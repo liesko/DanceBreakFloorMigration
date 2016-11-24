@@ -11,12 +11,14 @@ namespace DanceBreakFloorMigration.DB_objects
             MySqlDataReader dataReader = pMysql.Select("select id, name, abbreviation, countryid from tbl_states;");
             pMysql.Message = "tbl_states (from tbl_states)- extraction - START";
             int counter = 0;
+            string countryid = "null";
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_states(state_id,name,abbr,country_id) values('" + dataReader[0] + "','" + dataReader[1].ToString().Replace("'", "''") + "','" 
-                    + dataReader[2] + "','"+ dataReader[3] + "')");
+                countryid = (dataReader[3].ToString() == "") ? "null" : "'" + dataReader[3].ToString() + "'";
+                pPostgres.Insert("insert into tbl_states(state_id,name,abbr,country_id) values('" + dataReader[0] + "','" + dataReader[1].ToString().Replace("'", "''") + "','"
+                    + dataReader[2] + "'," + countryid + ")");
             }
-            pPostgres.Message = "tbl_countries - extraction - FINISH";
+            pPostgres.Message = "tbl_states - extraction - FINISH";
         }
     }
 }

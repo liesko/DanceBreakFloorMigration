@@ -30,7 +30,7 @@ namespace DanceBreakFloorMigration
 
         private void BtnDBConnect_Click(object sender, EventArgs e)
         {
-            //TextBoxMigration.AppendText(Environment.NewLine + ControlletInstance.Connect().ToString());
+            BtnDBConnect.Enabled = false;
             ControlletInstance.Connect();
         }
 

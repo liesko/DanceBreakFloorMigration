@@ -8,7 +8,7 @@ namespace DanceBreakFloorMigration.DB_objects
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
-            MySqlDataReader dataReader = pMysql.Select("select distinct gender from tbl_profiles where gender is not null;");
+            MySqlDataReader dataReader = pMysql.Select("select distinct gender from tbl_profiles where gender!='';");
             pMysql.Message = "tbl_gender (from tbl_profile)- extraction - START";
             int counter = 0;
             while (dataReader.Read())

@@ -90,6 +90,14 @@ namespace DanceBreakFloorMigration.Classes
             cmd.ExecuteNonQuery();
         }
 
+        public void Delete(string pTableName)
+        {
+            cmd.CommandText = "delete from " + pTableName + ";";
+            Message = "DELETED: " + pTableName;
+            cmd.Connection = connection;
+            cmd.ExecuteNonQuery();
+        }
+
         public void Update()
         {
             throw new System.NotImplementedException();

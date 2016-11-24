@@ -30,7 +30,6 @@
         {
             this.BtnDBConnect = new System.Windows.Forms.Button();
             this.BtnMigrationDB = new System.Windows.Forms.Button();
-            this.labelStatus = new System.Windows.Forms.Label();
             this.TextBoxMigration = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
@@ -54,15 +53,6 @@
             this.BtnMigrationDB.UseVisualStyleBackColor = true;
             this.BtnMigrationDB.Click += new System.EventHandler(this.BtnMigrationDB_Click);
             // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(12, 77);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(96, 13);
-            this.labelStatus.TabIndex = 2;
-            this.labelStatus.Text = "NO ACTION NOW";
-            // 
             // TextBoxMigration
             // 
             this.TextBoxMigration.Location = new System.Drawing.Point(117, 12);
@@ -77,13 +67,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 409);
             this.Controls.Add(this.TextBoxMigration);
-            this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.BtnMigrationDB);
             this.Controls.Add(this.BtnDBConnect);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -91,7 +79,6 @@
 
         private System.Windows.Forms.Button BtnDBConnect;
         private System.Windows.Forms.Button BtnMigrationDB;
-        private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.RichTextBox TextBoxMigration;
     }
 }

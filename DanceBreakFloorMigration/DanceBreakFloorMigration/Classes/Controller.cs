@@ -27,11 +27,19 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-            Tbl_score_colors tab=new Tbl_score_colors();
-            tab.Remigration(Mybreak_db,Pgdbbreakthefloor);
+            DeleteTable("tbl_states");
+            DeleteTable("tbl_gender");
+            DeleteTable("tbl_store_colors");
+            DeleteTable("tbl_person_types");
+            DeleteTable("tbl_store_sizes");
+            DeleteTable("tbl_store_product_types");
+            DeleteTable("tbl_countries");
+
+            Tbl_score_colors tab = new Tbl_score_colors();
+            tab.Remigration(Mybreak_db, Pgdbbreakthefloor);
 
             Tbl_gender tab1 = new Tbl_gender();
-            tab1.Remigration(DanceteaManager,Pgdbbreakthefloor);
+            tab1.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
             Tbl_person_types tab2 = new Tbl_person_types();
             tab2.Remigration(DanceteaManager, Pgdbbreakthefloor);
@@ -47,6 +55,10 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_states tab6 = new Tbl_states();
             tab6.Remigration(DanceteaManager, Pgdbbreakthefloor);
+        }
+        private void DeleteTable(string pTableName)
+        {
+            Pgdbbreakthefloor.Delete(pTableName);
         }
     }
 }
