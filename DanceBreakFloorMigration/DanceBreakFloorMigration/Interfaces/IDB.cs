@@ -7,7 +7,7 @@ namespace DanceBreakFloorMigration.Interfaces
         bool OpenConnection();
         bool CloseConnection();
         void Insert(string pInsertString);
-        void Update();
+        void Update(string pUpdate);
         MySqlDataReader Select(string pQuery);
 
     }

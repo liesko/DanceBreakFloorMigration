@@ -416,7 +416,7 @@ CREATE TABLE "tbl_date_studios" (
 DROP TABLE IF EXISTS "tbl_promo_codes_type" CASCADE;
 CREATE TABLE "tbl_promo_codes_type" (
 	"promo_codes_type_id" int4 NOT NULL,
-	"name" int4 NOT NULL,
+	"name" varchar NOT NULL,
 	PRIMARY KEY("promo_codes_type_id")
 );
 
@@ -816,12 +816,12 @@ CREATE TABLE "tbl_season_events" (
 	PRIMARY KEY("season_id","events_id")
 );
 
-DROP TABLE IF EXISTS "tbl_season" CASCADE;
-CREATE TABLE "tbl_season" (
-	"season_id" int4 NOT NULL,
+DROP TABLE IF EXISTS "tbl_seasons" CASCADE;
+CREATE TABLE "tbl_seasons" (
+	"seasons_id" int4 NOT NULL,
 	"start_year" int4 NOT NULL,
 	"end_year" int4,
-	PRIMARY KEY("season_id")
+	PRIMARY KEY("seasons_id")
 );
 
 DROP TABLE IF EXISTS "tbl_events" CASCADE;
@@ -1616,7 +1616,7 @@ ALTER TABLE "tbl_venue" ADD CONSTRAINT "tbl_address" FOREIGN KEY ("address_id")
 	NOT DEFERRABLE;
 
 ALTER TABLE "tbl_tour_dates" ADD CONSTRAINT "tbl_season" FOREIGN KEY ("season_id")
-	REFERENCES "tbl_season"("season_id")
+	REFERENCES "tbl_seasons"("seasons_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
@@ -1700,7 +1700,7 @@ ALTER TABLE "tbl_registration" ADD CONSTRAINT "tbl_tour_dates" FOREIGN KEY ("tou
 	NOT DEFERRABLE;
 
 ALTER TABLE "tbl_season_events" ADD CONSTRAINT "tbl_season" FOREIGN KEY ("season_id")
-	REFERENCES "tbl_season"("season_id")
+	REFERENCES "tbl_seasons"("seasons_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION

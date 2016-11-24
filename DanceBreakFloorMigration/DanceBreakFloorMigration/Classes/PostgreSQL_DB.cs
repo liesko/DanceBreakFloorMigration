@@ -98,9 +98,11 @@ namespace DanceBreakFloorMigration.Classes
             cmd.ExecuteNonQuery();
         }
 
-        public void Update()
+        public void Update(string pUpdate)
         {
-            throw new System.NotImplementedException();
+            cmd.CommandText = pUpdate;
+            cmd.Connection = connection;
+            cmd.ExecuteNonQuery();
         }
 
         public MySqlDataReader Select(string pQuery)

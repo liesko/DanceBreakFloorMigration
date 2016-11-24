@@ -101,19 +101,9 @@ namespace DanceBreakFloorMigration.Classes
             }
         }
 
-        public void Update()
+        public void Update(string pUpdate)
         {
-            string query = "UPDATE table SET...";
-
-            if (this.OpenConnection() == true)
-            {
-                MySqlCommand cmd = new MySqlCommand();
-                //Assign the query using CommandText
-                cmd.CommandText = query;
-                //Assign the connection using Connection
-                cmd.Connection = connection;
-                cmd.ExecuteNonQuery();
-            }
+            throw new NotImplementedException();
         }
 
         public MySqlDataReader Select(String pQuery)
