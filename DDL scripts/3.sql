@@ -1,94 +1,4 @@
-﻿DROP TABLE IF EXISTS "tbl_staff_types" CASCADE;
-CREATE TABLE "tbl_staff_types" (
-	"staff_types_id" int4 NOT NULL,
-	"name" int4,
-	PRIMARY KEY("staff_types_id")
-);
-
-DROP TABLE IF EXISTS "tbl_staff" CASCADE;
-CREATE TABLE "tbl_staff" (
-	"staff_id" int4 NOT NULL,
-	"fname" varchar,
-	"lname" varchar,
-	"staff_types_id" int4 NOT NULL,
-	PRIMARY KEY("staff_id")
-);
-
-DROP TABLE IF EXISTS "tbl_online_scoring" CASCADE;
-CREATE TABLE "tbl_online_scoring" (
-	"online_scoring_id" int4 NOT NULL,
-	"### routineid" int4,
-	"### tourdateid" int4,
-	"### studioid" int4,
-	"facultyid_json" text,
-	"data_json" text,
-	"compgroup" varchar,
-	"total_score" int4,
-	"dropped_score" int4,
-	"### awardid" int4,
-	PRIMARY KEY("online_scoring_id")
-);
-
-DROP TABLE IF EXISTS "tbl_online_critiques_access" CASCADE;
-CREATE TABLE "tbl_online_critiques_access" (
-	"online_critiques_access_id" int4 NOT NULL,
-	"tour_dates_id" int4 NOT NULL,
-	"studios_id" int4 NOT NULL,
-	"accesscode" varchar,
-	PRIMARY KEY("online_critiques_access_id")
-);
-
-DROP TABLE IF EXISTS "tbl_online_critiques_judges" CASCADE;
-CREATE TABLE "tbl_online_critiques_judges" (
-	"online_critiques_judges_id" int4 NOT NULL,
-	"tour_dates_id" int4 NOT NULL,
-	"startnumberhasa" int4,
-	"endnumber" int4,
-	"endnumberhasa" int4,
-	"judge_json" int4,
-	PRIMARY KEY("online_critiques_judges_id")
-);
-
-DROP TABLE IF EXISTS "tbl_jobs" CASCADE;
-CREATE TABLE "tbl_jobs" (
-	"jobs_id" int4 NOT NULL,
-	"title" varchar,
-	"jobtype" varchar,
-	"description" text,
-	"views" int4,
-	"showonsite" int4,
-	PRIMARY KEY("jobs_id")
-);
-
-DROP TABLE IF EXISTS "tbl_competition_cash_awards" CASCADE;
-CREATE TABLE "tbl_competition_cash_awards" (
-	"competition_cash_awards_id" int4 NOT NULL,
-	"highscoretype" varchar,
-	"place" int4,
-	"amount" int4,
-	"description" varchar,
-	"date_routines_id" int4 NOT NULL,
-	PRIMARY KEY("competition_cash_awards_id")
-);
-
-DROP TABLE IF EXISTS "tbl_events_has_promo_code" CASCADE;
-CREATE TABLE "tbl_events_has_promo_code" (
-	"promo_codes_id" int4 NOT NULL,
-	"events_id" int4 NOT NULL,
-	"tbl_event_reg_types_id" int4 NOT NULL,
-	"discount_fee" int4,
-	"fee" int4,
-	PRIMARY KEY("promo_codes_id","events_id","tbl_event_reg_types_id")
-);
-
-DROP TABLE IF EXISTS "tbl_event_reg_types" CASCADE;
-CREATE TABLE "tbl_event_reg_types" (
-	"tbl_event_reg_types_id" int4 NOT NULL,
-	"name" varchar,
-	PRIMARY KEY("tbl_event_reg_types_id")
-);
-
-DROP TABLE IF EXISTS "tbl_store_orders" CASCADE;
+﻿DROP TABLE IF EXISTS "tbl_store_orders" CASCADE;
 CREATE TABLE "tbl_store_orders" (
 	"store_orders_id" int4 NOT NULL,
 	"user_id" int4,
@@ -100,8 +10,10 @@ CREATE TABLE "tbl_store_orders" (
 	"digitalonly" int4 DEFAULT 0,
 	"fees_paid" varchar,
 	"tracking" varchar DEFAULT 0,
+	"label_made" int4 DEFAULT 0,
+	"label_cost" varchar DEFAULT '-',
+	"label_carrier" varchar,
 	"transactionid" varchar,
-	"label_json" text,
 	PRIMARY KEY("store_orders_id")
 );
 
@@ -358,18 +270,18 @@ CREATE TABLE "tbl_date_scholarships" (
 DROP TABLE IF EXISTS "schedule_workshops_room" CASCADE;
 CREATE TABLE "schedule_workshops_room" (
 	"schedule_workshops_id" int4 NOT NULL,
-	"workshop_room_plan_id" int4 NOT NULL,
+	"workshop_room_id" int4 NOT NULL,
 	"description" int4,
-	PRIMARY KEY("schedule_workshops_id","workshop_room_plan_id")
+	PRIMARY KEY("schedule_workshops_id","workshop_room_id")
 );
 
-DROP TABLE IF EXISTS "tbl_workshop_room_plan" CASCADE;
-CREATE TABLE "tbl_workshop_room_plan" (
-	"workshop_room_plan_id" int4 NOT NULL,
+DROP TABLE IF EXISTS "tbl_workshop_room0" CASCADE;
+CREATE TABLE "tbl_workshop_room0" (
+	"workshop_room_id" int4 NOT NULL,
 	"room_bold" int4 NOT NULL DEFAULT 0,
 	"room_highlight" int4 NOT NULL DEFAULT 0,
 	"description" varchar,
-	PRIMARY KEY("workshop_room_plan_id")
+	PRIMARY KEY("workshop_room_id")
 );
 
 DROP TABLE IF EXISTS "tbl_date_schedule_workshops" CASCADE;
@@ -416,13 +328,14 @@ CREATE TABLE "tbl_date_studios" (
 DROP TABLE IF EXISTS "tbl_promo_codes_type" CASCADE;
 CREATE TABLE "tbl_promo_codes_type" (
 	"promo_codes_type_id" int4 NOT NULL,
-	"name" varchar NOT NULL,
+	"name" int4 NOT NULL,
 	PRIMARY KEY("promo_codes_type_id")
 );
 
 DROP TABLE IF EXISTS "tbl_promo_codes" CASCADE;
 CREATE TABLE "tbl_promo_codes" (
 	"promo_codes_id" int4 NOT NULL,
+	"events_id" int4 NOT NULL,
 	"promo_codes_type_id" int4 NOT NULL,
 	"name" varchar NOT NULL,
 	"description" text,
@@ -458,6 +371,7 @@ CREATE TABLE "tbl_awards" (
 	"lowest" int4,
 	"highest" int4,
 	"report_order" int4,
+	"new_field0" int4,
 	PRIMARY KEY("awards_id")
 );
 
@@ -722,7 +636,6 @@ CREATE TABLE "tbl_tour_dates" (
 	"state_id" int4,
 	"venue_id" int4,
 	"hotel_id" int4,
-	"performance_divisions_id" int4,
 	"city" varchar,
 	"start_date" date,
 	"end_date" date,
@@ -730,16 +643,29 @@ CREATE TABLE "tbl_tour_dates" (
 	"cutoff_end_date" date,
 	"room_rate" varchar,
 	"notes" varchar,
+	"workshop_room_count" int4,
 	"is_finals" int4,
 	"entry_limits" varchar,
 	"weather_link" int4,
+	"no_hotel" int4,
 	"hotel_alt" varchar,
 	"custom_routine_durations" int4,
 	"default_category_order" varchar,
 	"routine_dist" int4,
+	"workshop_updated" int4,
+	"competition_room_count" int4,
+	"tda_danceoff_bestdancer_counts" varchar,
+	"tda_danceoff_judge_count" numeric,
 	"roomreservations" varchar,
+	"mybtfregenabled" int4,
+	"competition_notes" text,
+	"mybtf_no_competition" int4,
+	"workshop_notes" text,
 	"webcast_this_city" int4,
 	"hotel_notes" text,
+	"perfdivtype" int4,
+	"mybtf_photovideo_active" int4,
+	"web_critiques" int4,
 	"online_balance_payments_enabled" int4,
 	"event_date_status" int4,
 	"results_solo_display_count" int4,
@@ -747,10 +673,6 @@ CREATE TABLE "tbl_tour_dates" (
 	"use_online_scoring" int4,
 	"json_web_info" text,
 	"json_entry_info" text,
-	"json_workshop" text,
-	"json_competition" text,
-	"json_tda_dance" text,
-	"json_mybtf" text,
 	PRIMARY KEY("tour_dates_id")
 );
 
@@ -758,8 +680,7 @@ DROP TABLE IF EXISTS "tbl_fee_types_has_tbl_registration" CASCADE;
 CREATE TABLE "tbl_fee_types_has_tbl_registration" (
 	"fee_types_id" int4 NOT NULL,
 	"registration_id" int4 NOT NULL,
-	"value" numeric NOT NULL,
-	PRIMARY KEY("fee_types_id","registration_id")
+	"value" numeric NOT NULL
 );
 
 DROP TABLE IF EXISTS "tbl_fee_types" CASCADE;
@@ -803,7 +724,6 @@ CREATE TABLE "tbl_registration" (
 	"education" text,
 	"payment_method_id" int4,
 	"studios_id" int4,
-	"enteredby" int4,
 	PRIMARY KEY("registration_id")
 );
 
@@ -816,19 +736,19 @@ CREATE TABLE "tbl_season_events" (
 	PRIMARY KEY("season_id","events_id")
 );
 
-DROP TABLE IF EXISTS "tbl_seasons" CASCADE;
-CREATE TABLE "tbl_seasons" (
-	"seasons_id" int4 NOT NULL,
+DROP TABLE IF EXISTS "tbl_season" CASCADE;
+CREATE TABLE "tbl_season" (
+	"season_id" int4 NOT NULL,
 	"start_year" int4 NOT NULL,
 	"end_year" int4,
-	PRIMARY KEY("seasons_id")
+	PRIMARY KEY("season_id")
 );
 
 DROP TABLE IF EXISTS "tbl_events" CASCADE;
 CREATE TABLE "tbl_events" (
 	"events_id" int4 NOT NULL,
 	"event_types_id" int4 NOT NULL,
-	"name" varchar,
+	"name" varchar NOT NULL,
 	"link" varchar NOT NULL,
 	"web_home_webcast_banner" numeric,
 	"facebook_link" varchar,
@@ -869,7 +789,6 @@ CREATE TABLE "tbl_address" (
 	"address" varchar,
 	"city" varchar,
 	"zip" varchar,
-	"country_id" int4,
 	PRIMARY KEY("address_id")
 );
 
@@ -882,7 +801,6 @@ CREATE TABLE "tbl_person" (
 	"lname" varchar,
 	"title" varchar,
 	"birthdate" date,
-	"person_types_id" int4,
 	PRIMARY KEY("person_id")
 );
 
@@ -890,17 +808,18 @@ DROP TABLE IF EXISTS "tbl_user" CASCADE;
 CREATE TABLE "tbl_user" (
 	"user_id" int4 NOT NULL,
 	"person_id" int4 NOT NULL,
+	"user_types_id" int4 NOT NULL,
 	"email" varchar,
 	"password" varchar,
 	"active" int4,
 	PRIMARY KEY("user_id")
 );
 
-DROP TABLE IF EXISTS "tbl_person_types" CASCADE;
-CREATE TABLE "tbl_person_types" (
-	"person_types_id" int4 NOT NULL,
+DROP TABLE IF EXISTS "tbl_user_types" CASCADE;
+CREATE TABLE "tbl_user_types" (
+	"user_types_id" int4 NOT NULL,
 	"name" varchar NOT NULL,
-	PRIMARY KEY("person_types_id")
+	PRIMARY KEY("user_types_id")
 );
 
 DROP TABLE IF EXISTS "tbl_studios" CASCADE;
@@ -977,62 +896,6 @@ CREATE TABLE "tbl_dts_reg_types" (
 	"fee" int4 NOT NULL,
 	PRIMARY KEY("id")
 );
-
-ALTER TABLE "tbl_staff" ADD CONSTRAINT "tbl_staff_types" FOREIGN KEY ("staff_types_id")
-	REFERENCES "tbl_staff_types"("staff_types_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
-ALTER TABLE "tbl_online_critiques_access" ADD CONSTRAINT "tbl_tour_dates" FOREIGN KEY ("tour_dates_id")
-	REFERENCES "tbl_tour_dates"("tour_dates_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
-ALTER TABLE "tbl_online_critiques_access" ADD CONSTRAINT "tbl_studios" FOREIGN KEY ("studios_id")
-	REFERENCES "tbl_studios"("studios_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
-ALTER TABLE "tbl_online_critiques_judges" ADD CONSTRAINT "tbl_tour_dates" FOREIGN KEY ("tour_dates_id")
-	REFERENCES "tbl_tour_dates"("tour_dates_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
-ALTER TABLE "tbl_competition_cash_awards" ADD CONSTRAINT "tbl_date_routines" FOREIGN KEY ("date_routines_id")
-	REFERENCES "tbl_date_routines"("date_routines_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
-ALTER TABLE "tbl_events_has_promo_code" ADD CONSTRAINT "tbl_promo_codes" FOREIGN KEY ("promo_codes_id")
-	REFERENCES "tbl_promo_codes"("promo_codes_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
-ALTER TABLE "tbl_events_has_promo_code" ADD CONSTRAINT "tbl_events" FOREIGN KEY ("events_id")
-	REFERENCES "tbl_events"("events_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
-ALTER TABLE "tbl_events_has_promo_code" ADD CONSTRAINT "tbl_event_reg_types" FOREIGN KEY ("tbl_event_reg_types_id")
-	REFERENCES "tbl_event_reg_types"("tbl_event_reg_types_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
 
 ALTER TABLE "tbl_store_orders" ADD CONSTRAINT "tbl_unregistered_buyer" FOREIGN KEY ("unregistered_buyer_id")
 	REFERENCES "tbl_unregistered_buyer"("unregistered_buyer_id")
@@ -1300,8 +1163,8 @@ ALTER TABLE "schedule_workshops_room" ADD CONSTRAINT "tbl_date_schedule_workshop
 	ON UPDATE NO ACTION
 	NOT DEFERRABLE;
 
-ALTER TABLE "schedule_workshops_room" ADD CONSTRAINT "tbl_workshop_room_plan" FOREIGN KEY ("workshop_room_plan_id")
-	REFERENCES "tbl_workshop_room_plan"("workshop_room_plan_id")
+ALTER TABLE "schedule_workshops_room" ADD CONSTRAINT "tbl_workshop_room0" FOREIGN KEY ("workshop_room_id")
+	REFERENCES "tbl_workshop_room0"("workshop_room_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
@@ -1337,6 +1200,13 @@ ALTER TABLE "tbl_date_studios" ADD CONSTRAINT "tbl_tour_dates" FOREIGN KEY ("tou
 
 ALTER TABLE "tbl_promo_codes" ADD CONSTRAINT "tbl_promo_codes_type" FOREIGN KEY ("promo_codes_type_id")
 	REFERENCES "tbl_promo_codes_type"("promo_codes_type_id")
+	MATCH SIMPLE
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION
+	NOT DEFERRABLE;
+
+ALTER TABLE "tbl_promo_codes" ADD CONSTRAINT "tbl_events" FOREIGN KEY ("events_id")
+	REFERENCES "tbl_events"("events_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
@@ -1616,7 +1486,7 @@ ALTER TABLE "tbl_venue" ADD CONSTRAINT "tbl_address" FOREIGN KEY ("address_id")
 	NOT DEFERRABLE;
 
 ALTER TABLE "tbl_tour_dates" ADD CONSTRAINT "tbl_season" FOREIGN KEY ("season_id")
-	REFERENCES "tbl_seasons"("seasons_id")
+	REFERENCES "tbl_season"("season_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
@@ -1645,13 +1515,6 @@ ALTER TABLE "tbl_tour_dates" ADD CONSTRAINT "tbl_venue" FOREIGN KEY ("venue_id")
 
 ALTER TABLE "tbl_tour_dates" ADD CONSTRAINT "tbl_hotel" FOREIGN KEY ("hotel_id")
 	REFERENCES "tbl_hotel"("hotel_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
-ALTER TABLE "tbl_tour_dates" ADD CONSTRAINT "tbl_performance_divisions" FOREIGN KEY ("performance_divisions_id")
-	REFERENCES "tbl_performance_divisions"("performance_divisions_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
@@ -1700,7 +1563,7 @@ ALTER TABLE "tbl_registration" ADD CONSTRAINT "tbl_tour_dates" FOREIGN KEY ("tou
 	NOT DEFERRABLE;
 
 ALTER TABLE "tbl_season_events" ADD CONSTRAINT "tbl_season" FOREIGN KEY ("season_id")
-	REFERENCES "tbl_seasons"("seasons_id")
+	REFERENCES "tbl_season"("season_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
@@ -1748,13 +1611,6 @@ ALTER TABLE "tbl_address" ADD CONSTRAINT "tbl_states" FOREIGN KEY ("state_id")
 	ON UPDATE NO ACTION
 	NOT DEFERRABLE;
 
-ALTER TABLE "tbl_address" ADD CONSTRAINT "tbl_countries" FOREIGN KEY ("country_id")
-	REFERENCES "tbl_countries"("country_id")
-	MATCH SIMPLE
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-	NOT DEFERRABLE;
-
 ALTER TABLE "tbl_person" ADD CONSTRAINT "tbl_address" FOREIGN KEY ("address_id")
 	REFERENCES "tbl_address"("address_id")
 	MATCH SIMPLE
@@ -1769,15 +1625,15 @@ ALTER TABLE "tbl_person" ADD CONSTRAINT "tbl_gender" FOREIGN KEY ("gender_id")
 	ON UPDATE NO ACTION
 	NOT DEFERRABLE;
 
-ALTER TABLE "tbl_person" ADD CONSTRAINT "tbl_person_types" FOREIGN KEY ("person_types_id")
-	REFERENCES "tbl_person_types"("person_types_id")
+ALTER TABLE "tbl_user" ADD CONSTRAINT "tbl_person" FOREIGN KEY ("person_id")
+	REFERENCES "tbl_person"("person_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
 	NOT DEFERRABLE;
 
-ALTER TABLE "tbl_user" ADD CONSTRAINT "tbl_person" FOREIGN KEY ("person_id")
-	REFERENCES "tbl_person"("person_id")
+ALTER TABLE "tbl_user" ADD CONSTRAINT "tbl_user_types" FOREIGN KEY ("user_types_id")
+	REFERENCES "tbl_user_types"("user_types_id")
 	MATCH SIMPLE
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION

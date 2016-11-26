@@ -105,9 +105,12 @@ namespace DanceBreakFloorMigration.Classes
             cmd.ExecuteNonQuery();
         }
 
-        public MySqlDataReader Select(string pQuery)
+        public NpgsqlDataReader Select(string pQuery)
         {
-            throw new NotImplementedException();
+            cmd.CommandText = pQuery;
+            cmd.Connection = connection;
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            return dr;
         }
     }
 }
