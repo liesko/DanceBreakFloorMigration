@@ -61,6 +61,7 @@
     <Compile Include="DB_objects\Tbl_contact_type.cs" />
     <Compile Include="DB_objects\Tbl_countries.cs" />
     <Compile Include="DB_objects\Tbl_event_types.cs" />
+    <Compile Include="DB_objects\Tbl_fee_types.cs" />
     <Compile Include="DB_objects\Tbl_gender.cs" />
     <Compile Include="DB_objects\Tbl_payment_method.cs" />
     <Compile Include="DB_objects\Tbl_performance_divisions.cs" />
@@ -71,12 +72,15 @@
     <Compile Include="DB_objects\Tbl_score.cs" />
     <Compile Include="DB_objects\Tbl_score_colors.cs" />
     <Compile Include="DB_objects\Tbl_season.cs" />
+    <Compile Include="DB_objects\Tbl_season_events.cs" />
     <Compile Include="DB_objects\Tbl_songs.cs" />
+    <Compile Include="DB_objects\Tbl_soty_type.cs" />
     <Compile Include="DB_objects\Tbl_states.cs" />
     <Compile Include="DB_objects\Tbl_store_product_type.cs" />
     <Compile Include="DB_objects\Tbl_store_size.cs" />
     <Compile Include="DB_objects\Tbl_studios.cs" />
     <Compile Include="DB_objects\Tbl_time_type.cs" />
+    <Compile Include="DB_objects\Tbl_tour_dates.cs" />
     <Compile Include="DB_objects\Tbl_workshop_room.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

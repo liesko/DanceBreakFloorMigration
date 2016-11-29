@@ -27,6 +27,10 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
+            DeleteTable("tbl_tour_dates");
+            DeleteTable("tbl_fee_types");
+            DeleteTable("tbl_season_events");
+            DeleteTable("tbl_soty_type");
             DeleteTable("tbl_routine_types");
             DeleteTable("tbl_time_type");
             DeleteTable("tbl_score");
@@ -35,11 +39,11 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_category");
             DeleteTable("tbl_age_divisions");
             DeleteTable("tbl_playlist_workshop_levels");
-            DeleteTable("tbl_current_season");
+         //   DeleteTable("tbl_current_season");
             DeleteTable("tbl_events");
             DeleteTable("tbl_event_types");
             DeleteTable("tbl_promo_codes_type");
-            DeleteTable("tbl_seasons");
+            DeleteTable("tbl_season");
             DeleteTable("tbl_payment_method");
             DeleteTable("tbl_workshop_room");
             DeleteTable("tbl_event_types");
@@ -117,6 +121,18 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_routine_types tab21 = new Tbl_routine_types();
             tab21.Remigration(DanceteaManager, Pgdbbreakthefloor);
+
+            Tbl_soty_type tab22 = new Tbl_soty_type();
+            tab22.Remigration(DanceteaManager, Pgdbbreakthefloor);
+
+            Tbl_season_events tab23 = new Tbl_season_events();
+            tab23.Remigration(DanceteaManager, Pgdbbreakthefloor);
+
+            Tbl_fee_types tab24 = new Tbl_fee_types();
+            tab24.Remigration(DanceteaManager, Pgdbbreakthefloor);
+
+            Tbl_tour_dates tab25 = new Tbl_tour_dates();
+            tab25.Remigration(DanceteaManager, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {
