@@ -15,29 +15,32 @@ namespace DanceBreakFloorMigration.DB_objects
                                                        "cast(web_workshop as char), cast(web_competition as char), cast(web_playlist as char), cast(web_results as char), cast(web_city_webcast_banner as char), cast(web_no_competition as char), cast(web_videos as char), cast(web_personalpdfs as char)," +
                                                        "cast(entrylimit_total as char), cast(entrylimit_solos as char), cast(entrylimit_duotrios as char), cast(entrylimit_groups as char), cast(entrylimit_onesolo as char), cast(entrylimit_sologroup as char)," +
                                                        "cast(mybtfregenabled as char), cast(mybtf_no_competition as char), cast(mybtf_photovideo_active as char), " +
-                                                       "hotel_name, hotel_website, hotel_address, hotel_city, hotel_stateid, hotel_zip, hotel_phone" +
+                                                       "hotel_name, hotel_website, hotel_address, hotel_city, hotel_stateid, hotel_zip, hotel_phone, " +
+                                                       "venue_name, venue_address, venue_city, venue_stateid, venue_zip, venue_phone, venue_website" +
                                                        " from tbl_tour_dates;");
             pMysql.Message = "tbl_tour_dates - extraction - START";
             while (dataReader.Read())
             {
                 try
                 {
-                    pPostgres.Insert("insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, json_web_info, json_entry_info, json_mybtf, hotel_id) " +
+                    pPostgres.Insert("insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, json_web_info, json_entry_info, json_mybtf, hotel_id, venue_id) " +
                                 "values('" + dataReader[0] + "','" + dataReader[1] + "','" + dataReader[2] + "','" + dataReader[3] + "','" + dataReader[4] + "'," +
                                      "'" + Get_json_web_info(dataReader[5].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), dataReader[8].ToString(), dataReader[9].ToString(), dataReader[10].ToString(), dataReader[11].ToString(), dataReader[12].ToString()) + "','" +
                                      "" + Get_json_entry_info(dataReader[13].ToString(), dataReader[14].ToString(), dataReader[15].ToString(), dataReader[16].ToString(), dataReader[17].ToString(), dataReader[18].ToString()) + "','" +
                                      "" + Get_json_mybtf(dataReader[19].ToString(), dataReader[20].ToString(), dataReader[21].ToString()) + "'," +
-                                     "" + GetHotelId(dataReader[22].ToString(), dataReader[23].ToString(), dataReader[24].ToString(), dataReader[25].ToString(), dataReader[26].ToString(), dataReader[27].ToString(), dataReader[28].ToString(), pPostgres) + ");");
+                                     "" + GetHotelId(dataReader[22].ToString(), dataReader[23].ToString(), dataReader[24].ToString(), dataReader[25].ToString(), dataReader[26].ToString(), dataReader[27].ToString(), dataReader[28].ToString(), pPostgres) + ", " +
+                                     "" + GetVenueId(dataReader[29].ToString(), dataReader[30].ToString(), dataReader[31].ToString(), dataReader[32].ToString(), dataReader[33].ToString(), dataReader[34].ToString(), dataReader[35].ToString(), pPostgres)+ ");");
                 }
                 catch (Exception)
                 {
 
-                    pPostgres.Message = "tbl_tour_dates INVALID INSERT:insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, json_web_info, json_entry_info, json_mybtf, hotel_id) " +
+                    pPostgres.Message = "tbl_tour_dates INVALID INSERT:into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, json_web_info, json_entry_info, json_mybtf, hotel_id, venue_id) " +
                                 "values('" + dataReader[0] + "','" + dataReader[1] + "','" + dataReader[2] + "','" + dataReader[3] + "','" + dataReader[4] + "'," +
                                      "'" + Get_json_web_info(dataReader[5].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), dataReader[8].ToString(), dataReader[9].ToString(), dataReader[10].ToString(), dataReader[11].ToString(), dataReader[12].ToString()) + "','" +
                                      "" + Get_json_entry_info(dataReader[13].ToString(), dataReader[14].ToString(), dataReader[15].ToString(), dataReader[16].ToString(), dataReader[17].ToString(), dataReader[18].ToString()) + "','" +
                                      "" + Get_json_mybtf(dataReader[19].ToString(), dataReader[20].ToString(), dataReader[21].ToString()) + "'," +
-                                     "" + GetHotelId(dataReader[22].ToString(), dataReader[23].ToString(), dataReader[24].ToString(), dataReader[25].ToString(), dataReader[26].ToString(), dataReader[27].ToString(), dataReader[28].ToString(), pPostgres) + ");";
+                                     "" + GetHotelId(dataReader[22].ToString(), dataReader[23].ToString(), dataReader[24].ToString(), dataReader[25].ToString(), dataReader[26].ToString(), dataReader[27].ToString(), dataReader[28].ToString(), pPostgres) + "," +
+                                     "" + GetVenueId(dataReader[29].ToString(), dataReader[30].ToString(), dataReader[31].ToString(), dataReader[32].ToString(), dataReader[33].ToString(), dataReader[34].ToString(), dataReader[35].ToString(), pPostgres) + ");";
                 }
 
             }
@@ -83,23 +86,51 @@ namespace DanceBreakFloorMigration.DB_objects
         {
             NpgsqlDataReader query;
             query = pPostgres.Select("select distinct hotel_id " +
-                                   "from tbl_hotel where name like '" + p_hotel_name + "' and hotel_website like '%" + p_hotel_website + "%';");
+                                   "from tbl_hotel where name like '" + p_hotel_name.Replace("'", "''") + "' and hotel_website like '%" + p_hotel_website + "%';");
             string pom;
             while (query.Read())
             {
                 pom = query[0].ToString();
                 query.Dispose();
-                return pom;
+                return "'"+pom+"'";
             }
             query.Dispose();
             if (p_hotel_name != "")
             {
                 pPostgres.Insert("insert into tbl_address(state_id, address, city, zip) values('" + p_hotel_stateid + "','" + p_hotel_address + "','" + p_hotel_city + "','" + p_hotel_zip + "');");
                 string p_address_id = GetId("select max(address_id) from tbl_address", pPostgres);
-                pPostgres.Insert("insert into tbl_hotel(name, hotel_website, address_id) values('" + p_hotel_name + "','" + p_hotel_website + "','" + p_address_id + "');");
+                pPostgres.Insert("insert into tbl_hotel(name, hotel_website, address_id) values('" + p_hotel_name.Replace("'", "''") + "','" + p_hotel_website + "','" + p_address_id + "');");
                 string p_hotel_id = GetId("select max(hotel_id) from tbl_hotel", pPostgres);
                 pPostgres.Insert("insert into hotel_contact_type(contact_type_id, hotel_id, value) values('2','" + p_hotel_id + "','" + p_hotel_phone + "');");
                 return "'"+p_hotel_id+"'";
+            }
+            else
+            {
+                return "null";
+            }
+        }
+
+        private string GetVenueId(string p_venue_name, string p_venue_address, string p_venue_city, string p_venue_stateid, string p_venue_zip, string p_venue_phone, string p_venue_website, PostgreSQL_DB pPostgres)
+        {
+            NpgsqlDataReader query;
+            query = pPostgres.Select("select distinct venue_id " +
+                                   "from tbl_venue where name like '" + p_venue_name.Replace("'", "''") + "' and venue_website like '%" + p_venue_website + "%';");
+            string pom;
+            while (query.Read())
+            {
+                pom = query[0].ToString();
+                query.Dispose();
+                return "'" + pom + "'";
+            }
+            query.Dispose();
+            if (p_venue_name != "")
+            {
+                pPostgres.Insert("insert into tbl_address(state_id, address, city, zip) values('" + p_venue_stateid + "','" + p_venue_address + "','" + p_venue_city + "','" + p_venue_zip + "');");
+                string p_address_id = GetId("select max(address_id) from tbl_address", pPostgres);
+                pPostgres.Insert("insert into tbl_venue(name, venue_website, address_id) values('" + p_venue_name.Replace("'", "''") + "','" + p_venue_website + "','" + p_address_id + "');");
+                string p_venue_id = GetId("select max(venue_id) from tbl_venue", pPostgres);
+                pPostgres.Insert("insert into venue_contact_type(contact_type_id, venue_id, value) values('2','" + p_venue_id + "','" + p_venue_phone + "');");
+                return "'" + p_venue_id + "'";
             }
             else
             {

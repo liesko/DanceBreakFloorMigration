@@ -28,11 +28,13 @@ namespace DanceBreakFloorMigration.Classes
         public void Remigration()
         {
             
+            DeleteTable("venue_contact_type");
             DeleteTable("hotel_contact_type");
             DeleteTable("tour_dates_workshop_room");
             DeleteTable("tbl_level");
             DeleteTable("tbl_tour_dates");
             DeleteTable("tbl_hotel");
+            DeleteTable("tbl_venue");
             DeleteTable("tbl_address");
             DeleteTable("tbl_fee_types");
             DeleteTable("tbl_season_events");
