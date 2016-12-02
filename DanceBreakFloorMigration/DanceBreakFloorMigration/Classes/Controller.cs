@@ -27,7 +27,13 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
+            
+            DeleteTable("hotel_contact_type");
+            DeleteTable("tour_dates_workshop_room");
+            DeleteTable("tbl_level");
             DeleteTable("tbl_tour_dates");
+            DeleteTable("tbl_hotel");
+            DeleteTable("tbl_address");
             DeleteTable("tbl_fee_types");
             DeleteTable("tbl_season_events");
             DeleteTable("tbl_soty_type");
@@ -133,6 +139,12 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_tour_dates tab25 = new Tbl_tour_dates();
             tab25.Remigration(DanceteaManager, Pgdbbreakthefloor);
+
+            Tbl_level tab27 = new Tbl_level();
+            tab27.Remigration(DanceteaManager, Pgdbbreakthefloor);
+
+            Tour_dates_workshop_room tab26 = new Tour_dates_workshop_room();
+            tab26.Remigration(DanceteaManager, Pgdbbreakthefloor);            
         }
         private void DeleteTable(string pTableName)
         {
