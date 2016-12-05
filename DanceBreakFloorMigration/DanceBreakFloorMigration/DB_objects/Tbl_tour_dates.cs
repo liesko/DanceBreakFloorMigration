@@ -16,20 +16,30 @@ namespace DanceBreakFloorMigration.DB_objects
                                                        "cast(entrylimit_total as char), cast(entrylimit_solos as char), cast(entrylimit_duotrios as char), cast(entrylimit_groups as char), cast(entrylimit_onesolo as char), cast(entrylimit_sologroup as char)," +
                                                        "cast(mybtfregenabled as char), cast(mybtf_no_competition as char), cast(mybtf_photovideo_active as char), " +
                                                        "hotel_name, hotel_website, hotel_address, hotel_city, hotel_stateid, hotel_zip, hotel_phone, " +
-                                                       "venue_name, venue_address, venue_city, venue_stateid, venue_zip, venue_phone, venue_website" +
+                                                       "venue_name, venue_address, venue_city, venue_stateid, venue_zip, venue_phone, venue_website, " +
+                                                       "city, start_date, end_date, cutoff_date, cutoff_date2, room_rate, notes, is_finals,  entry_limits, weather_link, hotel_alt, " +
+                                                       "custom_routine_durations, default_category_order, routine_dist, roomreservations, webcast_this_city, " +
+                                                       "hotel_notes, online_balance_payments_enabled, event_date_status, show_time, use_online_scoring" +
                                                        " from tbl_tour_dates;");
             pMysql.Message = "tbl_tour_dates - extraction - START";
             while (dataReader.Read())
             {
                 try
                 {
-                    pPostgres.Insert("insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, json_web_info, json_entry_info, json_mybtf, hotel_id, venue_id) " +
-                                "values('" + dataReader[0] + "','" + dataReader[1] + "','" + dataReader[2] + "','" + dataReader[3] + "','" + dataReader[4] + "'," +
+                    pPostgres.Insert("insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, json_web_info, json_entry_info, json_mybtf, hotel_id, venue_id, " +
+                                     "city, start_date, end_date, cutoff_start_date, cutoff_end_date, room_rate, notes, is_finals,  entry_limits, weather_link, hotel_alt, custom_routine_durations, " +
+                                     "default_category_order, routine_dist, roomreservations, webcast_this_city, hotel_notes, online_balance_payments_enabled, event_date_status, show_time, use_online_scoring) " +
+                                "values('" + dataReader["id"] + "','" + dataReader["seasonid"] + "','" + dataReader["eventid"] + "','" + dataReader["stateid"] + "','" + dataReader[4] + "'," +
                                      "'" + Get_json_web_info(dataReader[5].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), dataReader[8].ToString(), dataReader[9].ToString(), dataReader[10].ToString(), dataReader[11].ToString(), dataReader[12].ToString()) + "','" +
                                      "" + Get_json_entry_info(dataReader[13].ToString(), dataReader[14].ToString(), dataReader[15].ToString(), dataReader[16].ToString(), dataReader[17].ToString(), dataReader[18].ToString()) + "','" +
                                      "" + Get_json_mybtf(dataReader[19].ToString(), dataReader[20].ToString(), dataReader[21].ToString()) + "'," +
                                      "" + GetHotelId(dataReader[22].ToString(), dataReader[23].ToString(), dataReader[24].ToString(), dataReader[25].ToString(), dataReader[26].ToString(), dataReader[27].ToString(), dataReader[28].ToString(), pPostgres) + ", " +
-                                     "" + GetVenueId(dataReader[29].ToString(), dataReader[30].ToString(), dataReader[31].ToString(), dataReader[32].ToString(), dataReader[33].ToString(), dataReader[34].ToString(), dataReader[35].ToString(), pPostgres)+ ");");
+                                     "" + GetVenueId(dataReader[29].ToString(), dataReader[30].ToString(), dataReader[31].ToString(), dataReader[32].ToString(), dataReader[33].ToString(), dataReader[34].ToString(), dataReader[35].ToString(), pPostgres)+ "," +
+                                     "'"+ dataReader[36].ToString().Replace("'", "''") + "','"+ dataReader[37].ToString() + "','"+ dataReader[38].ToString() + "','"+ dataReader[39].ToString() + "','"+ dataReader[40].ToString() + "','"+ dataReader[41].ToString() + "'," +
+                                     "'"+ dataReader[42].ToString().Replace("'", "''") + "','"+ CheckBool(dataReader[43].ToString()) + "','"+ dataReader[44].ToString().Replace("'","''") + "','"+ dataReader[44].ToString().Replace("'", "''") + "'," +
+                                     "'"+ dataReader[45].ToString().Replace("'", "''") + "','"+ dataReader[46].ToString().Replace("'", "''") + "','"+ dataReader[47].ToString().Replace("'", "''") + "','"+ dataReader["routine_dist"] + "','"+ dataReader["roomreservations"].ToString().Replace("'", "''") + "','"+ CheckBool(dataReader["webcast_this_city"].ToString()) + "'" +
+                                     ",'"+ dataReader["hotel_notes"].ToString().Replace("'", "''") + "','"+ CheckBool(dataReader["online_balance_payments_enabled"].ToString()) + "'" +
+                                     ",'"+ dataReader["event_date_status"].ToString() +"','"+ dataReader["show_time"].ToString() + "','"+ CheckBool(dataReader["use_online_scoring"].ToString()) + "');");
                 }
                 catch (Exception)
                 {
@@ -151,6 +161,15 @@ namespace DanceBreakFloorMigration.DB_objects
             }
             query.Dispose();
             return null;
+        }
+
+        private int CheckBool(string pValue)
+        {
+            if (pValue == "True")
+            {
+                return 1;
+            }
+            return 0;
         }
     }
 }
