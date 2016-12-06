@@ -27,7 +27,7 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-
+            DeleteTable("tbl_studio_contacts");
             DeleteTable("tbl_studios");
             DeleteTable("venue_contact_type");
             DeleteTable("hotel_contact_type");

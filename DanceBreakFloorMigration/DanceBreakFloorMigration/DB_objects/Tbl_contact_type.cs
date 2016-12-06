@@ -15,6 +15,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pPostgres.Insert("insert into tbl_contact_type(contact_type_id, name) values('5','web')");
             pPostgres.Insert("insert into tbl_contact_type(contact_type_id, name) values('6','linkedin')");
             pPostgres.Insert("insert into tbl_contact_type(contact_type_id, name) values('7','instagram')");
+            pPostgres.Insert("insert into tbl_contact_type(contact_type_id, name) values('8','fax')");
             pPostgres.Message = "tbl_contact_type - extraction - FINISH";
         }
     }
