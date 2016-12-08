@@ -38,9 +38,11 @@ namespace DanceBreakFloorMigration.Classes
 
             server = "localhost";
             database = pDBName;
-            uid = "postgres";
+            // uid = "postgres";
+            uid = "peterkim";
             port = "5432";
-            password = "ahojahoj";
+            password = "peterkim";
+            // password = "ahojahoj";
             string connectionString;
             connectionString = "Server=" + server + ";"
                 + "Port=" + port + ";"

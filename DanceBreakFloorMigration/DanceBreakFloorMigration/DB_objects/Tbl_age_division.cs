@@ -21,6 +21,17 @@ namespace DanceBreakFloorMigration.DB_objects
                                  "values('" + dataReader[0] + "','" + dataReader[1] + "','"+ dataReader[2] + "','"+ pom + "');");
             }
             pPostgres.Message = "tbl_age_divisions - extraction - FINISH";
+            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '1';");
+            pPostgres.Update("update tbl_age_divisions set range='1' where age_divisions_id = '2';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '3';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '4';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '5';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '6';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '7';");
+            pPostgres.Update("update tbl_age_divisions set range='100' where age_divisions_id = '8';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '10';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '11';");
+            pPostgres.Update("update tbl_age_divisions set range='5' where age_divisions_id = '12';");
         }
 
         private string GetId(string pParam, PostgreSQL_DB pPostgres)

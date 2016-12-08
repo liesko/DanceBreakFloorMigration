@@ -86,6 +86,7 @@
     <Compile Include="DB_objects\Tbl_studios.cs" />
     <Compile Include="DB_objects\Tbl_time_type.cs" />
     <Compile Include="DB_objects\Tbl_tour_dates.cs" />
+    <Compile Include="DB_objects\Tbl_users.cs" />
     <Compile Include="DB_objects\Tbl_workshop_room.cs" />
     <Compile Include="DB_objects\Tour_dates_workshop_room.cs" />
     <Compile Include="Form1.cs">

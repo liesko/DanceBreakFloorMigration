@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DanceBreakFloorMigration.Classes;
 using DanceBreakFloorMigration.Interfaces;
 using MySql.Data.MySqlClient;
@@ -109,9 +110,12 @@ namespace DanceBreakFloorMigration.DB_objects
             {
                 pPostgres.Insert("insert into tbl_address(state_id, address, city, zip) values('" + p_hotel_stateid + "','" + p_hotel_address + "','" + p_hotel_city + "','" + p_hotel_zip + "');");
                 string p_address_id = GetId("select max(address_id) from tbl_address", pPostgres);
-                pPostgres.Insert("insert into tbl_hotel(name, hotel_website, address_id) values('" + p_hotel_name.Replace("'", "''") + "','" + p_hotel_website + "','" + p_address_id + "');");
+                pPostgres.Insert("insert into tbl_hotel(name, hotel_website, address_id) values('" + p_hotel_name.Replace("'", "''") + "','" +p_hotel_website + "','" + p_address_id + "');");
                 string p_hotel_id = GetId("select max(hotel_id) from tbl_hotel", pPostgres);
-                pPostgres.Insert("insert into hotel_contact_type(contact_type_id, hotel_id, value) values('2','" + p_hotel_id + "','" + p_hotel_phone + "');");
+
+                var s = p_hotel_phone;
+                var c = new[] { '(', ')', '-', ' ' };
+                pPostgres.Insert("insert into hotel_contact_type(contact_type_id, hotel_id, value) values('2','" + p_hotel_id + "','" + Remove(s,c) + "');");
                 return "'"+p_hotel_id+"'";
             }
             else
@@ -139,7 +143,10 @@ namespace DanceBreakFloorMigration.DB_objects
                 string p_address_id = GetId("select max(address_id) from tbl_address", pPostgres);
                 pPostgres.Insert("insert into tbl_venue(name, venue_website, address_id) values('" + p_venue_name.Replace("'", "''") + "','" + p_venue_website + "','" + p_address_id + "');");
                 string p_venue_id = GetId("select max(venue_id) from tbl_venue", pPostgres);
-                pPostgres.Insert("insert into venue_contact_type(contact_type_id, venue_id, value) values('2','" + p_venue_id + "','" + p_venue_phone + "');");
+
+                var s = p_venue_phone;
+                var c = new[] { '(', ')', '-', ' ' };
+                pPostgres.Insert("insert into venue_contact_type(contact_type_id, venue_id, value) values('2','" + p_venue_id + "','" + Remove(s, c) + "');");
                 return "'" + p_venue_id + "'";
             }
             else
@@ -170,6 +177,11 @@ namespace DanceBreakFloorMigration.DB_objects
                 return 1;
             }
             return 0;
+        }
+
+        public static string Remove(string source, char[] oldChar)
+        {
+            return String.Join("", source.ToCharArray().Where(a => !oldChar.Contains(a)).ToArray());
         }
     }
 }

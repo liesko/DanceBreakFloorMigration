@@ -12,8 +12,9 @@ namespace DanceBreakFloorMigration.Classes
         public Controller(Form1 form)
         {
             _form = form;
-            Pgdbbreakthefloor =  new PostgreSQL_DB("pgdbbreakthefloor", _form);
-            DanceteaManager= new MySQL_DB("dancetea_manager", _form);
+            //Pgdbbreakthefloor =  new PostgreSQL_DB("pgdbbreakthefloor", _form);
+            Pgdbbreakthefloor = new PostgreSQL_DB("test", _form);
+            DanceteaManager = new MySQL_DB("dancetea_manager", _form);
             Mybreak_db = new MySQL_DB("mybreak_db", _form);
         }
         public bool Connect()
@@ -27,6 +28,9 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
+            DeleteTable("studios_has_person");
+            DeleteTable("tbl_user");
+            DeleteTable("tbl_person");
             DeleteTable("tbl_studio_contacts");
             DeleteTable("tbl_studios");
             DeleteTable("venue_contact_type");
@@ -151,6 +155,9 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_studios tab28 = new Tbl_studios();
             tab28.Remigration(DanceteaManager, Pgdbbreakthefloor);
+
+            Tbl_users tab29 = new Tbl_users();
+            tab29.Remigration(Mybreak_db, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {

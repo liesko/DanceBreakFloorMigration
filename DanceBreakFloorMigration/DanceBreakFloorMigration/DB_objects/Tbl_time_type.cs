@@ -8,10 +8,10 @@ namespace DanceBreakFloorMigration.DB_objects
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
             pPostgres.Message = "tbl_time_type - extraction - FINISH";
-            pPostgres.Insert("insert into tbl_time_type(time_type_id, name) values('1','extra_time');");
-            pPostgres.Insert("insert into tbl_time_type(time_type_id, name) values('2','prelims_time');");
-            pPostgres.Insert("insert into tbl_time_type(time_type_id, name) values('3','vips_time');");
-            pPostgres.Insert("insert into tbl_time_type(time_type_id, name) values('4','finals_time');");
+            pPostgres.Insert("insert into tbl_time_type(time_type_id, name) values('1','extra');");
+            pPostgres.Insert("insert into tbl_time_type(time_type_id, name) values('2','prelims');");
+            pPostgres.Insert("insert into tbl_time_type(time_type_id, name) values('3','vips');");
+            pPostgres.Insert("insert into tbl_time_type(time_type_id, name) values('4','finals');");
             pPostgres.Message = "tbl_time_type - extraction - FINISH";
         }
     }
