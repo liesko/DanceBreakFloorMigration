@@ -1,4 +1,6 @@
-﻿using DanceBreakFloorMigration.Classes;
+﻿using System;
+using System.Net;
+using DanceBreakFloorMigration.Classes;
 using DanceBreakFloorMigration.Interfaces;
 using MySql.Data.MySqlClient;
 
@@ -14,7 +16,7 @@ namespace DanceBreakFloorMigration.DB_objects
             while (dataReader.Read())
             {
                 pPostgres.Insert("insert into tbl_songs(songs_id, song_name, artist_name) " +
-                                 "values(" + ++counter + ",'" + dataReader[0] + "','"+dataReader[1]+"')");
+                                 "values(" + ++counter + ",'" + WebUtility.UrlDecode(dataReader[0].ToString()).Replace("'","''") + "','"+ WebUtility.UrlDecode(dataReader[1].ToString()).Replace("'", "''") + "')");
             }
             pPostgres.Message = "tbl_songs - extraction - FINISH";
         }

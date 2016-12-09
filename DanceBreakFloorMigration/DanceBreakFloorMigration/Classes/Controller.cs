@@ -68,6 +68,11 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_store_sizes");
             DeleteTable("tbl_store_product_types");
             DeleteTable("tbl_countries");
+            DeleteTable("tbl_city");
+
+
+            Tbl_city tab0 = new Tbl_city();
+            tab0.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
             Tbl_score_colors tab = new Tbl_score_colors();
             tab.Remigration(Mybreak_db, Pgdbbreakthefloor);
@@ -152,12 +157,15 @@ namespace DanceBreakFloorMigration.Classes
 
             Tour_dates_workshop_room tab26 = new Tour_dates_workshop_room();
             tab26.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_studios tab28 = new Tbl_studios();
             tab28.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_users tab29 = new Tbl_users();
             tab29.Remigration(Mybreak_db, Pgdbbreakthefloor);
+
+            Tbl_studio_has_person tab30 = new Tbl_studio_has_person();
+            tab30.Remigration(Mybreak_db, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {

@@ -14,6 +14,7 @@ namespace DanceBreakFloorMigration
 {
     public partial class Form1 : Form
     {
+        private BackgroundWorker _backgroundWorker = new BackgroundWorker();
         public EventHandler MyEvent;
         public Controller ControlletInstance;
         public Form1()
@@ -21,11 +22,26 @@ namespace DanceBreakFloorMigration
             MyEvent += MyEventWork;
             ControlletInstance = new Controller(this);
             InitializeComponent();
+
+            _backgroundWorker.DoWork += _backgroundWorker_DoWork;
+            _backgroundWorker.RunWorkerCompleted += _backgroundWorker_RunWorkerCompleted;
+        }
+
+        private void _backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            BtnMigrationDB.Enabled = true;
+            progressBar.Visible = false;
+            progressBar.Enabled = false;
+        }
+
+        private void _backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            ControlletInstance.Remigration();
         }
 
         private void MyEventWork(object sender, EventArgs eventArgs)
         {
-           TextBoxMigration.AppendText(((HandlerArgs)eventArgs).Message + "\n");
+            TextBoxMigration.Invoke(new Action(() => TextBoxMigration.AppendText(((HandlerArgs)eventArgs).Message + "\n")));
         }
 
         private void BtnDBConnect_Click(object sender, EventArgs e)
@@ -36,7 +52,13 @@ namespace DanceBreakFloorMigration
 
         private void BtnMigrationDB_Click(object sender, EventArgs e)
         {
-            ControlletInstance.Remigration();
+            if (!_backgroundWorker.IsBusy)
+            {
+                BtnMigrationDB.Enabled = false;
+                progressBar.Visible = true;
+                progressBar.Enabled = true;
+                _backgroundWorker.RunWorkerAsync();
+            }
         }
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="Classes\HandlerArgs.cs" />
     <Compile Include="Classes\MySQL_DB.cs" />
     <Compile Include="Classes\PostgreSQL_DB.cs" />
+    <Compile Include="DB_objects\Tbl_city.cs" />
     <Compile Include="DB_objects\Tbl_events.cs" />
     <Compile Include="DB_objects\Tbl_age_division.cs" />
     <Compile Include="DB_objects\Tbl_category.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="DB_objects\Tbl_store_product_type.cs" />
     <Compile Include="DB_objects\Tbl_store_size.cs" />
     <Compile Include="DB_objects\Tbl_studios.cs" />
+    <Compile Include="DB_objects\Tbl_studio_has_person.cs" />
     <Compile Include="DB_objects\Tbl_time_type.cs" />
     <Compile Include="DB_objects\Tbl_tour_dates.cs" />
     <Compile Include="DB_objects\Tbl_users.cs" />
