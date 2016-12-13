@@ -30,7 +30,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 string state = (dataReader["stateid"] == "") ? "'"+dataReader["stateid"]+"'": "null";
                 try
                 {
-                    pPostgres.Insert("insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, json_web_info, json_entry_info, json_mybtf, hotel_id, venue_id, " +
+                    pPostgres.Insert("insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, web, entrylimit, mybtf, hotel_id, venue_id, " +
                                      "start_date, end_date, cutoff_start_date, cutoff_end_date, room_rate, notes, is_finals,  entry_limits, weather_link, hotel_alt, custom_routine_durations, " +
                                      "default_category_order, routine_dist, roomreservations, webcast_this_city, hotel_notes, online_balance_payments_enabled, event_date_status, show_time, use_online_scoring, city_id ) " +
                                 "values('" + dataReader["id"] + "','" + dataReader["seasonid"] + "','" + dataReader["eventid"] + "'," + state + ",'" + dataReader["perfdivtype"] + "'," +
@@ -44,13 +44,13 @@ namespace DanceBreakFloorMigration.DB_objects
                                      "'"+ dataReader["hotel_alt"].ToString().Replace("'", "''") + "','"+ dataReader["custom_routine_durations"].ToString().Replace("'", "''") + "','"+ dataReader["default_category_order"].ToString().Replace("'", "''") + "','"+ dataReader["routine_dist"] + "','"+ dataReader["roomreservations"].ToString().Replace("'", "''") + "','"+ CheckBool(dataReader["webcast_this_city"].ToString()) + "'" +
                                      ",'"+ dataReader["hotel_notes"].ToString().Replace("'", "''") + "','"+ CheckBool(dataReader["online_balance_payments_enabled"].ToString()) + "'" +
                                      ",'"+ dataReader["event_date_status"].ToString() +"','"+ dataReader["show_time"].ToString() + "','"+ CheckBool(dataReader["use_online_scoring"].ToString()) + "'," +
-                                     ""+GetId("select city_id from tbl_city where name like '"+dataReader["city"]+"';",pPostgres) + ");");
+                                     ""+GetId("select city_id from tbl_city where name like '"+dataReader["city"].ToString().Replace("'", "''") + "';",pPostgres) + ");");
                 }
                 catch (Exception)
                 {
 
                     pPostgres.Message =
-                        " insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, json_web_info, json_entry_info, json_mybtf, hotel_id, venue_id, " +
+                        " insert into tbl_tour_dates(tour_dates_id, season_id, events_id, state_id, performance_divisions_id, web, entrylimit, mybtf, hotel_id, venue_id, " +
                         "start_date, end_date, cutoff_start_date, cutoff_end_date, room_rate, notes, is_finals,  entry_limits, weather_link, hotel_alt, custom_routine_durations, " +
                         "default_category_order, routine_dist, roomreservations, webcast_this_city, hotel_notes, online_balance_payments_enabled, event_date_status, show_time, use_online_scoring, city_id ) " +
                         "values('" + dataReader["id"] + "','" + dataReader["seasonid"] + "','" + dataReader["eventid"] +
@@ -92,7 +92,7 @@ namespace DanceBreakFloorMigration.DB_objects
                         ",'" + dataReader["hotel_notes"].ToString().Replace("'", "''") + "','" +
                         CheckBool(dataReader["online_balance_payments_enabled"].ToString()) + "'" +
                         ",'" + dataReader["event_date_status"].ToString() + "','" + dataReader["show_time"].ToString() +
-                        "','" + CheckBool(dataReader["use_online_scoring"].ToString()) + "','"+ GetId("select city_id from tbl_city where name like '" + dataReader["city"] + "';", pPostgres) + "')";
+                        "','" + CheckBool(dataReader["use_online_scoring"].ToString()) + "','"+ GetId("select city_id from tbl_city where name like '" + dataReader["city"].ToString().Replace("'","''") + "';", pPostgres) + "')";
                 }
 
             }
@@ -101,37 +101,37 @@ namespace DanceBreakFloorMigration.DB_objects
 
         private string Get_json_web_info(string p_web_workshop, string p_web_competition, string p_web_playlist, string p_web_results, string p_web_city_webcast_banner, string p_web_no_competition, string p_web_videos, string p_web_personalpdfs)
         {
-            dynamic json_web_info = new JObject();
-            json_web_info.web_workshop = p_web_workshop;
-            json_web_info.web_competition = p_web_competition;
-            json_web_info.web_playlist = p_web_playlist;
-            json_web_info.web_results = p_web_results;
-            json_web_info.web_city_webcast_banner = p_web_city_webcast_banner;
-            json_web_info.web_no_competition = p_web_no_competition;
-            json_web_info.web_videos = p_web_videos;
-            json_web_info.web_personalpdfs = p_web_personalpdfs;
-            return json_web_info.ToString();
+            dynamic web = new JObject();
+            web.workshop = p_web_workshop;
+            web.competition = p_web_competition;
+            web.playlist = p_web_playlist;
+            web.results = p_web_results;
+            web.city_webcast_banner = p_web_city_webcast_banner;
+            web.no_competition = p_web_no_competition;
+            web.videos = p_web_videos;
+            web.personalpdfs = p_web_personalpdfs;
+            return web.ToString();
         }
 
         private string Get_json_entry_info(string p_entrylimit_total, string p_entrylimit_solos, string p_entrylimit_duotrios, string p_entrylimit_groups, string p_entrylimit_onesolo, string p_entrylimit_sologroup)
         {
-            dynamic json_entry_info = new JObject();
-            json_entry_info.entrylimit_total = p_entrylimit_total;
-            json_entry_info.entrylimit_solos = p_entrylimit_solos;
-            json_entry_info.entrylimit_duotrios = p_entrylimit_duotrios;
-            json_entry_info.entrylimit_groups = p_entrylimit_groups;
-            json_entry_info.entrylimit_onesolo = p_entrylimit_onesolo;
-            json_entry_info.entrylimit_sologroup = p_entrylimit_sologroup;
-            return json_entry_info.ToString();
+            dynamic entrylimit = new JObject();
+            entrylimit.total = p_entrylimit_total;
+            entrylimit.solos = p_entrylimit_solos;
+            entrylimit._duotrios = p_entrylimit_duotrios;
+            entrylimit.groups = p_entrylimit_groups;
+            entrylimit.onesolo = p_entrylimit_onesolo;
+            entrylimit.sologroup = p_entrylimit_sologroup;
+            return entrylimit.ToString();
         }
 
         private string Get_json_mybtf(string p_mybtfregenabled, string p_mybtf_no_competition, string p_mybtf_photovideo_active)
         {
-            dynamic json_myftf = new JObject();
-            json_myftf.mybtfregenabled = p_mybtfregenabled;
-            json_myftf.mybtf_no_competition = p_mybtf_no_competition;
-            json_myftf.mybtf_photovideo_active = p_mybtf_photovideo_active;
-            return json_myftf.ToString();
+            dynamic myftf = new JObject();
+            myftf.regenabled = p_mybtfregenabled;
+            myftf.no_competition = p_mybtf_no_competition;
+            myftf.photovideo_active = p_mybtf_photovideo_active;
+            return myftf.ToString();
         }
 
         private string Get_room_rate(string pParameter)
@@ -171,7 +171,8 @@ namespace DanceBreakFloorMigration.DB_objects
             query.Dispose();
             if (p_hotel_name != "")
             {
-                pPostgres.Insert("insert into tbl_address(state_id, address, city, zip) values('" + p_hotel_stateid + "','" + p_hotel_address + "','" + p_hotel_city + "','" + p_hotel_zip + "');");
+                string p_city_id = GetId("select city_id from tbl_city where name like '"+ p_hotel_city.Replace("'", "''") + "'", pPostgres);
+                pPostgres.Insert("insert into tbl_address(state_id, address, city_id, zip) values('" + p_hotel_stateid + "','" + p_hotel_address + "'," + p_city_id + ",'" + p_hotel_zip + "');");
                 string p_address_id = GetId("select max(address_id) from tbl_address", pPostgres);
                 pPostgres.Insert("insert into tbl_hotel(name, hotel_website, address_id) values('" + p_hotel_name.Replace("'", "''") + "','" + WebUtility.UrlDecode(p_hotel_website) + "','" + p_address_id + "');");
                 string p_hotel_id = GetId("select max(hotel_id) from tbl_hotel", pPostgres);
@@ -202,7 +203,8 @@ namespace DanceBreakFloorMigration.DB_objects
             query.Dispose();
             if (p_venue_name != "")
             {
-                pPostgres.Insert("insert into tbl_address(state_id, address, city, zip) values('" + p_venue_stateid + "','" + p_venue_address + "','" + p_venue_city + "','" + p_venue_zip + "');");
+                string p_city_id = GetId("select city_id from tbl_city where name like '" + p_venue_city.Replace("'","''") + "'", pPostgres);
+                pPostgres.Insert("insert into tbl_address(state_id, address, city_id, zip) values('" + p_venue_stateid + "','" + p_venue_address + "'," + p_city_id + ",'" + p_venue_zip + "');");
                 string p_address_id = GetId("select max(address_id) from tbl_address", pPostgres);
                 pPostgres.Insert("insert into tbl_venue(name, venue_website, address_id) values('" + p_venue_name.Replace("'", "''") + "','" + WebUtility.UrlDecode(p_venue_website) + "','" + p_address_id + "');");
                 string p_venue_id = GetId("select max(venue_id) from tbl_venue", pPostgres);

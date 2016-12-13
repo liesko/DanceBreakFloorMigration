@@ -30,8 +30,9 @@ namespace DanceBreakFloorMigration.DB_objects
         private string GetAddressId(string pAddress, string pCity, string pState, string pZip, string pCountryId, PostgreSQL_DB pPostgres)
         {
             NpgsqlDataReader query;
+            string p_city_id = GetId("select city_id from tbl_city where name like '"+ pCity.Replace("'", "''") + "'", pPostgres);
             query = pPostgres.Select("select distinct address_id " +
-                                   "from tbl_address where address like '" + pAddress.Replace("'", "''") + "' and city like '" + pCity.Replace("'", "''") + "' and zip like '"+pZip+"' and country_id='"+pCountryId+"';");
+                                   "from tbl_address where address like '" + pAddress.Replace("'", "''") + "' and city_id = " + p_city_id + " and zip like '"+pZip+"' and country_id='"+pCountryId+"';");
             string pom;
             while (query.Read())
             {
@@ -42,8 +43,9 @@ namespace DanceBreakFloorMigration.DB_objects
             query.Dispose();
             if (pAddress != "")
             {
+                string city_id = GetId("select city_id from tbl_city where name like '" + pCity.Replace("'", "''") + "'", pPostgres);
                 string pomStateId = GetId("select state_id from tbl_states where name like '" + pState + "'", pPostgres);
-                pPostgres.Insert("insert into tbl_address(state_id, address, city, zip) values(" + pomStateId + ",'" + pAddress.Replace("'", "''") + "','" + pCity.Replace("'","''") + "','" + pZip + "');");
+                pPostgres.Insert("insert into tbl_address(state_id, address, city_id, zip) values(" + pomStateId + ",'" + pAddress.Replace("'", "''") + "'," + city_id + ",'" + pZip + "');");
                 string p_address_id = GetId("select max(address_id) from tbl_address", pPostgres);
                 return p_address_id;
             }
@@ -74,7 +76,7 @@ namespace DanceBreakFloorMigration.DB_objects
             {
                 pom = query[0].ToString();
                 query.Dispose();
-                return "'"+pom+"'";
+                return pom;
             }
             query.Dispose();
             return "null";

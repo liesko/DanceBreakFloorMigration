@@ -8,7 +8,11 @@ namespace DanceBreakFloorMigration.DB_objects
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
-            MySqlDataReader dataReader = pMysql.Select("select distinct city as name from tbl_tour_dates");
+            MySqlDataReader dataReader = pMysql.Select("select venue_city from tbl_tour_dates where venue_city not like '' " +
+                                                       "union " +
+                                                       "select hotel_city from tbl_tour_dates where hotel_city not like '' " +
+                                                       "union " +
+                                                       "select city from tbl_tour_dates where city not like ''");
             pMysql.Message = "tbl_city - extraction - START";
             while (dataReader.Read())
             {
