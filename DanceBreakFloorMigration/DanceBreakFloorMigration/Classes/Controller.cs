@@ -28,49 +28,53 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-             DeleteTable("studios_has_person");
-             DeleteTable("tbl_user");
-             DeleteTable("tbl_person");
-             DeleteTable("tbl_studio_contacts");
-             DeleteTable("tbl_studios");
-             DeleteTable("venue_contact_type");
-             DeleteTable("hotel_contact_type");
-             DeleteTable("tour_dates_workshop_room");
-             DeleteTable("tbl_level");
-             DeleteTable("tbl_tour_dates");
-             DeleteTable("tbl_hotel");
-             DeleteTable("tbl_venue");
-             DeleteTable("tbl_address");
-             DeleteTable("tbl_fee_types");
-             DeleteTable("tbl_season_events");
-             DeleteTable("tbl_soty_type");
-             DeleteTable("tbl_routine_types");
-             DeleteTable("tbl_time_type");
-             DeleteTable("tbl_score");
-             DeleteTable("tbl_songs");
-             DeleteTable("tbl_performance_divisions");
-             DeleteTable("tbl_category");
-             DeleteTable("tbl_age_divisions");
-             DeleteTable("tbl_playlist_workshop_levels");
-          //   DeleteTable("tbl_current_season");
-             DeleteTable("tbl_events");
-             DeleteTable("tbl_event_types");
-             DeleteTable("tbl_promo_codes_type");
-             DeleteTable("tbl_season");
-             DeleteTable("tbl_payment_method");
-             DeleteTable("tbl_workshop_room");
-             DeleteTable("tbl_event_types");
-             DeleteTable("tbl_contact_type");
-             DeleteTable("tbl_states");
-             DeleteTable("tbl_gender");
-             DeleteTable("tbl_store_colors");
-             DeleteTable("tbl_person_types");
-             DeleteTable("tbl_store_sizes");
-             DeleteTable("tbl_store_product_types");
-             DeleteTable("tbl_countries");
-             DeleteTable("tbl_city");
+            DeleteTable("tbl_studios_has_dancer");
+            DeleteTable("tbl_user_has_dancer");
+            DeleteTable("tbl_dancer");
 
-            
+       /*     DeleteTable("studios_has_person");
+            DeleteTable("tbl_user");
+            DeleteTable("tbl_person");
+            DeleteTable("tbl_studio_contacts");
+            DeleteTable("tbl_studios");
+            DeleteTable("venue_contact_type");
+            DeleteTable("hotel_contact_type");
+            DeleteTable("tour_dates_workshop_room");
+            DeleteTable("tbl_level");
+            DeleteTable("tbl_tour_dates");
+            DeleteTable("tbl_hotel");
+            DeleteTable("tbl_venue");
+            DeleteTable("tbl_address");
+            DeleteTable("tbl_fee_types");
+            DeleteTable("tbl_season_events");
+            DeleteTable("tbl_soty_type");
+            DeleteTable("tbl_routine_types");
+            DeleteTable("tbl_time_type");
+            DeleteTable("tbl_score");
+            DeleteTable("tbl_songs");
+            DeleteTable("tbl_performance_divisions");
+            DeleteTable("tbl_category");
+            DeleteTable("tbl_age_divisions");
+            DeleteTable("tbl_playlist_workshop_levels");
+            //   DeleteTable("tbl_current_season");
+            DeleteTable("tbl_events");
+            DeleteTable("tbl_event_types");
+            DeleteTable("tbl_promo_codes_type");
+            DeleteTable("tbl_season");
+            DeleteTable("tbl_payment_method");
+            DeleteTable("tbl_workshop_room");
+            DeleteTable("tbl_event_types");
+            DeleteTable("tbl_contact_type");
+            DeleteTable("tbl_states");
+            DeleteTable("tbl_gender");
+            DeleteTable("tbl_store_colors");
+            DeleteTable("tbl_person_types");
+            DeleteTable("tbl_store_sizes");
+            DeleteTable("tbl_store_product_types");
+            DeleteTable("tbl_countries");
+            DeleteTable("tbl_city");
+
+
             Tbl_city tab0 = new Tbl_city();
             tab0.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
@@ -166,6 +170,9 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_studio_has_person tab30 = new Tbl_studio_has_person();
             tab30.Remigration(Mybreak_db, Pgdbbreakthefloor);
+            */
+            Tbl_dancer tab31=new Tbl_dancer();
+            tab31.Remigration(DanceteaManager, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {

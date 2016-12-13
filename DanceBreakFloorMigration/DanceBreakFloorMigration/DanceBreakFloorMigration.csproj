@@ -61,6 +61,7 @@
     <Compile Include="Classes\MySQL_DB.cs" />
     <Compile Include="Classes\PostgreSQL_DB.cs" />
     <Compile Include="DB_objects\Tbl_city.cs" />
+    <Compile Include="DB_objects\Tbl_dancer.cs" />
     <Compile Include="DB_objects\Tbl_events.cs" />
     <Compile Include="DB_objects\Tbl_age_division.cs" />
     <Compile Include="DB_objects\Tbl_category.cs" />
