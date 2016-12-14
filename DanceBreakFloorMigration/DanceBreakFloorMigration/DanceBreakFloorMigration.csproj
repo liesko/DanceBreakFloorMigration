@@ -62,6 +62,7 @@
     <Compile Include="Classes\PostgreSQL_DB.cs" />
     <Compile Include="DB_objects\Tbl_city.cs" />
     <Compile Include="DB_objects\Tbl_dancer.cs" />
+    <Compile Include="DB_objects\Tbl_dancer_II.cs" />
     <Compile Include="DB_objects\Tbl_events.cs" />
     <Compile Include="DB_objects\Tbl_age_division.cs" />
     <Compile Include="DB_objects\Tbl_category.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="DB_objects\Tbl_time_type.cs" />
     <Compile Include="DB_objects\Tbl_tour_dates.cs" />
     <Compile Include="DB_objects\Tbl_users.cs" />
+    <Compile Include="DB_objects\Tbl_user_has_dancer.cs" />
     <Compile Include="DB_objects\Tbl_workshop_room.cs" />
     <Compile Include="DB_objects\Tour_dates_workshop_room.cs" />
     <Compile Include="Form1.cs">

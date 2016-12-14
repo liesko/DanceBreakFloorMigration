@@ -28,11 +28,13 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-            DeleteTable("tbl_studios_has_dancer");
             DeleteTable("tbl_user_has_dancer");
-            DeleteTable("tbl_dancer");
 
-       /*     DeleteTable("studios_has_person");
+            /*
+            DeleteTable("tbl_studios_has_dancer");
+            DeleteTable("tbl_dancer");
+            DeleteTable("person_has_contact_type");
+            DeleteTable("studios_has_person");
             DeleteTable("tbl_user");
             DeleteTable("tbl_person");
             DeleteTable("tbl_studio_contacts");
@@ -161,18 +163,24 @@ namespace DanceBreakFloorMigration.Classes
 
             Tour_dates_workshop_room tab26 = new Tour_dates_workshop_room();
             tab26.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            
+
             Tbl_studios tab28 = new Tbl_studios();
             tab28.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            
+
             Tbl_users tab29 = new Tbl_users();
             tab29.Remigration(Mybreak_db, Pgdbbreakthefloor);
-
+            
             Tbl_studio_has_person tab30 = new Tbl_studio_has_person();
             tab30.Remigration(Mybreak_db, Pgdbbreakthefloor);
-            */
+            
             Tbl_dancer tab31=new Tbl_dancer();
             tab31.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_dancer_II tab32 = new Tbl_dancer_II();
+            tab32.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            */
+            Tbl_user_has_dancer tab33 = new Tbl_user_has_dancer();
+            tab33.Remigration(Mybreak_db, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {

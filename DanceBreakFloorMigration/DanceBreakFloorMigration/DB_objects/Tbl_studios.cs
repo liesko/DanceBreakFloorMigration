@@ -25,6 +25,8 @@ namespace DanceBreakFloorMigration.DB_objects
 
             }
             pPostgres.Message = "tbl_studios - extraction - FINISH";
+            DummyStudioCreation(pMysql, pPostgres);
+            ;
         }
 
         private string GetAddressId(string pAddress, string pCity, string pState, string pZip, string pCountryId, PostgreSQL_DB pPostgres)
@@ -80,6 +82,18 @@ namespace DanceBreakFloorMigration.DB_objects
             }
             query.Dispose();
             return "null";
+        }
+
+        private void DummyStudioCreation(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        {
+            MySqlDataReader dataReader = pMysql.Select("select distinct studioid from tbl_profiles where studioid not in (select id from tbl_studios);");
+            pMysql.Message = "DUMMY tbl_studios - extraction - START";
+            while (dataReader.Read())
+            {
+                pPostgres.Insert("insert into tbl_studios(studios_id, name) values('"+dataReader[0]+"','DUMMY DANCE STUDIO')");
+
+            }
+            pPostgres.Message = "DUMMY tbl_studios - extraction - FINISH";
         }
     }
 }
