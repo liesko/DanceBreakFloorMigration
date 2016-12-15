@@ -28,9 +28,12 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-            DeleteTable("tbl_user_has_dancer");
-
+            DeleteTable("Tbl_online_critiques_judges");
             /*
+            DeleteTable("tbl_scholarships");
+            DeleteTable("tbl_online_critiques_access");
+            DeleteTable("tbl_date_schedule_competition");
+            DeleteTable("tbl_user_has_dancer");
             DeleteTable("tbl_studios_has_dancer");
             DeleteTable("tbl_dancer");
             DeleteTable("person_has_contact_type");
@@ -178,9 +181,22 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_dancer_II tab32 = new Tbl_dancer_II();
             tab32.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            */
+            
             Tbl_user_has_dancer tab33 = new Tbl_user_has_dancer();
             tab33.Remigration(Mybreak_db, Pgdbbreakthefloor);
+            
+            Tbl_date_schedule_competition tab34 = new Tbl_date_schedule_competition();
+            tab34.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_online_critiques_access tab35 = new Tbl_online_critiques_access();
+            tab35.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_scholarships tab36 = new Tbl_scholarships();
+            tab36.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            */
+
+            Tbl_online_critiques_judges tab37 = new Tbl_online_critiques_judges();
+            tab37.Remigration(DanceteaManager, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {

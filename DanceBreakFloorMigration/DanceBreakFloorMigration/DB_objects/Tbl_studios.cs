@@ -14,8 +14,8 @@ namespace DanceBreakFloorMigration.DB_objects
             string pom;
             while (dataReader.Read())
             {
-                string notes = (dataReader["notes"] == "") ? "null" : "'" + dataReader["notes"] + "'";
-                string contacts = (dataReader["contacts"] == "") ? "null" : "'" + dataReader["contacts"].ToString().Replace("'", "''") + "'";
+                string notes = (dataReader["notes"].ToString() == "") ? "null" : "'" + dataReader["notes"] + "'";
+                string contacts = (dataReader["contacts"].ToString() == "") ? "null" : "'" + dataReader["contacts"].ToString().Replace("'", "''") + "'";
                 pPostgres.Insert("insert into tbl_studios(studios_id, name, notes, contacts, address_id) " +
                                 "values('" + dataReader["id"] + "','" + dataReader["name"].ToString().Replace("'", "''") + "',"+notes+ ","+ contacts + "" +
                                  ","+GetAddressId(dataReader["address"].ToString(), dataReader["city"].ToString(), dataReader["state"].ToString(), 

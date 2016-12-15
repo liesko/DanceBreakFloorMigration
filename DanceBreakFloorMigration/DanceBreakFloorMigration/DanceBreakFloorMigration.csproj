@@ -63,6 +63,7 @@
     <Compile Include="DB_objects\Tbl_city.cs" />
     <Compile Include="DB_objects\Tbl_dancer.cs" />
     <Compile Include="DB_objects\Tbl_dancer_II.cs" />
+    <Compile Include="DB_objects\Tbl_date_schedule_competition.cs" />
     <Compile Include="DB_objects\Tbl_events.cs" />
     <Compile Include="DB_objects\Tbl_age_division.cs" />
     <Compile Include="DB_objects\Tbl_category.cs" />
@@ -72,12 +73,15 @@
     <Compile Include="DB_objects\Tbl_fee_types.cs" />
     <Compile Include="DB_objects\Tbl_gender.cs" />
     <Compile Include="DB_objects\Tbl_level.cs" />
+    <Compile Include="DB_objects\Tbl_online_critiques_access.cs" />
+    <Compile Include="DB_objects\Tbl_online_critiques_judges.cs" />
     <Compile Include="DB_objects\Tbl_payment_method.cs" />
     <Compile Include="DB_objects\Tbl_performance_divisions.cs" />
     <Compile Include="DB_objects\Tbl_person_types.cs" />
     <Compile Include="DB_objects\Tbl_playlist_workshop_levels.cs" />
     <Compile Include="DB_objects\Tbl_promo_codes_type.cs" />
     <Compile Include="DB_objects\Tbl_routine_types.cs" />
+    <Compile Include="DB_objects\Tbl_scholarships.cs" />
     <Compile Include="DB_objects\Tbl_score.cs" />
     <Compile Include="DB_objects\Tbl_score_colors.cs" />
     <Compile Include="DB_objects\Tbl_season.cs" />
