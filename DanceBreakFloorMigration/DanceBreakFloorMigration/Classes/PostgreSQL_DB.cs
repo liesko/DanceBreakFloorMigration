@@ -12,6 +12,7 @@ namespace DanceBreakFloorMigration.Classes
         private NpgsqlConnection connection;
         private NpgsqlCommand cmd = new NpgsqlCommand();
         private string server;
+        private NpgsqlTransaction _tran;
 
         private string _message;
         public string Message
@@ -56,7 +57,8 @@ namespace DanceBreakFloorMigration.Classes
             try
             {
                 Message = "Postgresql DB: "+database+ " - connected successfully.";
-                connection.Open();
+                connection.Open();                
+                //_tran = connection.BeginTransaction();
                 return true;
             }
             catch (NpgsqlException ex)
@@ -87,9 +89,19 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Insert(string pInsertString)
         {
-            cmd.CommandText = pInsertString;
-            cmd.Connection = connection;
-            cmd.ExecuteNonQuery();
+            try
+            {
+                _tran = connection.BeginTransaction();
+                cmd.CommandText = pInsertString;
+                cmd.Connection = connection;
+                cmd.ExecuteNonQuery();
+                _tran.Commit();
+            }
+            catch (Exception)
+            {
+                Message = "Invalid insert: "+ pInsertString;
+                _tran.Dispose();
+            }
         }
 
         public void Delete(string pTableName)

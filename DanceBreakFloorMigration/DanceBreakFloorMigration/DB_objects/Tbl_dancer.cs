@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DanceBreakFloorMigration.Classes;
 using DanceBreakFloorMigration.Interfaces;
 using MySql.Data.MySqlClient;
@@ -42,21 +43,25 @@ namespace DanceBreakFloorMigration.DB_objects
                 pPostgres.Insert("insert into tbl_dancer(dancer_id, person_id, parent_guardian, email_parents) " +
                                  "values('" + dataReader["id"] + "',"+Max_person_id+",'"+ parent_guardian.Replace("'","''") + "','"+ email_parents.Replace("'", "''") + "')");
 
+                var phone_1 = dataReader["phone"].ToString();
+                var phone_2 = dataReader["phone2"].ToString();
+                var fax = dataReader["fax"].ToString();
+                var c = new[] { '(', ')', '-', ' ' };
                 // insert into studio_has_contact_type
                 if (dataReader["phone"].ToString()!="")
                 {
                     pPostgres.Insert("insert into person_has_contact_type(person_id, contact_type_id, value)" +
-                                     "values(" + Max_person_id + ",2,'" + dataReader["phone"] + "')");
+                                     "values(" + Max_person_id + ",2,'" + Remove(phone_1, c) + "')");
                 }
                 if (dataReader["phone2"].ToString() != "")
                 {
                     pPostgres.Insert("insert into person_has_contact_type(person_id, contact_type_id, value)" +
-                                     "values(" + Max_person_id + ",2,'" + dataReader["phone2"] + "')");
+                                     "values(" + Max_person_id + ",2,'" + Remove(phone_2, c) + "')");
                 }
                 if (dataReader["fax"].ToString()!="")
                 {
                     pPostgres.Insert("insert into person_has_contact_type(person_id, contact_type_id, value)" +
-                                     "values(" + Max_person_id + ",8,'" + dataReader["fax"] + "')");
+                                     "values(" + Max_person_id + ",8,'" + Remove(fax, c) + "')");
                 }
                 if (dataReader["email"].ToString() != "")
                 {
@@ -119,6 +124,10 @@ namespace DanceBreakFloorMigration.DB_objects
             }
             query.Dispose();
             return "null";
+        }
+        public static string Remove(string source, char[] oldChar)
+        {
+            return String.Join("", source.ToCharArray().Where(a => !oldChar.Contains(a)).ToArray());
         }
 
 
