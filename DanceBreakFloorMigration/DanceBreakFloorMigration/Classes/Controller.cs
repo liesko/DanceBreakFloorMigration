@@ -28,7 +28,12 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
+
+            DeleteTable("tbl_store_products");
             /*
+            DeleteTable("tbl_store_product_subtypes");
+            DeleteTable("tbl_faculty_playlists");
+            DeleteTable("tbl_faculty");
             DeleteTable("tbl_date_routine_dancers");
             DeleteTable("tbl_routines_has_teacher");
             DeleteTable("tbl_routines");
@@ -81,7 +86,6 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_store_product_types");
             DeleteTable("tbl_countries");
             DeleteTable("tbl_city");
-
 
             Tbl_city tab0 = new Tbl_city();
             tab0.Remigration(DanceteaManager, Pgdbbreakthefloor);
@@ -200,14 +204,20 @@ namespace DanceBreakFloorMigration.Classes
             Tbl_online_critiques_judges tab37 = new Tbl_online_critiques_judges();
             tab37.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
-
             Tbl_routines tab38 = new Tbl_routines();
             tab38.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
             Tbl_date_routine_dancers tab39 = new Tbl_date_routine_dancers();
             tab39.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            */
 
+            Tbl_faculty tab40 = new Tbl_faculty();
+            tab40.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_store_product_subtypes tab41 = new Tbl_store_product_subtypes();
+            tab41.Remigration(Mybreak_db, Pgdbbreakthefloor);
+            */
+            Tbl_store_products tab42 = new Tbl_store_products();
+            tab42.Remigration(Mybreak_db, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {
