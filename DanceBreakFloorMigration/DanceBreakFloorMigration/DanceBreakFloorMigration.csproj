@@ -93,6 +93,8 @@
     <Compile Include="DB_objects\Tbl_soty_type.cs" />
     <Compile Include="DB_objects\Tbl_states.cs" />
     <Compile Include="DB_objects\Tbl_store_products.cs" />
+    <Compile Include="DB_objects\Tbl_store_products_has_size.cs" />
+    <Compile Include="DB_objects\tbl_store_product_colors.cs" />
     <Compile Include="DB_objects\Tbl_store_product_subtypes.cs" />
     <Compile Include="DB_objects\Tbl_store_product_type.cs" />
     <Compile Include="DB_objects\Tbl_store_size.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="DB_objects\Tbl_tour_dates.cs" />
     <Compile Include="DB_objects\Tbl_users.cs" />
     <Compile Include="DB_objects\Tbl_user_has_dancer.cs" />
+    <Compile Include="DB_objects\Tbl_user_stats.cs" />
     <Compile Include="DB_objects\Tbl_workshop_room.cs" />
     <Compile Include="DB_objects\Tour_dates_workshop_room.cs" />
     <Compile Include="Form1.cs">

@@ -1,4 +1,6 @@
-﻿using DanceBreakFloorMigration.Classes;
+﻿using System;
+using System.IO;
+using DanceBreakFloorMigration.Classes;
 using DanceBreakFloorMigration.Interfaces;
 using MySql.Data.MySqlClient;
 
@@ -19,7 +21,7 @@ namespace DanceBreakFloorMigration.DB_objects
                     "instock, showonsite, onsale, sale_price, weight, trending, short_description, sort) " +
                     "values(" + dataReader["id"]+ "," + tourdateid + "," + eventid + "," + dataReader["subtypeid"] + ",'" + dataReader["product"].ToString().Replace("'","''") + "'," +
                     "'" + dataReader["description"].ToString().Replace("'", "''") +"','" + dataReader["price"] + "','" + dataReader["shipping"] + "'," +
-                    "" + CheckBool(dataReader["featured"].ToString()) + ",'" + dataReader["timeadded"] + "'," + CheckBool(dataReader["instock"].ToString()) + "," +
+                    "" + CheckBool(dataReader["featured"].ToString()) + ",'" + FromUnixTime(Convert.ToInt64(dataReader["timeadded"])).ToString().Replace(". ",".") + "'," + CheckBool(dataReader["instock"].ToString()) + "," +
                     ""+ CheckBool(dataReader["showonsite"].ToString()) +"," + CheckBool(dataReader["onsale"].ToString()) + ",'" + dataReader["sale_price"] + "','" + dataReader["weight"].ToString().Replace(",",".") + "'," +
                     "" + CheckBool(dataReader["trending"].ToString()) + "," +
                     "'" + dataReader["short_description"].ToString().Replace("'","''") + "'," + dataReader["sort"]+");");
@@ -33,6 +35,11 @@ namespace DanceBreakFloorMigration.DB_objects
                 return 1;
             }
             return 0;
+        }
+        public DateTime FromUnixTime(long unixTime)
+        {
+            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return epoch.AddSeconds(unixTime);
         }
     }
 }

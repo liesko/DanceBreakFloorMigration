@@ -1,4 +1,5 @@
-﻿using DanceBreakFloorMigration.DB_objects;
+﻿using System;
+using DanceBreakFloorMigration.DB_objects;
 using MySql.Data.MySqlClient;
 
 namespace DanceBreakFloorMigration.Classes
@@ -28,9 +29,11 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-
-            DeleteTable("tbl_store_products");
+            DeleteTable("tbl_user_stats");
             /*
+            DeleteTable("tbl_store_product_colors");            
+            DeleteTable("tbl_store_products_has_size");
+            DeleteTable("tbl_store_products");
             DeleteTable("tbl_store_product_subtypes");
             DeleteTable("tbl_faculty_playlists");
             DeleteTable("tbl_faculty");
@@ -86,7 +89,7 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_store_product_types");
             DeleteTable("tbl_countries");
             DeleteTable("tbl_city");
-
+            
             Tbl_city tab0 = new Tbl_city();
             tab0.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
@@ -206,7 +209,7 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_routines tab38 = new Tbl_routines();
             tab38.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_date_routine_dancers tab39 = new Tbl_date_routine_dancers();
             tab39.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
@@ -215,9 +218,19 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_store_product_subtypes tab41 = new Tbl_store_product_subtypes();
             tab41.Remigration(Mybreak_db, Pgdbbreakthefloor);
-            */
+
             Tbl_store_products tab42 = new Tbl_store_products();
             tab42.Remigration(Mybreak_db, Pgdbbreakthefloor);
+            
+            Tbl_store_products_has_size tab43 = new Tbl_store_products_has_size();
+            tab43.Remigration(Mybreak_db, Pgdbbreakthefloor);            
+
+            Tbl_store_product_colors tab44 = new Tbl_store_product_colors();
+            tab44.Remigration(Mybreak_db, Pgdbbreakthefloor);
+            */
+
+            Tbl_user_stats tab45 = new Tbl_user_stats();
+            tab45.Remigration(Mybreak_db, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {
