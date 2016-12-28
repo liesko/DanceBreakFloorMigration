@@ -18,7 +18,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 try
                 {
                     pPostgres.Insert(
-                        "insert into tbl_online_critiques_judges(online_critiques_judges_id, tour_dates_id, startnumber, startnumberhasa, endnumber, endnumberhasa, judge_json, compgroup) " +
+                        "insert into tbl_online_critiques_judges(online_critiques_judges_id, tour_dates_id, startnumber, startnumberhasa, endnumber, endnumberhasa, judge, compgroup) " +
                         "values('" + dataReader["id"] + "','" + dataReader["tourdateid"] + "','" + dataReader["startnumber"] + "'," +
                         "'" + CheckBool(dataReader["startnumberhasa"].ToString()) + "','" + dataReader["endnumber"] + "','" + CheckBool(dataReader["endnumberhasa"].ToString()) + "" +
                         "','"+Get_json_judge(dataReader["judge1"].ToString(), dataReader["judge2"].ToString(), dataReader["judge3"].ToString(), dataReader["judge4"].ToString())  +"'," +
@@ -27,7 +27,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 catch (Exception)
                 {
 
-                    pPostgres.Message = "INVALID INSERT: insert into tbl_online_critiques_judges(online_critiques_judges_id, tour_dates_id, startnumber, startnumberhasa, endnumber, endnumberhasa, judge_json, compgroup) " +
+                    pPostgres.Message = "INVALID INSERT: insert into tbl_online_critiques_judges(online_critiques_judges_id, tour_dates_id, startnumber, startnumberhasa, endnumber, endnumberhasa, judge, compgroup) " +
                         "values('" + dataReader["id"] + "','" + dataReader["tourdateid"] + "','" + dataReader["startnumber"] + "'," +
                         "'" + CheckBool(dataReader["startnumberhasa"].ToString()) + "','" + dataReader["endnumber"] + "','" + CheckBool(dataReader["endnumberhasa"].ToString()) + "" +
                         "','" + Get_json_judge(dataReader["judge1"].ToString(), dataReader["judge2"].ToString(), dataReader["judge3"].ToString(), dataReader["judge4"].ToString()) + "'," +

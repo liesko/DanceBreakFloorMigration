@@ -92,6 +92,7 @@
     <Compile Include="DB_objects\Tbl_songs.cs" />
     <Compile Include="DB_objects\Tbl_soty_type.cs" />
     <Compile Include="DB_objects\Tbl_states.cs" />
+    <Compile Include="DB_objects\Tbl_store_orders.cs" />
     <Compile Include="DB_objects\Tbl_store_products.cs" />
     <Compile Include="DB_objects\Tbl_store_products_has_size.cs" />
     <Compile Include="DB_objects\tbl_store_product_colors.cs" />

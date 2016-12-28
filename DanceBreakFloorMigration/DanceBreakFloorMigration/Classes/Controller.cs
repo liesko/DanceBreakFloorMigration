@@ -29,8 +29,10 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-            DeleteTable("tbl_user_stats");
+            DeleteTable("tbl_store_orders");
+            DeleteTable("tbl_unregistered_buyer");
             /*
+            DeleteTable("tbl_user_stats");
             DeleteTable("tbl_store_product_colors");            
             DeleteTable("tbl_store_products_has_size");
             DeleteTable("tbl_store_products");
@@ -227,10 +229,13 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_store_product_colors tab44 = new Tbl_store_product_colors();
             tab44.Remigration(Mybreak_db, Pgdbbreakthefloor);
-            */
 
             Tbl_user_stats tab45 = new Tbl_user_stats();
             tab45.Remigration(Mybreak_db, Pgdbbreakthefloor);
+            */
+
+            Tbl_store_orders tab46 = new Tbl_store_orders();
+            tab46.Remigration(Mybreak_db, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {

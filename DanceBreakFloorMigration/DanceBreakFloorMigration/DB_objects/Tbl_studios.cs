@@ -1,4 +1,6 @@
-﻿using DanceBreakFloorMigration.Classes;
+﻿using System;
+using System.Linq;
+using DanceBreakFloorMigration.Classes;
 using DanceBreakFloorMigration.Interfaces;
 using MySql.Data.MySqlClient;
 using Npgsql;
@@ -56,15 +58,21 @@ namespace DanceBreakFloorMigration.DB_objects
                 return "null";
             }
         }
+        public static string Remove(string source, char[] oldChar)
+        {
+            return String.Join("", source.ToCharArray().Where(a => !oldChar.Contains(a)).ToArray());
+        }
 
         private void InsertContacts(string pPhone, string pPhone2, string pFax, string pEmail, string pStudioId, PostgreSQL_DB pPostgres)
         {
+            var c = new[] { '(', ')', '-', ' ' };
+
             if (pPhone != "")
-                pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 2 + "','" + pStudioId + "','" + pPhone + "');");
+                pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 2 + "','" + pStudioId + "','" + Remove(pPhone, c) + "');");
             if (pPhone2 != "")
-                pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 2 + "','" + pStudioId + "','" + pPhone2 + "');");
+                pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 2 + "','" + pStudioId + "','" + Remove(pPhone2, c) + "');");
             if (pFax != "")
-                pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 8 + "','" + pStudioId + "','" + pFax + "');");
+                pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 8 + "','" + pStudioId + "','" + Remove(pFax, c) + "');");
             if (pEmail != "")
                 pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 1 + "','" + pStudioId + "','" + pEmail.Replace("'","''") + "');");
         }
