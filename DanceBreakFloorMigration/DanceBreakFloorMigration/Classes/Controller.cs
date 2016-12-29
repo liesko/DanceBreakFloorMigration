@@ -29,9 +29,12 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
+            DeleteTable("tbl_event_reg_types");
+            /*
+            DeleteTable("tbl_promo_codes");
+            DeleteTable("tbl_routine_categories");
             DeleteTable("tbl_store_orders");
             DeleteTable("tbl_unregistered_buyer");
-            /*
             DeleteTable("tbl_user_stats");
             DeleteTable("tbl_store_product_colors");            
             DeleteTable("tbl_store_products_has_size");
@@ -91,7 +94,8 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_store_product_types");
             DeleteTable("tbl_countries");
             DeleteTable("tbl_city");
-            
+            */
+            /*
             Tbl_city tab0 = new Tbl_city();
             tab0.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
@@ -169,10 +173,12 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_fee_types tab24 = new Tbl_fee_types();
             tab24.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
 
             Tbl_tour_dates tab25 = new Tbl_tour_dates();
             tab25.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
+            
             Tbl_level tab27 = new Tbl_level();
             tab27.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
@@ -232,10 +238,18 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_user_stats tab45 = new Tbl_user_stats();
             tab45.Remigration(Mybreak_db, Pgdbbreakthefloor);
-            */
 
             Tbl_store_orders tab46 = new Tbl_store_orders();
             tab46.Remigration(Mybreak_db, Pgdbbreakthefloor);
+            
+            Tbl_routine_categories tab47 = new Tbl_routine_categories();
+            tab47.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_promo_codes tab48 = new Tbl_promo_codes();
+            tab48.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            */
+            Tbl_event_reg_types tab49 = new Tbl_event_reg_types();
+            tab49.Remigration(DanceteaManager, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {

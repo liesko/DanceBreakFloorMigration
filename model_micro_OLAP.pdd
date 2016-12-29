@@ -2,7 +2,7 @@
 
 <DBMODEL Version="1.9" TYPE="PostgreSQL">
 
-<MODELSETTINGS MDDVERSION="1.11.3 (build 1070)" ModelProject="" ModelName="model_micro_OLAP" ModelCompany="" ModelAuthor="" ModelCopyright="" ModelVersion="" ModelVersionAI="0" ModelSaveScriptsWithVersion="0" ModelCreated="2016-11-15 13:44:09" ModelUpdated="2016-12-28 23:01:51" Description="" Annotation="" ZoomFac="75.00" XPos="0" YPos="0" PrintLink="" GenSettings="object GenSettings1: TGenSettings\n  TextCharCase = tccMixed\n  ModelCheck = True\n  DropIfExists = True\n  NotValidConstraints = False\n  ConcurrentlyIndexes = False\n  ISQL = False\n  ExecuteAfterGeneration = True\n  DBOptions = [dbgoCreate, dbgoBeginScript, dbgoEndScript]\n  ViewOptions = [viewgoCreate, viewgoCreateRule]\n  SPOptions = [spgoCreate]\n  TableOptions = [tblgoCreate, tblgoDrop, tblgoBeginScript, tblgoEndScript, tblgoCreatePK, tblgoCreateFK, tblgoCreateIndex, tblgoCreateRule, tblgoCreateTrigger, tblgoCreateCHECK, tblgoFieldDefault]\n  OwnerOptions = [owngoSchema, owngoTable, owngoView, owngoSP, owngoSequence, owngoUDT]\n  ACLOptions = [aclgoSchema, aclgoTable, aclgoView, aclgoSP, aclgoSequence]\n  ModifyOptions = [mgoKeepTbls, mgoBackupTbls, mgoTraceRenaming]\n  RoleCreate = True\n  RoleWhenCreate = rocrInScript\n  SQLTypeNames = False\nend\n" DisplaySettings="object DisplaySettings1: TDisplaySettings\n  ObjectsDisplay = [edoColumns, edoConstraints, edoColNull, edoFKs, spdoParameters, spdoResult, spdoParamTypes, spdoParamKind, vdoAttributes, vdoTargets, vdoRules]\n  Color = clWhite\n  ShowIcons = True\n  SnapGrid = True\n  DisplaySnap = False\n  SnapSize = 10\n  ShowPages = False\n  EntityFillColor = clWhite\n  EntityLineColor = clNavy\n  SPFillColor = clCream\n  SPLineColor = clNavy\n  ViewFillColor = clMoneyGreen\n  ViewLineColor = clNavy\n  RefNotation = 0\n  RefColor = clNavy\n  RefLabelColor = clWhite\n  MinimapShapesStyle = mmssFillAndBorder\n  MinimapVisibleAreaStyle = mmvasBitmapShading\n  MinimapBackColor = clWhite\nend\n" DefaultDelete="3" DefaultUpdate="3" DefaultDataType="23" DefaultSchemaID="0" NamePatterns="Table=tbl_,View=View_,SP=Procedure_,Reference=%TOTABLE%,FKColumn=%TOCOLUMN%" QueryDelimiter=";" DBQuoteCharacter="\A" EncloseNames="1" PKColumnsFirst="0" HPageCount="5" VPageCount="5" />
+<MODELSETTINGS MDDVERSION="1.11.3 (build 1070)" ModelProject="" ModelName="model_micro_OLAP" ModelCompany="" ModelAuthor="" ModelCopyright="" ModelVersion="" ModelVersionAI="0" ModelSaveScriptsWithVersion="0" ModelCreated="2016-11-15 13:44:09" ModelUpdated="2016-12-29 21:55:56" Description="" Annotation="" ZoomFac="100.00" XPos="0" YPos="0" PrintLink="" GenSettings="object GenSettings1: TGenSettings\n  TextCharCase = tccMixed\n  ModelCheck = True\n  DropIfExists = True\n  NotValidConstraints = False\n  ConcurrentlyIndexes = False\n  ISQL = False\n  ExecuteAfterGeneration = True\n  DBOptions = [dbgoCreate, dbgoBeginScript, dbgoEndScript]\n  ViewOptions = [viewgoCreate, viewgoCreateRule]\n  SPOptions = [spgoCreate]\n  TableOptions = [tblgoCreate, tblgoDrop, tblgoBeginScript, tblgoEndScript, tblgoCreatePK, tblgoCreateFK, tblgoCreateIndex, tblgoCreateRule, tblgoCreateTrigger, tblgoCreateCHECK, tblgoFieldDefault]\n  OwnerOptions = [owngoSchema, owngoTable, owngoView, owngoSP, owngoSequence, owngoUDT]\n  ACLOptions = [aclgoSchema, aclgoTable, aclgoView, aclgoSP, aclgoSequence]\n  ModifyOptions = [mgoKeepTbls, mgoBackupTbls, mgoTraceRenaming]\n  RoleCreate = True\n  RoleWhenCreate = rocrInScript\n  SQLTypeNames = False\nend\n" DisplaySettings="object DisplaySettings1: TDisplaySettings\n  ObjectsDisplay = [edoColumns, edoConstraints, edoColNull, edoFKs, spdoParameters, spdoResult, spdoParamTypes, spdoParamKind, vdoAttributes, vdoTargets, vdoRules]\n  Color = clWhite\n  ShowIcons = True\n  SnapGrid = True\n  DisplaySnap = False\n  SnapSize = 10\n  ShowPages = False\n  EntityFillColor = clWhite\n  EntityLineColor = clNavy\n  SPFillColor = clCream\n  SPLineColor = clNavy\n  ViewFillColor = clMoneyGreen\n  ViewLineColor = clNavy\n  RefNotation = 0\n  RefColor = clNavy\n  RefLabelColor = clWhite\n  MinimapShapesStyle = mmssFillAndBorder\n  MinimapVisibleAreaStyle = mmvasBitmapShading\n  MinimapBackColor = clWhite\nend\n" DefaultDelete="3" DefaultUpdate="3" DefaultDataType="23" DefaultSchemaID="0" NamePatterns="Table=tbl_,View=View_,SP=Procedure_,Reference=%TOTABLE%,FKColumn=%TOCOLUMN%" QueryDelimiter=";" DBQuoteCharacter="\A" EncloseNames="1" PKColumnsFirst="0" HPageCount="5" VPageCount="5" />
 
 <DATABASE Name="test" CharacterSet="" Collate="" CType="" Tablespace="" Owner="" Template="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="0" />
 
@@ -446,7 +446,7 @@
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1015" Name="tbl_countries" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="990" YPos="1090" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1015" Name="tbl_countries" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1260" YPos="1020" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="17" Name="country_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="18" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -457,14 +457,14 @@
 		<REFERENCE_BEGIN ID="45730" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9" Name="" Kind="2" Expression="" ReferenceIndex="88377" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9" Name="" Kind="2" Expression="" ReferenceIndex="91115" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="17"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1016" Name="tbl_states" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1300" YPos="1080" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1016" Name="tbl_states" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1450" YPos="1000" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="20" Name="state_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="33" Name="country_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -479,7 +479,7 @@
 		<REFERENCE_END ID="35" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10" Name="" Kind="2" Expression="" ReferenceIndex="88192" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10" Name="" Kind="2" Expression="" ReferenceIndex="90932" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="20"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -502,7 +502,7 @@
 		<REFERENCE_END ID="45189" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="11" Name="teacher_id" Kind="2" Expression="" ReferenceIndex="88399" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="11" Name="teacher_id" Kind="2" Expression="" ReferenceIndex="91137" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="23"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -521,14 +521,14 @@
 		<REFERENCE_BEGIN ID="9677" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="43" Name="" Kind="2" Expression="" ReferenceIndex="88206" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="43" Name="" Kind="2" Expression="" ReferenceIndex="90946" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="40"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1123" Name="tbl_studio_contacts" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1060" YPos="1190" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1123" Name="tbl_studio_contacts" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1040" YPos="1090" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="38" Name="studio_contacts_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="42" Name="contact_type_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -540,14 +540,14 @@
 		<REFERENCE_END ID="73" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="42" Name="" Kind="2" Expression="" ReferenceIndex="88161" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="42" Name="" Kind="2" Expression="" ReferenceIndex="90901" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="38,42,77"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1133" Name="tbl_gender" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="810" YPos="1480" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1133" Name="tbl_gender" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="790" YPos="1490" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="34" Name="gender_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="35" Name="value" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -556,14 +556,14 @@
 		<REFERENCE_BEGIN ID="86" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="39" Name="" Kind="2" Expression="" ReferenceIndex="88168" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="39" Name="" Kind="2" Expression="" ReferenceIndex="90908" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="34"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1194" Name="tbl_studios" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1500" YPos="1550" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1194" Name="tbl_studios" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1610" YPos="1660" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44" Name="studios_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="83" Name="address_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -586,7 +586,7 @@
 		<REFERENCE_END ID="82" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="47" Name="" Kind="2" Expression="" ReferenceIndex="88389" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="47" Name="" Kind="2" Expression="" ReferenceIndex="91127" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -602,7 +602,7 @@
 		<REFERENCE_BEGIN ID="46425" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="49" Name="" Kind="2" Expression="" ReferenceIndex="88379" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="49" Name="" Kind="2" Expression="" ReferenceIndex="91117" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="51"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -629,14 +629,14 @@
 		<REFERENCE_END ID="62" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="60" Name="" Kind="2" Expression="" ReferenceIndex="88359" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="60" Name="" Kind="2" Expression="" ReferenceIndex="91097" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="68"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1328" Name="tbl_person" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="920" YPos="1640" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1328" Name="tbl_person" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="960" YPos="1660" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="59" Name="person_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="74" Name="address_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -660,14 +660,14 @@
 		<REFERENCE_END ID="46425" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="58" Name="" Kind="2" Expression="" ReferenceIndex="88397" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="58" Name="" Kind="2" Expression="" ReferenceIndex="91135" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="59"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1339" Name="tbl_address" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1230" YPos="1420" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1339" Name="tbl_address" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1250" YPos="1510" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="64" Name="address_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9544" Name="state_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -688,14 +688,14 @@
 		<REFERENCE_END ID="47193" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="59" Name="" Kind="2" Expression="" ReferenceIndex="88394" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="59" Name="" Kind="2" Expression="" ReferenceIndex="91132" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="64"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1657" Name="person_has_contact_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="880" YPos="1350" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1657" Name="person_has_contact_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="940" YPos="1380" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="78" Name="person_has_contact_type_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="79" Name="person_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -707,14 +707,14 @@
 		<REFERENCE_END ID="76" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="77" Name="" Kind="2" Expression="" ReferenceIndex="88165" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="77" Name="" Kind="2" Expression="" ReferenceIndex="90905" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="78,79,80"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="1991" Name="tbl_dancer" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1200" YPos="1840" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="1991" Name="tbl_dancer" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1190" YPos="1920" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="85" Name="dancer_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="87" Name="person_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -732,14 +732,14 @@
 		<REFERENCE_END ID="91" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="88" Name="" Kind="2" Expression="" ReferenceIndex="88324" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="88" Name="" Kind="2" Expression="" ReferenceIndex="91062" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="85"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="2272" Name="tbl_event_types" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1980" YPos="930" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="2272" Name="tbl_event_types" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1840" YPos="890" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="91" Name="event_types_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="92" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -748,14 +748,14 @@
 		<REFERENCE_BEGIN ID="106" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="100" Name="" Kind="2" Expression="" ReferenceIndex="88172" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="100" Name="" Kind="2" Expression="" ReferenceIndex="90912" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="91"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="2303" Name="tbl_events" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1730" YPos="1020" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="2303" Name="tbl_events" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1860" YPos="1010" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="93" Name="events_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="108" Name="event_types_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -780,14 +780,14 @@
 		<REFERENCE_END ID="106" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="95" Name="" Kind="2" Expression="" ReferenceIndex="88363" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="95" Name="" Kind="2" Expression="" ReferenceIndex="91101" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="93"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="2335" Name="tbl_season" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2420" YPos="1350" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="2335" Name="tbl_season" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2540" YPos="1360" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="102" Name="season_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="103" Name="start_year" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -796,16 +796,17 @@
 	<REFERENCES_BEGIN>
 		<REFERENCE_BEGIN ID="108" />
 		<REFERENCE_BEGIN ID="9655" />
+		<REFERENCE_BEGIN ID="47468" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="96" Name="" Kind="2" Expression="" ReferenceIndex="88186" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="96" Name="" Kind="2" Expression="" ReferenceIndex="91141" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="102"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="2884" Name="tbl_season_events" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2400" YPos="1060" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="2884" Name="tbl_season_events" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2410" YPos="970" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="110" Name="season_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="111" Name="events_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -815,7 +816,7 @@
 		<REFERENCE_END ID="109" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="8963" Name="" Kind="2" Expression="" ReferenceIndex="88177" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="8963" Name="" Kind="2" Expression="" ReferenceIndex="90917" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="110,111"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -864,14 +865,14 @@
 		<REFERENCE_END ID="44962" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="110" Name="" Kind="2" Expression="" ReferenceIndex="88352" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="110" Name="" Kind="2" Expression="" ReferenceIndex="91090" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="112"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="3001" Name="tbl_payment_method" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1830" YPos="1440" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="3001" Name="tbl_payment_method" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1790" YPos="1600" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="130" Name="payment_method_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="132" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -880,7 +881,7 @@
 		<REFERENCE_BEGIN ID="113" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="111" Name="" Kind="2" Expression="" ReferenceIndex="88178" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="111" Name="" Kind="2" Expression="" ReferenceIndex="90918" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="130"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -896,7 +897,7 @@
 		<REFERENCE_BEGIN ID="115" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="114" Name="" Kind="2" Expression="" ReferenceIndex="88180" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="114" Name="" Kind="2" Expression="" ReferenceIndex="90920" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="134"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -914,7 +915,7 @@
 		<REFERENCE_END ID="44920" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45477" Name="" Kind="2" Expression="" ReferenceIndex="88289" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45477" Name="" Kind="2" Expression="" ReferenceIndex="91027" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="137,138"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -931,18 +932,18 @@
 		<COLUMN ID="9555" Name="hotel_id" Pos="5" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44890" Name="performance_divisions_id" Pos="6" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44909" Name="city_id" Pos="7" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9538" Name="start_date" Pos="8" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9539" Name="end_date" Pos="9" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9538" Name="start_date" Pos="8" Datatype="1082" Type="date" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9539" Name="end_date" Pos="9" Datatype="1082" Type="date" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9540" Name="cutoff_start_date" Pos="10" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9541" Name="cutoff_end_date" Pos="11" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9552" Name="room_rate" Pos="12" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9552" Name="room_rate" Pos="12" Datatype="114" Type="json" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9561" Name="notes" Pos="13" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9568" Name="is_finals" Pos="14" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9571" Name="entry_limits" Pos="15" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9572" Name="weather_link" Pos="16" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9574" Name="hotel_alt" Pos="17" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9580" Name="custom_routine_durations" Pos="18" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9582" Name="default_category_order" Pos="19" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9580" Name="custom_routine_durations" Pos="18" Datatype="114" Type="json" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9582" Name="default_category_order" Pos="19" Datatype="114" Type="json" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9583" Name="routine_dist" Pos="20" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="3" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9592" Name="roomreservations" Pos="21" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9603" Name="webcast_this_city" Pos="22" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
@@ -952,11 +953,11 @@
 		<COLUMN ID="9610" Name="results_solo_display_count" Pos="26" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="10" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9611" Name="show_time" Pos="27" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9612" Name="use_online_scoring" Pos="28" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9575" Name="web" Pos="29" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9595" Name="entrylimit" Pos="30" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="44888" Name="json_competition" Pos="31" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="44889" Name="json_tda_dance" Pos="32" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="44891" Name="mybtf" Pos="33" Datatype="25" Type="text" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9575" Name="web" Pos="29" Datatype="114" Type="json" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9595" Name="entrylimit" Pos="30" Datatype="114" Type="json" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="44888" Name="competition" Pos="31" Datatype="114" Type="json" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="44889" Name="tda_dance" Pos="32" Datatype="114" Type="json" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="44891" Name="mybtf" Pos="33" Datatype="114" Type="json" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 	</COLUMNS>
 	<REFERENCES_BEGIN>
 		<REFERENCE_BEGIN ID="44924" />
@@ -984,14 +985,14 @@
 		<REFERENCE_END ID="47199" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="122" Name="" Kind="2" Expression="" ReferenceIndex="88396" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="122" Name="" Kind="2" Expression="" ReferenceIndex="91134" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="144"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="10078" Name="tbl_venue" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2820" YPos="1180" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="10078" Name="tbl_venue" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2770" YPos="1190" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9542" Name="venue_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9546" Name="address_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1006,14 +1007,14 @@
 		<REFERENCE_END ID="9668" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9660" Name="" Kind="2" Expression="" ReferenceIndex="88200" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9660" Name="" Kind="2" Expression="" ReferenceIndex="90940" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9542"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="10886" Name="venue_contact_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1440" YPos="1220" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="10886" Name="venue_contact_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1060" YPos="1210" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9547" Name="venue_contact_type_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9548" Name="venue_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1025,14 +1026,14 @@
 		<REFERENCE_END ID="9670" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9680" Name="" Kind="2" Expression="" ReferenceIndex="88199" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9680" Name="" Kind="2" Expression="" ReferenceIndex="90939" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9547,9548,9549"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="11224" Name="tbl_hotel" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2580" YPos="1450" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="11224" Name="tbl_hotel" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1980" YPos="1480" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9553" Name="hotel_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9554" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1047,14 +1048,14 @@
 		<REFERENCE_END ID="9676" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9673" Name="" Kind="2" Expression="" ReferenceIndex="88208" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9673" Name="" Kind="2" Expression="" ReferenceIndex="90948" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9553"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="11647" Name="hotel_contact_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1480" YPos="1350" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="11647" Name="hotel_contact_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1520" YPos="1340" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9557" Name="hotel_contact_type_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9558" Name="contact_type_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1066,14 +1067,14 @@
 		<REFERENCE_END ID="9678" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9679" Name="" Kind="2" Expression="" ReferenceIndex="88209" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9679" Name="" Kind="2" Expression="" ReferenceIndex="90949" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9557,9558,9559"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="12110" Name="tbl_workshop_room" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2940" YPos="1390" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="12110" Name="tbl_workshop_room" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2880" YPos="1380" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9563" Name="workshop_room_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9564" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1082,14 +1083,14 @@
 		<REFERENCE_BEGIN ID="9684" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9683" Name="" Kind="2" Expression="" ReferenceIndex="88210" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9683" Name="" Kind="2" Expression="" ReferenceIndex="90950" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9563"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="12190" Name="tour_dates_workshop_room" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2870" YPos="1540" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="12190" Name="tour_dates_workshop_room" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2870" YPos="1550" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9566" Name="workshop_room_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9567" Name="tour_dates_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1103,14 +1104,14 @@
 		<REFERENCE_END ID="46440" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9686" Name="" Kind="2" Expression="" ReferenceIndex="88388" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9686" Name="" Kind="2" Expression="" ReferenceIndex="91126" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9566,9567,44896"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="13647" Name="tbl_vip_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2180" YPos="2310" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="13647" Name="tbl_vip_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2180" YPos="2270" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9635" Name="vip_type_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9636" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1133,7 +1134,7 @@
 		<REFERENCE_BEGIN ID="9736" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9705" Name="" Kind="2" Expression="" ReferenceIndex="88226" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9705" Name="" Kind="2" Expression="" ReferenceIndex="90966" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9638"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1158,14 +1159,14 @@
 		<REFERENCE_END ID="9708" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9706" Name="" Kind="2" Expression="" ReferenceIndex="88220" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9706" Name="" Kind="2" Expression="" ReferenceIndex="90960" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9640,9647"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="15430" Name="tbl_performance_divisions" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1820" YPos="2580" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="15430" Name="tbl_performance_divisions" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1870" YPos="2590" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9650" Name="performance_divisions_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9651" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1176,7 +1177,7 @@
 		<REFERENCE_BEGIN ID="46434" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9715" Name="" Kind="2" Expression="" ReferenceIndex="88383" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9715" Name="" Kind="2" Expression="" ReferenceIndex="91121" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9650"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1204,7 +1205,7 @@
 		<REFERENCE_END ID="9718" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9717" Name="" Kind="2" Expression="" ReferenceIndex="88330" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9717" Name="" Kind="2" Expression="" ReferenceIndex="91068" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9652"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1228,7 +1229,7 @@
 		<REFERENCE_END ID="44949" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9725" Name="" Kind="2" Expression="" ReferenceIndex="88307" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9725" Name="" Kind="2" Expression="" ReferenceIndex="91045" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9664"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1245,7 +1246,7 @@
 		<REFERENCE_END ID="9727" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9784" Name="" Kind="2" Expression="" ReferenceIndex="88219" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9784" Name="" Kind="2" Expression="" ReferenceIndex="90959" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9669,9670"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1259,34 +1260,33 @@
 		<COLUMN ID="9675" Name="routine_id" Pos="2" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9676" Name="studios_id" Pos="3" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9682" Name="age_divisions_id" Pos="4" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9696" Name="routine_categories_id" Pos="5" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9697" Name="category_id" Pos="6" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9698" Name="performance_divisions_id" Pos="7" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9701" Name="perf_div_type_id" Pos="8" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9704" Name="routine_types_id" Pos="9" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9705" Name="prelims" Pos="10" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9706" Name="vips" Pos="11" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9707" Name="finals" Pos="12" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="1" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9708" Name="fee" Pos="13" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9718" Name="finals_time" Pos="14" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9719" Name="canceled" Pos="15" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9720" Name="custom_dancer_count" Pos="16" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9721" Name="number_finals" Pos="17" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9722" Name="number_prelims" Pos="18" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9723" Name="number_vips" Pos="19" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9724" Name="finals_has_a" Pos="20" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9725" Name="prelims_has_a" Pos="21" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9726" Name="vips_has_a" Pos="22" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9727" Name="duration" Pos="23" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9742" Name="custom_fee" Pos="24" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9743" Name="place_hsa" Pos="25" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9744" Name="place_hsp" Pos="26" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9746" Name="room_finals" Pos="27" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="1" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9747" Name="award_typename" Pos="28" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9748" Name="room_prelims" Pos="29" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9749" Name="room_vips" Pos="30" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9750" Name="uploaded_duration" Pos="31" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9751" Name="uploaded" Pos="32" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9698" Name="performance_divisions_id" Pos="5" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9701" Name="perf_div_type_id" Pos="6" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9704" Name="routine_types_id" Pos="7" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="44917" Name="category_id" Pos="8" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9705" Name="prelims" Pos="9" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9706" Name="vips" Pos="10" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9707" Name="finals" Pos="11" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="1" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9708" Name="fee" Pos="12" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9718" Name="finals_time" Pos="13" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9719" Name="canceled" Pos="14" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9720" Name="custom_dancer_count" Pos="15" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9721" Name="number_finals" Pos="16" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9722" Name="number_prelims" Pos="17" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9723" Name="number_vips" Pos="18" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9724" Name="finals_has_a" Pos="19" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9725" Name="prelims_has_a" Pos="20" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9726" Name="vips_has_a" Pos="21" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9727" Name="duration" Pos="22" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9742" Name="custom_fee" Pos="23" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9743" Name="place_hsa" Pos="24" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9744" Name="place_hsp" Pos="25" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9746" Name="room_finals" Pos="26" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="1" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9747" Name="award_typename" Pos="27" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9748" Name="room_prelims" Pos="28" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9749" Name="room_vips" Pos="29" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9750" Name="uploaded_duration" Pos="30" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9751" Name="uploaded" Pos="31" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 	</COLUMNS>
 	<REFERENCES_BEGIN>
 		<REFERENCE_BEGIN ID="9767" />
@@ -1299,14 +1299,14 @@
 		<REFERENCE_END ID="9731" />
 		<REFERENCE_END ID="9732" />
 		<REFERENCE_END ID="9737" />
-		<REFERENCE_END ID="9744" />
 		<REFERENCE_END ID="9748" />
 		<REFERENCE_END ID="9752" />
 		<REFERENCE_END ID="9756" />
 		<REFERENCE_END ID="44946" />
+		<REFERENCE_END ID="47465" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9729" Name="" Kind="2" Expression="" ReferenceIndex="88367" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9729" Name="" Kind="2" Expression="" ReferenceIndex="91140" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9673"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1328,33 +1328,34 @@
 		<REFERENCE_END ID="9736" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9733" Name="" Kind="2" Expression="" ReferenceIndex="88385" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9733" Name="" Kind="2" Expression="" ReferenceIndex="91123" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9677"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="18931" Name="tbl_category" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="810" YPos="3010" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="18931" Name="tbl_category" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1090" YPos="3080" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9683" Name="category_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9684" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 	</COLUMNS>
 	<REFERENCES_BEGIN>
 		<REFERENCE_BEGIN ID="9740" />
+		<REFERENCE_BEGIN ID="47465" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9738" Name="" Kind="2" Expression="" ReferenceIndex="88230" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9738" Name="" Kind="2" Expression="" ReferenceIndex="91139" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9683"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="19054" Name="tbl_routine_categories" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1020" YPos="2980" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="19054" Name="tbl_routine_categories" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="730" YPos="3020" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
-		<COLUMN ID="9685" Name="routine_categories_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9695" Name="category_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9695" Name="category_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="44918" Name="season_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9687" Name="min_dancers" Pos="2" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9688" Name="full_fee_per_dancer" Pos="3" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9689" Name="duration" Pos="4" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1363,15 +1364,13 @@
 		<COLUMN ID="9693" Name="finale_fee_per_dancer" Pos="7" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9694" Name="finale_prelim_fee_per_dancer" Pos="8" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 	</COLUMNS>
-	<REFERENCES_BEGIN>
-		<REFERENCE_BEGIN ID="9744" />
-	</REFERENCES_BEGIN>
 	<REFERENCES_END>
 		<REFERENCE_END ID="9740" />
+		<REFERENCE_END ID="47468" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9739" Name="" Kind="2" Expression="" ReferenceIndex="88232" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
-			<CONSTRAINTCOLUMNS COMMATEXT="9685,9695"></CONSTRAINTCOLUMNS>
+		<CONSTRAINT ID="47469" Name="" Kind="2" Expression="" ReferenceIndex="91142" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+			<CONSTRAINTCOLUMNS COMMATEXT="9695,44918"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
@@ -1386,7 +1385,7 @@
 		<REFERENCE_BEGIN ID="9752" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9750" Name="" Kind="2" Expression="" ReferenceIndex="88236" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9750" Name="" Kind="2" Expression="" ReferenceIndex="90974" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9699"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1402,7 +1401,7 @@
 		<REFERENCE_BEGIN ID="9756" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9755" Name="" Kind="2" Expression="" ReferenceIndex="88238" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9755" Name="" Kind="2" Expression="" ReferenceIndex="90976" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9702"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1418,7 +1417,7 @@
 		<REFERENCE_BEGIN ID="9766" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9765" Name="" Kind="2" Expression="" ReferenceIndex="88240" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9765" Name="" Kind="2" Expression="" ReferenceIndex="90978" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9728"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1437,7 +1436,7 @@
 		<REFERENCE_END ID="9767" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9768" Name="" Kind="2" Expression="" ReferenceIndex="88243" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9768" Name="" Kind="2" Expression="" ReferenceIndex="90981" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9732,9731,44892"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1453,7 +1452,7 @@
 		<REFERENCE_BEGIN ID="9774" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9772" Name="" Kind="2" Expression="" ReferenceIndex="88246" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9772" Name="" Kind="2" Expression="" ReferenceIndex="90984" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9735"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1471,7 +1470,7 @@
 		<REFERENCE_END ID="9774" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9775" Name="" Kind="2" Expression="" ReferenceIndex="88247" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9775" Name="" Kind="2" Expression="" ReferenceIndex="90985" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9738,9739"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1490,7 +1489,7 @@
 		<REFERENCE_END ID="44955" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9787" Name="" Kind="2" Expression="" ReferenceIndex="88309" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9787" Name="" Kind="2" Expression="" ReferenceIndex="91047" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9755"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1509,7 +1508,7 @@
 		<REFERENCE_END ID="44933" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9797" Name="" Kind="2" Expression="" ReferenceIndex="88299" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9797" Name="" Kind="2" Expression="" ReferenceIndex="91037" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9763,9764,9766"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1532,14 +1531,14 @@
 		<REFERENCE_END ID="10022" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9799" Name="" Kind="2" Expression="" ReferenceIndex="88268" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9799" Name="" Kind="2" Expression="" ReferenceIndex="91006" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9767"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="29143" Name="tbl_event_attendees" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3170" YPos="2250" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="29143" Name="tbl_event_attendees" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3170" YPos="2320" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9774" Name="event_attendees_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44750" Name="registration_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1556,14 +1555,14 @@
 		<REFERENCE_END ID="45181" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9805" Name="" Kind="2" Expression="" ReferenceIndex="88327" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9805" Name="" Kind="2" Expression="" ReferenceIndex="91065" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9774"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="31480" Name="tbl_promo_codes" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3180" YPos="1880" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="31480" Name="tbl_promo_codes" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3180" YPos="1880" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9790" Name="promo_codes_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9805" Name="promo_codes_type_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1575,7 +1574,7 @@
 		<COLUMN ID="9797" Name="active" Pos="7" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9798" Name="noncommuteronly" Pos="8" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9799" Name="onceperreg" Pos="9" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="0" QuoteDefault="0" Comments=""></COLUMN>
-		<COLUMN ID="9800" Name="#intensiveid" Pos="10" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="9800" Name="intensiveid" Pos="10" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 	</COLUMNS>
 	<REFERENCES_BEGIN>
 		<REFERENCE_BEGIN ID="9816" />
@@ -1585,14 +1584,14 @@
 		<REFERENCE_END ID="9819" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9815" Name="" Kind="2" Expression="" ReferenceIndex="88361" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9815" Name="" Kind="2" Expression="" ReferenceIndex="91099" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9790"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="32279" Name="tbl_promo_codes_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3210" YPos="1770" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="32279" Name="tbl_promo_codes_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3190" YPos="1770" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9803" Name="promo_codes_type_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9804" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1601,14 +1600,14 @@
 		<REFERENCE_BEGIN ID="9819" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9818" Name="" Kind="2" Expression="" ReferenceIndex="88256" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9818" Name="" Kind="2" Expression="" ReferenceIndex="90994" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9803"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="33586" Name="tbl_date_studios" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2000" YPos="1760" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="33586" Name="tbl_date_studios" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1990" YPos="1760" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9807" Name="tbl_date_studios_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9808" Name="tour_dates_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1631,7 +1630,7 @@
 		<REFERENCE_END ID="44958" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9824" Name="" Kind="2" Expression="" ReferenceIndex="88311" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9824" Name="" Kind="2" Expression="" ReferenceIndex="91049" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9807"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1650,7 +1649,7 @@
 		<REFERENCE_END ID="44929" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="9998" Name="" Kind="2" Expression="" ReferenceIndex="88295" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="9998" Name="" Kind="2" Expression="" ReferenceIndex="91033" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9828"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1673,7 +1672,7 @@
 		<REFERENCE_END ID="44931" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10001" Name="" Kind="2" Expression="" ReferenceIndex="88297" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10001" Name="" Kind="2" Expression="" ReferenceIndex="91035" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9833"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1692,7 +1691,7 @@
 		<REFERENCE_BEGIN ID="46430" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10002" Name="" Kind="2" Expression="" ReferenceIndex="88381" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10002" Name="" Kind="2" Expression="" ReferenceIndex="91119" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9838"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1710,7 +1709,7 @@
 		<REFERENCE_END ID="46430" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10005" Name="" Kind="2" Expression="" ReferenceIndex="88382" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10005" Name="" Kind="2" Expression="" ReferenceIndex="91120" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9842,44886"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1729,14 +1728,14 @@
 		<REFERENCE_END ID="44926" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44927" Name="" Kind="2" Expression="" ReferenceIndex="88293" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44927" Name="" Kind="2" Expression="" ReferenceIndex="91031" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9855,9858"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="36402" Name="tbl_scholarships" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3220" YPos="1260" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="36402" Name="tbl_scholarships" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3210" YPos="1070" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="9851" Name="scholarships_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="9852" Name="active" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -1752,7 +1751,7 @@
 		<REFERENCE_END ID="10017" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10012" Name="" Kind="2" Expression="" ReferenceIndex="88265" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10012" Name="" Kind="2" Expression="" ReferenceIndex="91003" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9851"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1770,7 +1769,7 @@
 		<REFERENCE_END ID="10028" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10027" Name="" Kind="2" Expression="" ReferenceIndex="88271" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10027" Name="" Kind="2" Expression="" ReferenceIndex="91009" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9865"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1787,7 +1786,7 @@
 		<REFERENCE_BEGIN ID="10032" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10021" Name="" Kind="2" Expression="" ReferenceIndex="88274" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10021" Name="" Kind="2" Expression="" ReferenceIndex="91012" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9859"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1808,7 +1807,7 @@
 		<REFERENCE_END ID="44941" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10030" Name="" Kind="2" Expression="" ReferenceIndex="88303" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10030" Name="" Kind="2" Expression="" ReferenceIndex="91041" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9868"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1832,7 +1831,7 @@
 		<REFERENCE_END ID="10244" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10243" Name="" Kind="2" Expression="" ReferenceIndex="88277" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10243" Name="" Kind="2" Expression="" ReferenceIndex="91015" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9902"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1850,7 +1849,7 @@
 		<REFERENCE_END ID="10256" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10246" Name="" Kind="2" Expression="" ReferenceIndex="88281" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10246" Name="" Kind="2" Expression="" ReferenceIndex="91019" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9912"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1867,7 +1866,7 @@
 		<REFERENCE_BEGIN ID="45208" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10249" Name="" Kind="2" Expression="" ReferenceIndex="88346" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10249" Name="" Kind="2" Expression="" ReferenceIndex="91084" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9915"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1920,7 +1919,7 @@
 		<REFERENCE_END ID="45213" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="10253" Name="" Kind="2" Expression="" ReferenceIndex="88351" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="10253" Name="" Kind="2" Expression="" ReferenceIndex="91089" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="9925"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1959,7 +1958,7 @@
 		<REFERENCE_END ID="45197" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44702" Name="" Kind="2" Expression="" ReferenceIndex="88344" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44702" Name="" Kind="2" Expression="" ReferenceIndex="91082" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44703"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -1981,7 +1980,7 @@
 		<REFERENCE_END ID="45209" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44704" Name="" Kind="2" Expression="" ReferenceIndex="88349" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44704" Name="" Kind="2" Expression="" ReferenceIndex="91087" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44721"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2001,7 +2000,7 @@
 		<REFERENCE_END ID="44710" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44705" Name="" Kind="2" Expression="" ReferenceIndex="88338" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44705" Name="" Kind="2" Expression="" ReferenceIndex="91076" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44727"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2017,7 +2016,7 @@
 		<REFERENCE_BEGIN ID="44710" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44708" Name="" Kind="2" Expression="" ReferenceIndex="88282" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44708" Name="" Kind="2" Expression="" ReferenceIndex="91020" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44730"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2034,7 +2033,7 @@
 		<REFERENCE_END ID="45206" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44714" Name="" Kind="2" Expression="" ReferenceIndex="88345" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44714" Name="" Kind="2" Expression="" ReferenceIndex="91083" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44735,44763"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2051,14 +2050,14 @@
 		<REFERENCE_BEGIN ID="44949" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44948" Name="" Kind="2" Expression="" ReferenceIndex="88306" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44948" Name="" Kind="2" Expression="" ReferenceIndex="91044" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44737"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="59698" Name="tbl_user_has_dancer" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="950" YPos="1890" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="59698" Name="tbl_user_has_dancer" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="880" YPos="1900" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44742" Name="dancer_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44743" Name="user_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2068,14 +2067,14 @@
 		<REFERENCE_END ID="44970" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44972" Name="" Kind="2" Expression="" ReferenceIndex="88317" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44972" Name="" Kind="2" Expression="" ReferenceIndex="91055" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44742,44743"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="60297" Name="tbl_studios_has_dancer" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1300" YPos="1760" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="60297" Name="tbl_studios_has_dancer" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1350" YPos="1800" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44745" Name="dancer_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44746" Name="studios_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2085,7 +2084,7 @@
 		<REFERENCE_END ID="44974" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="44975" Name="" Kind="2" Expression="" ReferenceIndex="88321" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="44975" Name="" Kind="2" Expression="" ReferenceIndex="91059" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44745,44746"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2102,14 +2101,14 @@
 		<REFERENCE_END ID="45177" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45178" Name="" Kind="2" Expression="" ReferenceIndex="88325" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45178" Name="" Kind="2" Expression="" ReferenceIndex="91063" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44748,44749"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="63542" Name="faculty_has_performance" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1480" YPos="2530" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="63542" Name="faculty_has_performance" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1490" YPos="2530" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44752" Name="faculty_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44753" Name="performance_divisions_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2130,7 +2129,7 @@
 		<REFERENCE_BEGIN ID="45209" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45199" Name="" Kind="2" Expression="" ReferenceIndex="88348" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45199" Name="" Kind="2" Expression="" ReferenceIndex="91086" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44758"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2147,7 +2146,7 @@
 		<REFERENCE_END ID="45202" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45203" Name="" Kind="2" Expression="" ReferenceIndex="88343" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45203" Name="" Kind="2" Expression="" ReferenceIndex="91081" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44761,44762"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2165,7 +2164,7 @@
 		<REFERENCE_BEGIN ID="45219" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45217" Name="" Kind="2" Expression="" ReferenceIndex="88357" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45217" Name="" Kind="2" Expression="" ReferenceIndex="91095" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44770"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2185,7 +2184,7 @@
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="75178" Name="tbl_user_registrations_soty" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2830" YPos="2360" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="75178" Name="tbl_user_registrations_soty" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2370" YPos="3240" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="16777215" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44798" Name="user_registrations_soty_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44800" Name="registration_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2198,14 +2197,14 @@
 		<REFERENCE_END ID="45231" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45230" Name="" Kind="2" Expression="" ReferenceIndex="88354" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45230" Name="" Kind="2" Expression="" ReferenceIndex="91092" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44798"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="76035" Name="tbl_soty_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3150" YPos="2570" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="76035" Name="tbl_soty_type" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2260" YPos="3580" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44801" Name="soty_type_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44802" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2214,14 +2213,14 @@
 		<REFERENCE_BEGIN ID="45238" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45233" Name="" Kind="2" Expression="" ReferenceIndex="88355" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45233" Name="" Kind="2" Expression="" ReferenceIndex="91093" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44801"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="76897" Name="tbl_soty_type_routine" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2830" YPos="2560" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="14481663" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="76897" Name="tbl_soty_type_routine" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1960" YPos="3370" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="14481663" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44803" Name="user_registrations_soty_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44804" Name="soty_type_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2254,23 +2253,23 @@
 		<REFERENCE_END ID="45216" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45215" Name="" Kind="2" Expression="" ReferenceIndex="88360" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45215" Name="" Kind="2" Expression="" ReferenceIndex="91098" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44767"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="77780" Name="tbl_event_reg_types" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2850" YPos="1990" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="14481663" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="77780" Name="tbl_event_reg_types" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2850" YPos="1990" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
-		<COLUMN ID="44808" Name="tbl_event_reg_types_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
+		<COLUMN ID="44808" Name="tbl_event_reg_types_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44809" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 	</COLUMNS>
 	<REFERENCES_BEGIN>
 		<REFERENCE_BEGIN ID="45473" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45462" Name="" Kind="2" Expression="" ReferenceIndex="88365" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45462" Name="" Kind="2" Expression="" ReferenceIndex="91103" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44808"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2291,7 +2290,7 @@
 		<REFERENCE_END ID="45473" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45471" Name="" Kind="2" Expression="" ReferenceIndex="88366" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45471" Name="" Kind="2" Expression="" ReferenceIndex="91104" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44817,44818,44819"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2311,7 +2310,7 @@
 		<REFERENCE_END ID="45481" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45480" Name="" Kind="2" Expression="" ReferenceIndex="88368" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45480" Name="" Kind="2" Expression="" ReferenceIndex="91106" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44823"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2350,7 +2349,7 @@
 		<REFERENCE_END ID="45724" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45485" Name="" Kind="2" Expression="" ReferenceIndex="88372" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45485" Name="" Kind="2" Expression="" ReferenceIndex="91110" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44840"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2369,7 +2368,7 @@
 		<REFERENCE_END ID="45727" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45486" Name="" Kind="2" Expression="" ReferenceIndex="88376" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45486" Name="" Kind="2" Expression="" ReferenceIndex="91114" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44846"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2408,7 +2407,7 @@
 		<REFERENCE_END ID="45492" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45490" Name="" Kind="2" Expression="" ReferenceIndex="88370" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45490" Name="" Kind="2" Expression="" ReferenceIndex="91108" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44873"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2424,14 +2423,14 @@
 		<REFERENCE_BEGIN ID="45492" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="45491" Name="" Kind="2" Expression="" ReferenceIndex="88369" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="45491" Name="" Kind="2" Expression="" ReferenceIndex="91107" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44876"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="86607" Name="tbl_level" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3140" YPos="1500" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="86607" Name="tbl_level" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="3100" YPos="1470" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44898" Name="level_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44899" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2440,14 +2439,14 @@
 		<REFERENCE_BEGIN ID="46440" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="46439" Name="" Kind="2" Expression="" ReferenceIndex="88387" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="46439" Name="" Kind="2" Expression="" ReferenceIndex="91125" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44898"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="86618" Name="studios_has_person" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1170" YPos="1700" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="86618" Name="studios_has_person" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1290" YPos="1700" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44902" Name="studios_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44903" Name="person_id" Pos="1" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="0" Collation="" PrimaryKey="1" IsFKey="1" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2457,14 +2456,14 @@
 		<REFERENCE_END ID="46687" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="46688" Name="" Kind="2" Expression="" ReferenceIndex="88392" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="46688" Name="" Kind="2" Expression="" ReferenceIndex="91130" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44902,44903"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
 	</CONSTRAINTS>
 </ENTITY>
 
-<ENTITY ID="86629" Name="tbl_city" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="1250" YPos="1620" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
+<ENTITY ID="86629" Name="tbl_city" SchemaOID="0" SchemaName="public" OwnerID="0" OwnerName="" TablespaceID="0" XPos="2200" YPos="1400" Temporary="0" Unlogged="0" OnCommit="" Inherits="" FillColor="3937500" LineColor="8388608" CharacterSet="" Collate="" Comments="" Description="" Annotation="" BeginScript="" EndScript="" Generate="1" ACL="" StorageParams="" >
 	<COLUMNS>
 		<COLUMN ID="44904" Name="city_id" Pos="0" Datatype="23" Type="int4" Width="0" Prec="0" NotNull="1" AutoInc="1" Collation="" PrimaryKey="1" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
 		<COLUMN ID="44905" Name="name" Pos="1" Datatype="1043" Type="varchar" Width="0" Prec="0" NotNull="0" AutoInc="0" Collation="" PrimaryKey="0" IsFKey="0" DefaultValue="" QuoteDefault="0" Comments=""></COLUMN>
@@ -2474,7 +2473,7 @@
 		<REFERENCE_BEGIN ID="47199" />
 	</REFERENCES_BEGIN>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="46939" Name="" Kind="2" Expression="" ReferenceIndex="88395" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="46939" Name="" Kind="2" Expression="" ReferenceIndex="91133" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44904"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2491,7 +2490,7 @@
 		<REFERENCE_END ID="47202" />
 	</REFERENCES_END>
 	<CONSTRAINTS>
-		<CONSTRAINT ID="47203" Name="" Kind="2" Expression="" ReferenceIndex="88400" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
+		<CONSTRAINT ID="47203" Name="" Kind="2" Expression="" ReferenceIndex="91138" FillFactor="" Comments="" TablespaceID="0" Deferrable="0" Method="0">
 			<CONSTRAINTCOLUMNS COMMATEXT="44914,44915"></CONSTRAINTCOLUMNS>
 			<CONSTRAINTOPERATORS COMMATEXT=""></CONSTRAINTOPERATORS>
 		</CONSTRAINT>
@@ -2658,10 +2657,6 @@
 	</USERPOINTS>
 </REFERENCE>
 <REFERENCE ID="9740" Name="tbl_category" SOURCE="18931" DESTINATION="19054" FKIDS="9683=9695\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="9738" LabelPointNumber="-1" LabelPosition="0.5" ManualStartTailPosition="0" ManualEndTailPosition="0" />
-	<USERPOINTS>
-	</USERPOINTS>
-</REFERENCE>
-<REFERENCE ID="9744" Name="tbl_routine_categories" SOURCE="19054" DESTINATION="17188" FKIDS="9685=9696\n9695=9697\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="9739" LabelPointNumber="-1" LabelPosition="0.5" ManualStartTailPosition="0" ManualEndTailPosition="0" />
 	<USERPOINTS>
 	</USERPOINTS>
 </REFERENCE>
@@ -3009,6 +3004,14 @@
 	<USERPOINTS>
 	</USERPOINTS>
 </REFERENCE>
+<REFERENCE ID="47465" Name="tbl_category" SOURCE="18931" DESTINATION="17188" FKIDS="9683=44917\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="9738" LabelPointNumber="-1" LabelPosition="0.5" ManualStartTailPosition="0" ManualEndTailPosition="0" />
+	<USERPOINTS>
+	</USERPOINTS>
+</REFERENCE>
+<REFERENCE ID="47468" Name="tbl_season" SOURCE="2335" DESTINATION="19054" FKIDS="102=44918\n" Direction="0" RefColor="8388608" RefLabelColor="16777215" OnDelete="3" OnUpdate="3" Deferrable="0" MatchType="0" Comments="" Description="" Annotation="" Generate="1" FKConstraint_ID="96" LabelPointNumber="-1" LabelPosition="0.5" ManualStartTailPosition="0" ManualEndTailPosition="0" />
+	<USERPOINTS>
+	</USERPOINTS>
+</REFERENCE>
 </REFERENCES>
 
 <NOTES>
@@ -3016,9 +3019,9 @@
 
 <NOTE ID="14292" Name="Note_02" XPos="800" YPos="2790" Text="teacher, senior, teen, junior...\n" BackColor="15793151" />
 
-<NOTE ID="15625" Name="Note_03" XPos="1850" YPos="2550" Text="hip-hop, classic...\n" BackColor="15793151" />
+<NOTE ID="15625" Name="Note_03" XPos="1880" YPos="2560" Text="hip-hop, classic...\n" BackColor="15793151" />
 
-<NOTE ID="19053" Name="Note_04" XPos="820" YPos="2980" Text="solo, duo, group\n" BackColor="15793151" />
+<NOTE ID="19053" Name="Note_04" XPos="1100" YPos="3040" Text="solo, duo, group\n" BackColor="15793151" />
 
 <NOTE ID="21167" Name="Note_05" XPos="890" YPos="3270" Text="1: combined top 3, \n2: combined top 1, \n3: indiv top 3, \n4: indiv: top 1\n" BackColor="15793151" />
 
@@ -3028,7 +3031,7 @@
 
 <NOTE ID="39507" Name="Note_08" XPos="1450" YPos="3940" Text="competition\nspecial\nstudio\ntda\n" BackColor="15793151" />
 
-<NOTE ID="76251" Name="Note_09" XPos="3140" YPos="2530" Text="ts_ballet, ts_jazz, ts_mtspec, ....\n" BackColor="15793151" />
+<NOTE ID="76251" Name="Note_09" XPos="2250" YPos="3540" Text="ts_ballet, ts_jazz, ts_mtspec, ....\n" BackColor="15793151" />
 
 <NOTE ID="85884" Name="Note_10" XPos="2480" YPos="3370" Text="TEACHER is person - I will delete this table\n" BackColor="15793151" />
 
