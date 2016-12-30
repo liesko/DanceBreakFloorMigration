@@ -10,7 +10,6 @@ namespace DanceBreakFloorMigration.Classes
             MySqlDataReader dataReader = pMysql.Select("select 	id, name, link, type, web_home_webcast_banner, currentseason, facebook_link, ageasofyear, " +
                                                        "intopmenu, workshoponly from events; ");
             pMysql.Message = "tbl_events - extraction(from table events) - START";
-            int counter = 0;
             string pom1 = "null";
             string pom2 = "null";
             while (dataReader.Read())

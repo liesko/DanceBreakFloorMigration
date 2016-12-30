@@ -29,8 +29,12 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-            DeleteTable("tbl_event_reg_types");
+
+            DeleteTable("tbl_date_routines");
             /*
+            DeleteTable("tbl_perf_div_type");
+            DeleteTable("tbl_events_has_promo_code");
+            DeleteTable("tbl_event_reg_types");
             DeleteTable("tbl_promo_codes");
             DeleteTable("tbl_routine_categories");
             DeleteTable("tbl_store_orders");
@@ -247,9 +251,18 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_promo_codes tab48 = new Tbl_promo_codes();
             tab48.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            */
+            
             Tbl_event_reg_types tab49 = new Tbl_event_reg_types();
             tab49.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_events_has_promo_code tab50 = new Tbl_events_has_promo_code();
+            tab50.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_perf_div_type tab51 = new Tbl_perf_div_type();
+            tab51.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            */
+            Tbl_date_routines tab52 = new Tbl_date_routines();
+            tab52.Remigration(DanceteaManager, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {

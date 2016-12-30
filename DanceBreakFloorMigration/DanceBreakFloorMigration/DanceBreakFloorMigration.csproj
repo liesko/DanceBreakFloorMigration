@@ -63,6 +63,7 @@
     <Compile Include="DB_objects\Tbl_city.cs" />
     <Compile Include="DB_objects\Tbl_dancer.cs" />
     <Compile Include="DB_objects\Tbl_dancer_II.cs" />
+    <Compile Include="DB_objects\Tbl_date_routines.cs" />
     <Compile Include="DB_objects\Tbl_date_routine_dancers.cs" />
     <Compile Include="DB_objects\Tbl_date_schedule_competition.cs" />
     <Compile Include="DB_objects\Tbl_events.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="DB_objects\Tbl_online_critiques_judges.cs" />
     <Compile Include="DB_objects\Tbl_payment_method.cs" />
     <Compile Include="DB_objects\Tbl_performance_divisions.cs" />
+    <Compile Include="DB_objects\Tbl_perf_div_type.cs" />
     <Compile Include="DB_objects\Tbl_person_types.cs" />
     <Compile Include="DB_objects\Tbl_playlist_workshop_levels.cs" />
     <Compile Include="DB_objects\Tbl_promo_codes.cs" />

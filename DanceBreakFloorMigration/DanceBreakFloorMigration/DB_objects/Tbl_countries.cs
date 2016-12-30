@@ -10,7 +10,6 @@ namespace DanceBreakFloorMigration.DB_objects
         {
             MySqlDataReader dataReader = pMysql.Select("select id, name, abbr from tbl_countries;");
             pMysql.Message = "tbl_countries (from tbl_countries)- extraction - START";
-            int counter = 0;
             while (dataReader.Read())
             {
                 pPostgres.Insert("insert into tbl_countries(country_id, name, abbr) values('" + dataReader[0] + "','" + dataReader[1].ToString().Replace("'","''") + "','" 

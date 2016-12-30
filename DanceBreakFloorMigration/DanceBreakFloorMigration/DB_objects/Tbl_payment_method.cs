@@ -11,7 +11,6 @@ namespace DanceBreakFloorMigration.DB_objects
             MySqlDataReader dataReader = pMysql.Select("select distinct payment_method from registrations where payment_method!='';");
             pMysql.Message = "payment_method (from registration)- extraction - START";
             int counter = 0;
-            string countryid = "null";
             while (dataReader.Read())
             {
                 pPostgres.Insert("insert into tbl_payment_method(payment_method_id,name) values('"+ ++counter +"', '" + dataReader[0] + "')");

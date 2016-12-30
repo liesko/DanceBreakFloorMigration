@@ -13,7 +13,6 @@ namespace DanceBreakFloorMigration.DB_objects
         {
             MySqlDataReader dataReader = pMysql.Select("select * from tbl_studios;");
             pMysql.Message = "tbl_studios - extraction - START";
-            string pom;
             while (dataReader.Read())
             {
                 string notes = (dataReader["notes"].ToString() == "") ? "null" : "'" + dataReader["notes"] + "'";

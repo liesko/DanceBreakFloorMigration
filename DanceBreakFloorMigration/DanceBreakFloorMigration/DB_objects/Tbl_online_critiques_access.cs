@@ -11,7 +11,6 @@ namespace DanceBreakFloorMigration.DB_objects
         {
             MySqlDataReader dataReader = pMysql.Select("select * from tbl_online_critiques_access;");
             pMysql.Message = "tbl_online_critiques_access - extraction - START";
-            int counter = 0;
             while (dataReader.Read())
             {
                 try

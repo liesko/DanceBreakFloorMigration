@@ -10,7 +10,6 @@ namespace DanceBreakFloorMigration.DB_objects
         {
             MySqlDataReader dataReader = pMysql.Select("select id, name, abbreviation, countryid from tbl_states;");
             pMysql.Message = "tbl_states (from tbl_states)- extraction - START";
-            int counter = 0;
             string countryid = "null";
             while (dataReader.Read())
             {

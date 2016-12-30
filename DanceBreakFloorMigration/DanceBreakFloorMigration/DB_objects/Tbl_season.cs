@@ -10,7 +10,6 @@ namespace DanceBreakFloorMigration.DB_objects
         {
             MySqlDataReader dataReader = pMysql.Select("select id, year1, year2 from tbl_seasons;");
             pMysql.Message = "tbl_season - extraction - START";
-            int counter = 0;
             string pom = "null";
             while (dataReader.Read())
             {

@@ -10,7 +10,6 @@ namespace DanceBreakFloorMigration.DB_objects
         {
             MySqlDataReader dataReader = pMysql.Select("select distinct id, name from tbl_event_types;");
             pMysql.Message = "tbl_event_types - extraction - START";
-            int counter = 0;
             while (dataReader.Read())
             {
                 pPostgres.Insert("insert into tbl_event_types(event_types_id, name) values('" + dataReader[0] + "','"+ dataReader[1] + "')");
