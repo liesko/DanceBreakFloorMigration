@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_user_stats:IMigration
+    public class Tbl_user_stats : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -26,19 +26,6 @@ namespace DanceBreakFloorMigration.DB_objects
                                  "'" + CheckBool(dataReader["dontshow1"].ToString()) + "')");
             }
             pPostgres.Message = "tbl_user_stats - extraction - FINISH";
-        }
-        private int CheckBool(string pValue)
-        {
-            if (pValue == "True")
-            {
-                return 1;
-            }
-            return 0;
-        }
-        public string FromUnixTime(long unixTime)
-        {
-            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            return "'"+epoch.AddSeconds(unixTime)+"'";
         }
     }
 }

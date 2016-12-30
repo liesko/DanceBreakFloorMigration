@@ -3,7 +3,7 @@ using MySql.Data.MySqlClient;
 
 namespace DanceBreakFloorMigration.Classes
 {
-    public class Tbl_events:IMigration
+    public class Tbl_events : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -25,15 +25,6 @@ namespace DanceBreakFloorMigration.Classes
                 //pPostgres.Insert("insert into tbl_current_season(season_id, events_id, is_current_season) values('"+ dataReader[5] + "','"+ dataReader[0] + "',True);");
             }
             pPostgres.Message = "tbl_events - extraction - FINISH";
-        }
-
-        private int CheckBool(string pValue)
-        {
-            if (pValue=="True")
-            {
-                return 1;
-            }
-            return 0;
         }
     }
 }

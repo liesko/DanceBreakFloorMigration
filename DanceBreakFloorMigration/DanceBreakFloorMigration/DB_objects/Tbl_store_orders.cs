@@ -8,7 +8,7 @@ using Npgsql;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_store_orders:IMigration
+    public class Tbl_store_orders : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -38,28 +38,6 @@ namespace DanceBreakFloorMigration.DB_objects
             }
             pPostgres.Message = "tbl_store_orders - extraction - FINISH";
         }
-        private int CheckBool(string pValue)
-        {
-            if (pValue == "True")
-            {
-                return 1;
-            }
-            return 0;
-        }
-        private string GetId(string pParam, PostgreSQL_DB pPostgres)
-        {
-            NpgsqlDataReader query;
-            query = pPostgres.Select(pParam);
-            string pom;
-            while (query.Read())
-            {
-                pom = query[0].ToString();
-                query.Dispose();
-                return pom;
-            }
-            query.Dispose();
-            return "null";
-        }
         private string Get_json_label(string label_made, string label_cost, string label_carrier)
         {
             dynamic label = new JObject();
@@ -78,11 +56,6 @@ namespace DanceBreakFloorMigration.DB_objects
                 buyerId = GetId("select unregistered_buyer_id from tbl_unregistered_buyer where fname like '" + pname + "' and lname like '" + lname + "' and email like '" + pemail + "';", pPostgres);
             }
             return buyerId;
-        }
-        public DateTime FromUnixTime(long unixTime)
-        {
-            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            return epoch.AddSeconds(unixTime);
         }
     }
 }

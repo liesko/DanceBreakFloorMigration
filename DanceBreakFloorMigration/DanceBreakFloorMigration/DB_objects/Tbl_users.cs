@@ -5,7 +5,7 @@ using Npgsql;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_users:IMigration
+    public class Tbl_users : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -30,29 +30,6 @@ namespace DanceBreakFloorMigration.DB_objects
                 }
             }
             pPostgres.Message= "tbl_users - extraction - FINISH - studio OWNERS";
-        }
-
-        private string GetId(string pParam, PostgreSQL_DB pPostgres)
-        {
-            NpgsqlDataReader query;
-            query = pPostgres.Select(pParam);
-            string pom;
-            while (query.Read())
-            {
-                pom = query[0].ToString();
-                query.Dispose();
-                return pom;
-            }
-
-            return null;
-        }
-        private int CheckBool(string pValue)
-        {
-            if (pValue == "True")
-            {
-                return 1;
-            }
-            return 0;
         }
     }
 }

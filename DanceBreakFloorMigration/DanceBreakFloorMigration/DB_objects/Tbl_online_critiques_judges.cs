@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_online_critiques_judges:IMigration
+    public class Tbl_online_critiques_judges : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -35,14 +35,6 @@ namespace DanceBreakFloorMigration.DB_objects
 
             }
             pPostgres.Message = "tbl_online_critiques_judges - extraction - FINISH";
-        }
-        private int CheckBool(string pValue)
-        {
-            if (pValue == "True")
-            {
-                return 1;
-            }
-            return 0;
         }
         private string Get_json_judge(string pjudge1, string pjudge2, string pjudge3, string pjudge4)
         {

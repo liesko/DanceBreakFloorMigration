@@ -6,7 +6,7 @@ using Npgsql;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_date_routines:IMigration
+    public class Tbl_date_routines : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -38,28 +38,7 @@ namespace DanceBreakFloorMigration.DB_objects
             }
             pPostgres.Message = "tbl_date_routines - extraction - FINISH";
         }
-        private string GetId(string pParam, PostgreSQL_DB pPostgres)
-        {
-            NpgsqlDataReader query;
-            query = pPostgres.Select(pParam);
-            string pom;
-            while (query.Read())
-            {
-                pom = query[0].ToString();
-                query.Dispose();
-                return pom;
-            }
-            query.Dispose();
-            return "null";
-        }
-        private int CheckBool(string pValue)
-        {
-            if (pValue == "True")
-            {
-                return 1;
-            }
-            return 0;
-        }
+
         private string Get_json_final(string pfinals, string pfinals_score1, string pfinals_score2, string pfinals_score3, string pfinals_score4, string pfinals_score5, string pfinals_score6, string pfinals_awardid, string pfinals_total_score, string pfinals_dropped_score, string pfinals_time, string pnumber_finals, string pfinals_dropped_score2, string pfinals_has_a, string proom_finals)
         {
             dynamic finals = new JObject();

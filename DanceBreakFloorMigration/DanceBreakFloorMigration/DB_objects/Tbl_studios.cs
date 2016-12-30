@@ -7,7 +7,7 @@ using Npgsql;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_studios:IMigration
+    public class Tbl_studios : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -74,21 +74,6 @@ namespace DanceBreakFloorMigration.DB_objects
                 pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 8 + "','" + pStudioId + "','" + Remove(pFax, c) + "');");
             if (pEmail != "")
                 pPostgres.Insert("insert into tbl_studio_contacts(contact_type_id, studios_id, value) values('" + 1 + "','" + pStudioId + "','" + pEmail.Replace("'","''") + "');");
-        }
-
-        private string GetId(string pParam, PostgreSQL_DB pPostgres)
-        {
-            NpgsqlDataReader query;
-            query = pPostgres.Select(pParam);
-            string pom;
-            while (query.Read())
-            {
-                pom = query[0].ToString();
-                query.Dispose();
-                return pom;
-            }
-            query.Dispose();
-            return "null";
         }
 
         private void DummyStudioCreation(MySQL_DB pMysql, PostgreSQL_DB pPostgres)

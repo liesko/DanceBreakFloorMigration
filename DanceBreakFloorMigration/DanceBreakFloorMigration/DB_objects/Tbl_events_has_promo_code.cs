@@ -5,7 +5,7 @@ using Npgsql;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_events_has_promo_code:IMigration
+    public class Tbl_events_has_promo_code : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -32,20 +32,6 @@ namespace DanceBreakFloorMigration.DB_objects
                                  "values('"+dataReader["codeid"] + "','" + dataReader["eventid"] + "','" + regTypId + "','" + dataReader["discount_fee"] + "','" + dataReader["fee"] + "');");
             }
             pPostgres.Message = "tbl_events_has_promo_code - extraction - FINISH";
-        }
-        private string GetId(string pParam, PostgreSQL_DB pPostgres)
-        {
-            NpgsqlDataReader query;
-            query = pPostgres.Select(pParam);
-            string pom;
-            while (query.Read())
-            {
-                pom = query[0].ToString();
-                query.Dispose();
-                return pom;
-            }
-            query.Dispose();
-            return "null";
         }
     }
 }

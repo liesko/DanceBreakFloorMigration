@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BaseClass.cs" />
     <Compile Include="Classes\Controller.cs" />
     <Compile Include="Classes\HandlerArgs.cs" />
     <Compile Include="Classes\MySQL_DB.cs" />

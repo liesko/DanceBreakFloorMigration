@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_store_products:IMigration
+    public class Tbl_store_products : BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -27,19 +27,6 @@ namespace DanceBreakFloorMigration.DB_objects
                     "'" + dataReader["short_description"].ToString().Replace("'","''") + "'," + dataReader["sort"]+");");
             }
             pPostgres.Message = "tbl_store_products - extraction - FINISH";
-        }
-        private int CheckBool(string pValue)
-        {
-            if (pValue == "True")
-            {
-                return 1;
-            }
-            return 0;
-        }
-        public DateTime FromUnixTime(long unixTime)
-        {
-            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            return epoch.AddSeconds(unixTime);
         }
     }
 }
