@@ -13,14 +13,14 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_faculty - extraction - START";
             while (dataReader.Read())
             {
-                string event_id = GetId("select events_id from tbl_events where lower(name) like lower('"+dataReader["tour"]+"')",pPostgres);
-                string person_id = GetId("select person_id from tbl_person where lower(fname) like lower('" + dataReader["fname"].ToString().Replace("'", "''") + "') and lower(lname) like lower('"+ dataReader["lname"].ToString().Replace("'", "''") + "')", pPostgres);
-                string style_1 = GetId("select performance_divisions_id from tbl_performance_divisions where name like '"+dataReader["style1"] +"'", pPostgres);
-                string style_2 = GetId("select performance_divisions_id from tbl_performance_divisions where name like '" + dataReader["style2"] + "'", pPostgres);
+                string event_id = GetId("select id from tbl_events where lower(name) like lower('"+dataReader["tour"]+"')",pPostgres);
+                string person_id = GetId("select id from tbl_person where lower(fname) like lower('" + dataReader["fname"].ToString().Replace("'", "''") + "') and lower(lname) like lower('"+ dataReader["lname"].ToString().Replace("'", "''") + "')", pPostgres);
+                string style_1 = GetId("select id from tbl_performance_divisions where name like '"+dataReader["style1"] +"'", pPostgres);
+                string style_2 = GetId("select id from tbl_performance_divisions where name like '" + dataReader["style2"] + "'", pPostgres);
                 string dancer_id = "null";
                 if (person_id!="null")
                 {
-                    dancer_id = GetId("select dancer_id from tbl_dancer where person_id ='"+person_id+"'", pPostgres);
+                    dancer_id = GetId("select id from tbl_dancer where person_id ='"+person_id+"'", pPostgres);
                 }
                 
                 if (dancer_id=="null")
@@ -29,7 +29,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 }
                 else
                 {
-                    pPostgres.Insert("insert into tbl_faculty(faculty_id, events_id, dancer_id, bio, website, director, twitter, instagram, youtube) " +
+                    pPostgres.Insert("insert into tbl_faculty(id, events_id, dancer_id, bio, website, director, twitter, instagram, youtube) " +
                                     "values("+dataReader["id"]+","+event_id+","+dancer_id+",'"+dataReader["bio"].ToString().Replace("'","''") +"','" + dataReader["website"].ToString().Replace("'", "''") + "'" +
                                      ",'" + dataReader["director"].ToString().Replace("'", "''") + "','" + dataReader["twitter"].ToString().Replace("'", "''") + "','" + dataReader["instagram"].ToString().Replace("'", "''") + "'," +
                                      "'" + dataReader["youtube"].ToString().Replace("'", "''") + "');");

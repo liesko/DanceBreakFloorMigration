@@ -13,7 +13,7 @@ namespace DanceBreakFloorMigration.DB_objects
             int counter = 0;
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_person_types(person_types_id, name) values('" + ++counter + "','" + dataReader[0] + "')");
+                pPostgres.Insert("insert into tbl_person_types(id, name) values('" + ++counter + "','" + dataReader[0] + "')");
             }
             pPostgres.Message = "tbl_person_types - extraction - FINISH";
         }

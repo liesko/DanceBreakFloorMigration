@@ -13,7 +13,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "store_colors - extraction - START";
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_store_colors(store_colors_id, name) values(" + (int)dataReader[0] + ",'" + dataReader[1] + "')");
+                pPostgres.Insert("insert into tbl_store_colors(id, name) values(" + (int)dataReader[0] + ",'" + dataReader[1] + "')");
             }
             pPostgres.Message = "store_colors - extraction - FINISH";
         }

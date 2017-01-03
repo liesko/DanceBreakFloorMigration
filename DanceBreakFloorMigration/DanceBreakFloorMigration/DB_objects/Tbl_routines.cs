@@ -25,7 +25,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_routines - extraction - START - studio OWNERS";
             while (dataReader.Read())
             {
-                    pPostgres.Insert("insert into tbl_routines(routine_id, studios_id, name) " +
+                    pPostgres.Insert("insert into tbl_routines(id, studios_id, name) " +
                                  "values('" + dataReader["id"] + "','" + dataReader["studioid"] + "','" + dataReader["name"].ToString().Replace("'", "''") + "');");
                     if (dataReader["teacher"].ToString().Length > 0)
                     {
@@ -45,11 +45,11 @@ namespace DanceBreakFloorMigration.DB_objects
                 {
                     string name = word.Substring(0, Strings.InStr(1, word, " ") - 1);
                     string surname = word.Substring(Strings.InStr(1, word, " "));
-                    string personid = GetId("select person_id from tbl_person where fname like '" + name.Replace("'", "''") + "' and lname like '" + surname.Replace("'", "''") + "' LIMIT 1;", pPostgres);
-                    if (personid == null)
+                    string personid = GetId("select id from tbl_person where fname like '" + name.Replace("'", "''") + "' and lname like '" + surname.Replace("'", "''") + "' LIMIT 1;", pPostgres);
+                    if (personid == "null")
                     {
                         pPostgres.Insert("insert into tbl_person(fname, lname) values('" + name.Replace("'", "''") + "','" + surname.Replace("'", "''") + "')");
-                        personid = GetId("select max(person_id) from tbl_person;", pPostgres);
+                        personid = GetId("select max(id) from tbl_person;", pPostgres);
                     }
                     pPostgres.Insert("insert into tbl_routines_has_teacher(person_id, routine_id) values('" + personid + "','" + proutine_id + "')");
                 }
@@ -64,7 +64,11 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "DUMMY tbl_studios - extraction - START";
             while (dataReader.Read())
             {
-                    pPostgres.Insert("insert into tbl_studios(studios_id, name) values('" + dataReader[0] + "','DUMMY DANCE STUDIO')");
+                string Exists = GetId("select id from tbl_studios where id='"+ dataReader[0] + "'", pPostgres);
+                if (Exists=="null")
+                {
+                    pPostgres.Insert("insert into tbl_studios(id, name) values('" + dataReader[0] + "','DUMMY DANCE STUDIO')");
+                }
             }
             pPostgres.Message = "DUMMY tbl_studios - extraction - FINISH";
         }

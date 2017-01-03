@@ -97,7 +97,7 @@ namespace DanceBreakFloorMigration.DB_objects
         private string GetLevel(string pLevel, PostgreSQL_DB pPostgres)
         {
             NpgsqlDataReader query;
-            query = pPostgres.Select("select distinct level_id from tbl_level where name like '" + pLevel + "';");
+            query = pPostgres.Select("select distinct id from tbl_level where name like '" + pLevel + "';");
             string pom;
             while (query.Read())
             {

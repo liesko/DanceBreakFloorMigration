@@ -17,7 +17,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 string tourdateid = (dataReader["tourdateid"].ToString() == "")? "null": dataReader["tourdateid"].ToString();
                 string eventid = (dataReader["eventid"].ToString() == "") ? "null" : dataReader["eventid"].ToString();
                 pPostgres.Insert(
-                    "insert into tbl_store_products(store_products_id, tour_dates_id, events_id, product_subtypes_id, product, description, price, shipping, featured, timeadded, " +
+                    "insert into tbl_store_products(id, tour_dates_id, events_id, product_subtypes_id, product, description, price, shipping, featured, timeadded, " +
                     "instock, showonsite, onsale, sale_price, weight, trending, short_description, sort) " +
                     "values(" + dataReader["id"]+ "," + tourdateid + "," + eventid + "," + dataReader["subtypeid"] + ",'" + dataReader["product"].ToString().Replace("'","''") + "'," +
                     "'" + dataReader["description"].ToString().Replace("'", "''") +"','" + dataReader["price"] + "','" + dataReader["shipping"] + "'," +

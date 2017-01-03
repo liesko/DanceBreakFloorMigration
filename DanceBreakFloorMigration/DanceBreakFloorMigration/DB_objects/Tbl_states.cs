@@ -14,7 +14,7 @@ namespace DanceBreakFloorMigration.DB_objects
             while (dataReader.Read())
             {
                 countryid = (dataReader[3].ToString() == "") ? "null" : "'" + dataReader[3].ToString() + "'";
-                pPostgres.Insert("insert into tbl_states(state_id,name,abbr,country_id) values('" + dataReader[0] + "','" + dataReader[1].ToString().Replace("'", "''") + "','"
+                pPostgres.Insert("insert into tbl_states(id,name,abbr,country_id) values('" + dataReader[0] + "','" + dataReader[1].ToString().Replace("'", "''") + "','"
                     + dataReader[2] + "'," + countryid + ")");
             }
             pPostgres.Message = "tbl_states - extraction - FINISH";

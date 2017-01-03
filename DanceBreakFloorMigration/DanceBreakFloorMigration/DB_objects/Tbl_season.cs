@@ -14,7 +14,7 @@ namespace DanceBreakFloorMigration.DB_objects
             while (dataReader.Read())
             {
                 pom = (dataReader[2].ToString()=="")?"null": dataReader[2].ToString();
-                pPostgres.Insert("insert into tbl_season(season_id, start_year,end_year) values('" + dataReader[0] + "',"+ dataReader[1] + ","+ pom + ")");
+                pPostgres.Insert("insert into tbl_season(id, start_year,end_year) values('" + dataReader[0] + "',"+ dataReader[1] + ","+ pom + ")");
             }
             pPostgres.Message = "tbl_season - extraction - FINISH";
         }

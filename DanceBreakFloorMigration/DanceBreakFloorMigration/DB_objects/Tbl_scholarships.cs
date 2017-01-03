@@ -14,7 +14,7 @@ namespace DanceBreakFloorMigration.DB_objects
             while (dataReader.Read())
             {
                 pPostgres.Insert(
-                    "insert into tbl_scholarships(scholarships_id, active, report_order, isclass, name, events_id) " +
+                    "insert into tbl_scholarships(id, active, report_order, isclass, name, events_id) " +
                     "values('" + dataReader["id"] + "','" + CheckBool(dataReader["active"].ToString()) + "','" + dataReader["report_order"] + "'," +
                     "'" + CheckBool(dataReader["isclass"].ToString()) + "','" + dataReader["name"] + "','" + dataReader["eventid"] + "');");
             }

@@ -13,12 +13,12 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_user_stats - extraction - START";
             while (dataReader.Read())
             {
-                string time_signup=(dataReader["time_signup"].ToString()=="")? "null" : FromUnixTime(Convert.ToInt64(dataReader["time_signup"])).ToString().Replace(". ", ".");
-                string time_activate = (dataReader["time_activate"].ToString() == "")? "null" : FromUnixTime(Convert.ToInt64(dataReader["time_activate"])).ToString().Replace(". ", ".");
-                string time_last_login = (dataReader["time_last_login"].ToString() == "")? "null" : FromUnixTime(Convert.ToInt64(dataReader["time_last_login"])).ToString().Replace(". ", ".");
-                string time_disable = (dataReader["time_disable"].ToString() == "")? "null" : FromUnixTime(Convert.ToInt64(dataReader["time_disable"])).ToString().Replace(". ", ".");
+                string time_signup=(dataReader["time_signup"].ToString()=="")? "null" : "'"+FromUnixTime(Convert.ToInt64(dataReader["time_signup"])).ToString().Replace(". ", ".")+"'";
+                string time_activate = (dataReader["time_activate"].ToString() == "")? "null" : "'" + FromUnixTime(Convert.ToInt64(dataReader["time_activate"])).ToString().Replace(". ", ".") + "'";
+                string time_last_login = (dataReader["time_last_login"].ToString() == "")? "null" : "'" + FromUnixTime(Convert.ToInt64(dataReader["time_last_login"])).ToString().Replace(". ", ".") + "'";
+                string time_disable = (dataReader["time_disable"].ToString() == "")? "null" : "'" + FromUnixTime(Convert.ToInt64(dataReader["time_disable"])).ToString().Replace(". ", ".") + "'";
 
-                pPostgres.Insert("insert into tbl_user_stats(user_stats_id, user_id, activation_code, time_signup, time_activate, time_last_login, time_disable, login_count, ips, dontshow1) " +
+                pPostgres.Insert("insert into tbl_user_stats(id, user_id, activation_code, time_signup, time_activate, time_last_login, time_disable, login_count, ips, dontshow1) " +
                                  "values('"+dataReader["id"]+"','"+dataReader["userid"] +"','"+dataReader["activation_code"] +"'," +
                                  "" + time_signup + "," + time_activate + "," +
                                  "" + time_last_login + "," + time_disable + "," +

@@ -14,25 +14,12 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_online_critiques_judges - extraction - START";
             while (dataReader.Read())
             {
-                try
-                {
                     pPostgres.Insert(
-                        "insert into tbl_online_critiques_judges(online_critiques_judges_id, tour_dates_id, startnumber, startnumberhasa, endnumber, endnumberhasa, judge, compgroup) " +
+                        "insert into tbl_online_critiques_judges(id, tour_dates_id, startnumber, startnumberhasa, endnumber, endnumberhasa, judge, compgroup) " +
                         "values('" + dataReader["id"] + "','" + dataReader["tourdateid"] + "','" + dataReader["startnumber"] + "'," +
                         "'" + CheckBool(dataReader["startnumberhasa"].ToString()) + "','" + dataReader["endnumber"] + "','" + CheckBool(dataReader["endnumberhasa"].ToString()) + "" +
                         "','"+Get_json_judge(dataReader["judge1"].ToString(), dataReader["judge2"].ToString(), dataReader["judge3"].ToString(), dataReader["judge4"].ToString())  +"'," +
                         "'"+dataReader["compgroup"] +"');");
-                }
-                catch (Exception)
-                {
-
-                    pPostgres.Message = "INVALID INSERT: insert into tbl_online_critiques_judges(online_critiques_judges_id, tour_dates_id, startnumber, startnumberhasa, endnumber, endnumberhasa, judge, compgroup) " +
-                        "values('" + dataReader["id"] + "','" + dataReader["tourdateid"] + "','" + dataReader["startnumber"] + "'," +
-                        "'" + CheckBool(dataReader["startnumberhasa"].ToString()) + "','" + dataReader["endnumber"] + "','" + CheckBool(dataReader["endnumberhasa"].ToString()) + "" +
-                        "','" + Get_json_judge(dataReader["judge1"].ToString(), dataReader["judge2"].ToString(), dataReader["judge3"].ToString(), dataReader["judge4"].ToString()) + "'," +
-                        "'" + dataReader["compgroup"] + "');";
-                }
-
             }
             pPostgres.Message = "tbl_online_critiques_judges - extraction - FINISH";
         }

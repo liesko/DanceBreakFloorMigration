@@ -14,8 +14,8 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_promo_codes - extraction - START";
             while (dataReader.Read())
             {
-                string codeTypeId = GetId("select promo_codes_type_id from tbl_promo_codes_type where name like '" + dataReader["type"]+"'", pPostgres);
-                pPostgres.Insert("insert into tbl_promo_codes(promo_codes_id, promo_codes_type_id, name, description, value, charges, uses, active, noncommuteronly, onceperreg, intensiveid) " +
+                string codeTypeId = GetId("select id from tbl_promo_codes_type where name like '" + dataReader["type"]+"'", pPostgres);
+                pPostgres.Insert("insert into tbl_promo_codes(id, promo_codes_type_id, name, description, value, charges, uses, active, noncommuteronly, onceperreg, intensiveid) " +
                                  "values("+dataReader["id"]+","+ codeTypeId + ",'"+dataReader["name"]+ "','" + dataReader["description"] + "','" + dataReader["value"] + "','" +
                                  "" + dataReader["charges"] + "','" + dataReader["uses"] + "','" +CheckBool(dataReader["active"].ToString()) + "','" +CheckBool(dataReader["noncommuteronly"].ToString()) + "'," +
                                  "'" +CheckBool(dataReader["onceperreg"].ToString()) + "','" + dataReader["intensiveid"] + "');");

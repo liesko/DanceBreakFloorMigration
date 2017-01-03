@@ -12,7 +12,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_store_product_types (from store_product_types)- extraction - START";
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_store_product_types(product_types_id, name) values('" + dataReader[0] + "','" + dataReader[1] + "')");
+                pPostgres.Insert("insert into tbl_store_product_types(id, name) values('" + dataReader[0] + "','" + dataReader[1] + "')");
             }
             pPostgres.Message = "tbl_store_product_types - extraction - FINISH";
         }

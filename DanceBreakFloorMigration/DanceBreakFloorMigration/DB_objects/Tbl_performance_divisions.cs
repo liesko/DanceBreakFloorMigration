@@ -12,7 +12,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_performance_divisions - extraction - START";
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_performance_divisions(performance_divisions_id, name) values(" + dataReader[0] + ",'" + dataReader[1] + "')");
+                pPostgres.Insert("insert into tbl_performance_divisions(id, name) values(" + dataReader[0] + ",'" + dataReader[1] + "')");
             }
             pPostgres.Message = "tbl_performance_divisions - extraction - FINISH";
         }

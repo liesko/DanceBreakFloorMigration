@@ -15,7 +15,7 @@ namespace DanceBreakFloorMigration.DB_objects
             int counter = 0;
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_songs(songs_id, song_name, artist_name) " +
+                pPostgres.Insert("insert into tbl_songs(id, song_name, artist_name) " +
                                  "values(" + ++counter + ",'" + WebUtility.UrlDecode(dataReader[0].ToString()).Replace("'","''") + "','"+ WebUtility.UrlDecode(dataReader[1].ToString()).Replace("'", "''") + "')");
             }
             pPostgres.Message = "tbl_songs - extraction - FINISH";

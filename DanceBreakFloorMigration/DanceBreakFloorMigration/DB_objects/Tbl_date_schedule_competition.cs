@@ -13,20 +13,9 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_date_schedule_competition - extraction - START";
             while (dataReader.Read())
             {
-                try
-                {
-                    pPostgres.Insert("insert into tbl_date_schedule_competition(schedule_competition_id, tour_dates_id,last_update,dates,awards) " +
+                    pPostgres.Insert("insert into tbl_date_schedule_competition(id, tour_dates_id,last_update,dates,awards) " +
                                  "values('" + dataReader["id"] + "'," +
                                  "'" + dataReader["tourdateid"] + "','" + dataReader["last_update"] + "','" + dataReader["dates"] + "','" + dataReader["awards"] + "')");
-                }
-                catch (Exception)
-                {
-
-                    pPostgres.Message = "INVALID INSERT: insert into tbl_date_schedule_competition(schedule_competition_id, tour_dates_id,last_update,dates,awards) " +
-                                 "values('" + dataReader["id"] + "'," +
-                                 "'" + dataReader["tourdateid"] + "','" + dataReader["last_update"].ToString().Replace("'","''") + "','" + dataReader["dates"].ToString().Replace("'", "''") + "','" + dataReader["awards"].ToString().Replace("'", "''") + "')";
-                }
-                
             }
             pPostgres.Message = "tbl_date_schedule_competition - extraction - FINISH";
         }

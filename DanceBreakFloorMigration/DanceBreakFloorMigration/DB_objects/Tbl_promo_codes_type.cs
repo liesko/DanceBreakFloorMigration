@@ -13,7 +13,7 @@ namespace DanceBreakFloorMigration.DB_objects
             int counter = 0;
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_promo_codes_type(promo_codes_type_id,name) " +
+                pPostgres.Insert("insert into tbl_promo_codes_type(id,name) " +
                                  "values('" + ++counter + "','" + dataReader[0]+"')");
             }
             pPostgres.Message = "tbl_promo_codes_type - extraction - FINISH";

@@ -12,7 +12,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_countries (from tbl_countries)- extraction - START";
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_countries(country_id, name, abbr) values('" + dataReader[0] + "','" + dataReader[1].ToString().Replace("'","''") + "','" 
+                pPostgres.Insert("insert into tbl_countries(id, name, abbr) values('" + dataReader[0] + "','" + dataReader[1].ToString().Replace("'","''") + "','" 
                     + dataReader[2] + "')"); // PROBLEM WITH NULL????
             }
             pPostgres.Message = "tbl_countries - extraction - FINISH";

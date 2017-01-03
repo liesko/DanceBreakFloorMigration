@@ -13,20 +13,9 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_online_critiques_access - extraction - START";
             while (dataReader.Read())
             {
-                try
-                {
-                    pPostgres.Insert("insert into tbl_online_critiques_access(online_critiques_access_id, tour_dates_id, studios_id, accesscode) " +
+                    pPostgres.Insert("insert into tbl_online_critiques_access(id, tour_dates_id, studios_id, accesscode) " +
                                  "values('" + dataReader["id"] + "'," +
                                  "'" + dataReader["tourdateid"] + "','" + dataReader["studioid"] + "','" + dataReader["accesscode"] + "')");
-                }
-                catch (Exception)
-                {
-
-                    pPostgres.Message = "INVALID INSERT: insert into tbl_online_critiques_access(online_critiques_access_id, tour_dates_id, studios_id, accesscode) " +
-                                 "values('" + dataReader["id"] + "'," +
-                                 "'" + dataReader["tourdateid"] + "','" + dataReader["studioid"] + "','" + dataReader["accesscode"] + "')";
-                }
-
             }
             pPostgres.Message = "tbl_online_critiques_access - extraction - FINISH";
         }

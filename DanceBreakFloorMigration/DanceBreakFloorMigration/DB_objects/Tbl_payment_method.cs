@@ -13,13 +13,13 @@ namespace DanceBreakFloorMigration.DB_objects
             int counter = 0;
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_payment_method(payment_method_id,name) values('"+ ++counter +"', '" + dataReader[0] + "')");
+                pPostgres.Insert("insert into tbl_payment_method(id,name) values('"+ ++counter +"', '" + dataReader[0] + "')");
             }
             pPostgres.Message = "tbl_payment_method - extraction - FINISH";
             pPostgres.Update("update tbl_payment_method set name ='Credit cards' where name like 'credit_card'");
             pPostgres.Update("update tbl_payment_method set name ='Check' where name like 'check'");
             pPostgres.Update("update tbl_payment_method set name ='No Balance' where name like 'nobal'");
-            pPostgres.Insert("insert into tbl_payment_method(payment_method_id,name) values('"+ ++counter + "','Bank transfer')");
+            pPostgres.Insert("insert into tbl_payment_method(id,name) values('"+ ++counter + "','Bank transfer')");
         }
     }
 }

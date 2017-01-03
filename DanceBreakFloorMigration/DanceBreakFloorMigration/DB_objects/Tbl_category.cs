@@ -18,7 +18,7 @@ namespace DanceBreakFloorMigration.DB_objects
             int counter = 0;
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_category(category_id, name) values(" + ++counter + ",'" + dataReader[0] + "')");
+                pPostgres.Insert("insert into tbl_category(id, name) values(" + ++counter + ",'" + dataReader[0] + "')");
             }
             pPostgres.Message = "tbl_category - extraction - FINISH";
         }

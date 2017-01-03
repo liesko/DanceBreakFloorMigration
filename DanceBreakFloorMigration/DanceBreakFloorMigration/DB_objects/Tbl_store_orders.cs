@@ -19,7 +19,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 if (dataReader["userid"].ToString()=="0")
                 {
                     string buyerid=UnregisteredBuyerManage(dataReader["fname"].ToString(), dataReader["lname"].ToString(), dataReader["email"].ToString(), pPostgres);
-                    pPostgres.Insert("insert into tbl_store_orders(store_orders_id, user_id, unregistered_buyer_id, order_hash, submitted, shipped, statsuser, " +
+                    pPostgres.Insert("insert into tbl_store_orders(id, user_id, unregistered_buyer_id, order_hash, submitted, shipped, statsuser, " +
                                      "digitalonly, fees_paid, tracking, transactionid, label) " +
                                      "values('"+dataReader["id"]+"',null,'"+ buyerid + "','"+dataReader["order_hash"]+ "','" + FromUnixTime(Convert.ToInt64(dataReader["submitted"])).ToString().Replace(". ", ".") + "'" +
                                      ",'" + CheckBool(dataReader["shipped"].ToString()) + "','" + dataReader["statsuser"] + "','" + CheckBool(dataReader["digitalonly"].ToString()) + "'," +
@@ -28,7 +28,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 }
                 else
                 {
-                    pPostgres.Insert("insert into tbl_store_orders(store_orders_id, user_id, unregistered_buyer_id, order_hash, submitted, shipped, statsuser, " +
+                    pPostgres.Insert("insert into tbl_store_orders(id, user_id, unregistered_buyer_id, order_hash, submitted, shipped, statsuser, " +
                                      "digitalonly, fees_paid, tracking, transactionid, label) " +
                                      "values('" + dataReader["id"] + "','" + dataReader["userid"] + "',null,'" + dataReader["order_hash"] + "','" + FromUnixTime(Convert.ToInt64(dataReader["submitted"])).ToString().Replace(". ", ".") + "'" +
                                      ",'" + CheckBool(dataReader["shipped"].ToString()) + "','" + dataReader["statsuser"] + "','" + CheckBool(dataReader["digitalonly"].ToString()) + "'," +
@@ -49,11 +49,11 @@ namespace DanceBreakFloorMigration.DB_objects
 
         private string UnregisteredBuyerManage(string pname, string lname, string pemail, PostgreSQL_DB pPostgres)
         {
-            string buyerId = GetId("select unregistered_buyer_id from tbl_unregistered_buyer where fname like '"+pname+"' and lname like '"+lname+"' and email like '"+pemail+"';", pPostgres);
+            string buyerId = GetId("select id from tbl_unregistered_buyer where fname like '"+pname+"' and lname like '"+lname+"' and email like '"+pemail+"';", pPostgres);
             if (buyerId=="null")
             {
                 pPostgres.Insert("insert into tbl_unregistered_buyer(fname, lname, email) values('"+pname+"','"+lname+"','"+pemail+"')");
-                buyerId = GetId("select unregistered_buyer_id from tbl_unregistered_buyer where fname like '" + pname + "' and lname like '" + lname + "' and email like '" + pemail + "';", pPostgres);
+                buyerId = GetId("select id from tbl_unregistered_buyer where fname like '" + pname + "' and lname like '" + lname + "' and email like '" + pemail + "';", pPostgres);
             }
             return buyerId;
         }

@@ -16,7 +16,7 @@ namespace DanceBreakFloorMigration.Classes
             {
                 pom1 = (dataReader[2].ToString() == "") ? "null" : "'"+dataReader[2].ToString()+"'";
                 pom2 = (dataReader[6].ToString() == "") ? "null" : "'"+dataReader[6].ToString() + "'";
-                pPostgres.Insert("insert into tbl_events(events_id, name, link, event_types_id, web_home_webcast_banner, facebook_link, " +
+                pPostgres.Insert("insert into tbl_events(id, name, link, event_types_id, web_home_webcast_banner, facebook_link, " +
                                  "ageasofyear,intopmenu, currentseason, " +
                                  "workshoponly) values('"+ dataReader[0] + "','"+ dataReader[1].ToString().Replace("'", "''") + "',"+pom1+",'"+ dataReader[3] + "','"+ CheckBool(dataReader[4].ToString()) + "',"+pom2+"" +
                                  ",'"+ dataReader[7] + "','"+ CheckBool(dataReader[8].ToString()) + "','"+ dataReader[5] + "','"+ CheckBool(dataReader[9].ToString()) + "');");

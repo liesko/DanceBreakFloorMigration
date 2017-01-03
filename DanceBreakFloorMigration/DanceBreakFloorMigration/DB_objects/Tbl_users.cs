@@ -22,10 +22,10 @@ namespace DanceBreakFloorMigration.DB_objects
                 {
                     string person_type_id = (dataReader["typeid"].ToString() == "") ? "null" : dataReader["typeid"].ToString();
                     pPostgres.Insert("insert into tbl_person(person_types_id, fname, lname) values(" + person_type_id + ",'" + dataReader["name"].ToString().Replace("'", "''") + "','" + dataReader["surname"].ToString().Replace("'", "''") + "');");
-                    string pom = GetId("select max(person_id) from tbl_person;", pPostgres);
+                    string pom = GetId("select max(id) from tbl_person;", pPostgres);
 
                     // tbl user
-                    pPostgres.Insert("insert into tbl_user(user_id, email, password, active, person_id) " +
+                    pPostgres.Insert("insert into tbl_user(id, email, password, active, person_id) " +
                                     "values('" + dataReader["id"] + "','" + dataReader["email"] + "','" + dataReader["password"].ToString().Replace("'", "''") + "','" + CheckBool(dataReader["active"].ToString()) + "','" + pom + "');");
                 }
             }

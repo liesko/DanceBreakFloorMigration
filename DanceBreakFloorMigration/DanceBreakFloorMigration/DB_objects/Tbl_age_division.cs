@@ -17,27 +17,27 @@ namespace DanceBreakFloorMigration.DB_objects
             {
                 pom = GetId(dataReader[3].ToString(), pPostgres);
                
-                 pPostgres.Insert("insert into tbl_age_divisions(age_divisions_id, range, minimum_age,playlist_workshop_levels_id) " +
+                 pPostgres.Insert("insert into tbl_age_divisions(id, range, minimum_age,playlist_workshop_levels_id) " +
                                  "values('" + dataReader[0] + "','" + dataReader[1] + "','"+ dataReader[2] + "','"+ pom + "');");
             }
             pPostgres.Message = "tbl_age_divisions - extraction - FINISH";
-            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '1';");
-            pPostgres.Update("update tbl_age_divisions set range='1' where age_divisions_id = '2';");
-            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '3';");
-            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '4';");
-            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '5';");
-            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '6';");
-            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '7';");
-            pPostgres.Update("update tbl_age_divisions set range='100' where age_divisions_id = '8';");
-            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '10';");
-            pPostgres.Update("update tbl_age_divisions set range='2' where age_divisions_id = '11';");
-            pPostgres.Update("update tbl_age_divisions set range='5' where age_divisions_id = '12';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where id = '1';");
+            pPostgres.Update("update tbl_age_divisions set range='1' where id = '2';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where id = '3';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where id = '4';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where id = '5';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where id = '6';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where id = '7';");
+            pPostgres.Update("update tbl_age_divisions set range='100' where id = '8';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where id = '10';");
+            pPostgres.Update("update tbl_age_divisions set range='2' where id = '11';");
+            pPostgres.Update("update tbl_age_divisions set range='5' where id = '12';");
         }
 
         private string GetId(string pParam, PostgreSQL_DB pPostgres)
         {
             NpgsqlDataReader query;
-            query=pPostgres.Select("select distinct playlist_workshop_levels_id " +
+            query=pPostgres.Select("select distinct id " +
                                    "from tbl_playlist_workshop_levels where name like '"+ pParam + "';");
             string pom;
             while (query.Read())

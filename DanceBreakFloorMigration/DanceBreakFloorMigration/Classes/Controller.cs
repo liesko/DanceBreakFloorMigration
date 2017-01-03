@@ -29,7 +29,6 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-
             /*
             DeleteTable("tbl_date_routines");
             DeleteTable("tbl_perf_div_type");
@@ -102,10 +101,10 @@ namespace DanceBreakFloorMigration.Classes
             /*
             Tbl_city tab0 = new Tbl_city();
             tab0.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_score_colors tab = new Tbl_score_colors();
             tab.Remigration(Mybreak_db, Pgdbbreakthefloor);
-
+            
             Tbl_gender tab1 = new Tbl_gender();
             tab1.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
@@ -114,98 +113,96 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_store_size tab3 = new Tbl_store_size();
             tab3.Remigration(Mybreak_db, Pgdbbreakthefloor);
-
+            
             Tbl_store_product_type tab4 = new Tbl_store_product_type();
             tab4.Remigration(Mybreak_db, Pgdbbreakthefloor);
-
+            
             Tbl_countries tab5 = new Tbl_countries();
             tab5.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_states tab6 = new Tbl_states();
             tab6.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_contact_type tab7 = new Tbl_contact_type();
             tab7.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_event_types tab8 = new Tbl_event_types();
             tab8.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_workshop_room tab9 = new Tbl_workshop_room();
             tab9.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_payment_method tab10 = new Tbl_payment_method();
             tab10.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_season tab11 = new Tbl_season();
             tab11.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_promo_codes_type tab12 = new Tbl_promo_codes_type();
             tab12.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_events tab13 = new Tbl_events();
             tab13.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_playlist_workshop_levels tab14=new Tbl_playlist_workshop_levels();
             tab14.Remigration(DanceteaManager,Pgdbbreakthefloor);
-
+            
             Tbl_age_division tab15 = new Tbl_age_division();
             tab15.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_category tab16 = new Tbl_category();
             tab16.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_performance_divisions tab17 = new Tbl_performance_divisions();
             tab17.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_songs tab18 = new Tbl_songs();
             tab18.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_score tab19 = new Tbl_score();
             tab19.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_time_type tab20 = new Tbl_time_type();
             tab20.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_routine_types tab21 = new Tbl_routine_types();
             tab21.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_soty_type tab22 = new Tbl_soty_type();
             tab22.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_season_events tab23 = new Tbl_season_events();
             tab23.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_fee_types tab24 = new Tbl_fee_types();
             tab24.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
-
             Tbl_tour_dates tab25 = new Tbl_tour_dates();
             tab25.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
-            
             Tbl_level tab27 = new Tbl_level();
             tab27.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tour_dates_workshop_room tab26 = new Tour_dates_workshop_room();
             tab26.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_studios tab28 = new Tbl_studios();
             tab28.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_users tab29 = new Tbl_users();
             tab29.Remigration(Mybreak_db, Pgdbbreakthefloor);
             
             Tbl_studio_has_person tab30 = new Tbl_studio_has_person();
             tab30.Remigration(Mybreak_db, Pgdbbreakthefloor);
             
-            Tbl_dancer tab31=new Tbl_dancer();
-            tab31.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            
-            Tbl_dancer_II tab32 = new Tbl_dancer_II();
-            tab32.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            
-            Tbl_user_has_dancer tab33 = new Tbl_user_has_dancer();
-            tab33.Remigration(Mybreak_db, Pgdbbreakthefloor);
+              Tbl_dancer tab31=new Tbl_dancer();
+              tab31.Remigration(DanceteaManager, Pgdbbreakthefloor);
+              
+              Tbl_dancer_II tab32 = new Tbl_dancer_II();
+              tab32.Remigration(DanceteaManager, Pgdbbreakthefloor);
+              
+              Tbl_user_has_dancer tab33 = new Tbl_user_has_dancer();
+              tab33.Remigration(Mybreak_db, Pgdbbreakthefloor);
             
             Tbl_date_schedule_competition tab34 = new Tbl_date_schedule_competition();
             tab34.Remigration(DanceteaManager, Pgdbbreakthefloor);
@@ -215,7 +212,7 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_scholarships tab36 = new Tbl_scholarships();
             tab36.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_online_critiques_judges tab37 = new Tbl_online_critiques_judges();
             tab37.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
@@ -224,25 +221,25 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_date_routine_dancers tab39 = new Tbl_date_routine_dancers();
             tab39.Remigration(DanceteaManager, Pgdbbreakthefloor);
-
+            
             Tbl_faculty tab40 = new Tbl_faculty();
             tab40.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
             Tbl_store_product_subtypes tab41 = new Tbl_store_product_subtypes();
             tab41.Remigration(Mybreak_db, Pgdbbreakthefloor);
-
+            
             Tbl_store_products tab42 = new Tbl_store_products();
             tab42.Remigration(Mybreak_db, Pgdbbreakthefloor);
             
             Tbl_store_products_has_size tab43 = new Tbl_store_products_has_size();
-            tab43.Remigration(Mybreak_db, Pgdbbreakthefloor);            
-
+            tab43.Remigration(Mybreak_db, Pgdbbreakthefloor);
+            
             Tbl_store_product_colors tab44 = new Tbl_store_product_colors();
             tab44.Remigration(Mybreak_db, Pgdbbreakthefloor);
-
+            
             Tbl_user_stats tab45 = new Tbl_user_stats();
             tab45.Remigration(Mybreak_db, Pgdbbreakthefloor);
-
+            
             Tbl_store_orders tab46 = new Tbl_store_orders();
             tab46.Remigration(Mybreak_db, Pgdbbreakthefloor);
             

@@ -16,7 +16,7 @@ namespace DanceBreakFloorMigration.DB_objects
             {
                 string award_typename= string.IsNullOrWhiteSpace(dataReader["award_typename"].ToString()) ? "null" : "'"+dataReader["award_typename"].ToString().Replace("'", "''") + "'";
                 string fee = string.IsNullOrWhiteSpace(dataReader["fee"].ToString()) ? "null" : dataReader["fee"].ToString();
-                pPostgres.Insert("insert into tbl_date_routines(date_routines_id, tour_dates_id, routine_id, studios_id, age_divisions_id, category_id, " +
+                pPostgres.Insert("insert into tbl_date_routines(id, tour_dates_id, routine_id, studios_id, age_divisions_id, category_id, " +
                                  "performance_divisions_id, perf_div_type_id, routine_types_id, fee, canceled, custom_dancer_count, duration, " +
                                  "custom_fee, place_hsa, place_hsp, award_typename, uploaded_duration, extra_time, uploaded, prelims, vips, finals) " +
                                  "values("+dataReader["id"] + "," + dataReader["tourdateid"] + "," + dataReader["routineid"] + "," + dataReader["studioid"] + "," + dataReader["agedivisionid"] + "," +
