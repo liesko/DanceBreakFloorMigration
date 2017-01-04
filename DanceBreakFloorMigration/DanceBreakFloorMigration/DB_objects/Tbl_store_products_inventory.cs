@@ -1,0 +1,23 @@
+﻿using System;
+using DanceBreakFloorMigration.Classes;
+using DanceBreakFloorMigration.Interfaces;
+using MySql.Data.MySqlClient;
+
+namespace DanceBreakFloorMigration.DB_objects
+{
+    public class Tbl_store_products_inventory : BaseClass, IMigration
+    {
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        {
+            MySqlDataReader dataReader = pMysql.Select("select * from store_products_inventory;");
+            pMysql.Message = "tbl_store_products_inventory - extraction - START";
+            while (dataReader.Read())
+            {
+                pPostgres.Insert("insert into tbl_store_products_inventory(id, store_products_id, store_sizes_id, qty_warehouse, qty_onsite, store_colors_id) " +
+                                 "values('"+dataReader["id"]+ "','" + dataReader["productid"] + "','" + dataReader["sizeid"] + "','" + dataReader["qty_warehouse"] + "'," +
+                                 "'" + dataReader["qty_onsite"] + "','" + dataReader["colorid"] + "')");
+            }
+            pPostgres.Message = "tbl_store_products_inventory - extraction - FINISH";
+        }
+    }
+}

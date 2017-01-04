@@ -62,8 +62,10 @@
     <Compile Include="Classes\MySQL_DB.cs" />
     <Compile Include="Classes\PostgreSQL_DB.cs" />
     <Compile Include="DB_objects\Tbl_city.cs" />
+    <Compile Include="DB_objects\Tbl_competition_cash_awards.cs" />
     <Compile Include="DB_objects\Tbl_dancer.cs" />
     <Compile Include="DB_objects\Tbl_dancer_II.cs" />
+    <Compile Include="DB_objects\Tbl_date_mybtf_exceptions.cs" />
     <Compile Include="DB_objects\Tbl_date_routines.cs" />
     <Compile Include="DB_objects\Tbl_date_routine_dancers.cs" />
     <Compile Include="DB_objects\Tbl_date_schedule_competition.cs" />
@@ -76,8 +78,10 @@
     <Compile Include="DB_objects\Tbl_event_reg_types.cs" />
     <Compile Include="DB_objects\Tbl_event_types.cs" />
     <Compile Include="DB_objects\Tbl_faculty.cs" />
+    <Compile Include="DB_objects\Tbl_faculty_playlists.cs" />
     <Compile Include="DB_objects\Tbl_fee_types.cs" />
     <Compile Include="DB_objects\Tbl_gender.cs" />
+    <Compile Include="DB_objects\Tbl_jobs.cs" />
     <Compile Include="DB_objects\Tbl_level.cs" />
     <Compile Include="DB_objects\Tbl_online_critiques_access.cs" />
     <Compile Include="DB_objects\Tbl_online_critiques_judges.cs" />
@@ -98,10 +102,15 @@
     <Compile Include="DB_objects\Tbl_season_events.cs" />
     <Compile Include="DB_objects\Tbl_songs.cs" />
     <Compile Include="DB_objects\Tbl_soty_type.cs" />
+    <Compile Include="DB_objects\Tbl_staff.cs" />
+    <Compile Include="DB_objects\Tbl_staff_types.cs" />
     <Compile Include="DB_objects\Tbl_states.cs" />
+    <Compile Include="DB_objects\Tbl_store_giftcards.cs" />
+    <Compile Include="DB_objects\Tbl_store_hearts.cs" />
     <Compile Include="DB_objects\Tbl_store_orders.cs" />
     <Compile Include="DB_objects\Tbl_store_products.cs" />
     <Compile Include="DB_objects\Tbl_store_products_has_size.cs" />
+    <Compile Include="DB_objects\Tbl_store_products_inventory.cs" />
     <Compile Include="DB_objects\tbl_store_product_colors.cs" />
     <Compile Include="DB_objects\Tbl_store_product_subtypes.cs" />
     <Compile Include="DB_objects\Tbl_store_product_type.cs" />
@@ -112,6 +121,7 @@
     <Compile Include="DB_objects\Tbl_tour_dates.cs" />
     <Compile Include="DB_objects\Tbl_users.cs" />
     <Compile Include="DB_objects\Tbl_user_has_dancer.cs" />
+    <Compile Include="DB_objects\Tbl_user_hearts.cs" />
     <Compile Include="DB_objects\Tbl_user_stats.cs" />
     <Compile Include="DB_objects\Tbl_workshop_room.cs" />
     <Compile Include="DB_objects\Tour_dates_workshop_room.cs" />
