@@ -61,14 +61,18 @@
     <Compile Include="Classes\HandlerArgs.cs" />
     <Compile Include="Classes\MySQL_DB.cs" />
     <Compile Include="Classes\PostgreSQL_DB.cs" />
+    <Compile Include="DB_objects\Tbl_awards_type.cs" />
     <Compile Include="DB_objects\Tbl_city.cs" />
     <Compile Include="DB_objects\Tbl_competition_cash_awards.cs" />
     <Compile Include="DB_objects\Tbl_dancer.cs" />
     <Compile Include="DB_objects\Tbl_dancer_II.cs" />
     <Compile Include="DB_objects\Tbl_date_mybtf_exceptions.cs" />
+    <Compile Include="DB_objects\Tbl_date_playlists.cs" />
     <Compile Include="DB_objects\Tbl_date_routines.cs" />
     <Compile Include="DB_objects\Tbl_date_routine_dancers.cs" />
     <Compile Include="DB_objects\Tbl_date_schedule_competition.cs" />
+    <Compile Include="DB_objects\Tbl_date_special_awards.cs" />
+    <Compile Include="DB_objects\Tbl_date_studio_awards.cs" />
     <Compile Include="DB_objects\Tbl_events.cs" />
     <Compile Include="DB_objects\Tbl_age_division.cs" />
     <Compile Include="DB_objects\Tbl_category.cs" />
@@ -102,6 +106,7 @@
     <Compile Include="DB_objects\Tbl_season_events.cs" />
     <Compile Include="DB_objects\Tbl_songs.cs" />
     <Compile Include="DB_objects\Tbl_soty_type.cs" />
+    <Compile Include="DB_objects\Tbl_special_awards.cs" />
     <Compile Include="DB_objects\Tbl_staff.cs" />
     <Compile Include="DB_objects\Tbl_staff_types.cs" />
     <Compile Include="DB_objects\Tbl_states.cs" />
@@ -116,6 +121,7 @@
     <Compile Include="DB_objects\Tbl_store_product_type.cs" />
     <Compile Include="DB_objects\Tbl_store_size.cs" />
     <Compile Include="DB_objects\Tbl_studios.cs" />
+    <Compile Include="DB_objects\Tbl_studio_awards.cs" />
     <Compile Include="DB_objects\Tbl_studio_has_person.cs" />
     <Compile Include="DB_objects\Tbl_time_type.cs" />
     <Compile Include="DB_objects\Tbl_tour_dates.cs" />
@@ -123,6 +129,7 @@
     <Compile Include="DB_objects\Tbl_user_has_dancer.cs" />
     <Compile Include="DB_objects\Tbl_user_hearts.cs" />
     <Compile Include="DB_objects\Tbl_user_stats.cs" />
+    <Compile Include="DB_objects\Tbl_workshop_levels.cs" />
     <Compile Include="DB_objects\Tbl_workshop_room.cs" />
     <Compile Include="DB_objects\Tour_dates_workshop_room.cs" />
     <Compile Include="Form1.cs">

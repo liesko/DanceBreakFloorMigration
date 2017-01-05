@@ -29,9 +29,15 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
-            // LATER  DeleteTable("Tbl_faculty_playlists");
-
+            DeleteTable("Tbl_date_studio_awards");
             /*
+            DeleteTable("Tbl_date_special_awards");
+            DeleteTable("Tbl_special_awards");
+            DeleteTable("Tbl_studio_awards");
+            DeleteTable("Tbl_awards_type");
+            DeleteTable("Tbl_workshop_levels");
+            DeleteTable("Tbl_faculty_playlists");
+            DeleteTable("Tbl_date_playlists");
             DeleteTable("tbl_date_mybtf_exceptions");
             DeleteTable("Tbl_competition_cash_awards");
             DeleteTable("Tbl_staff");
@@ -298,10 +304,30 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_date_mybtf_exceptions tab61 = new Tbl_date_mybtf_exceptions();
             tab61.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_date_playlists tab62 = new Tbl_date_playlists();
+            tab62.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_faculty_playlists tab63 = new Tbl_faculty_playlists();
+            tab63.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_workshop_levels tab64 = new Tbl_workshop_levels();
+            tab64.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_awards_type tab65 = new Tbl_awards_type();
+            tab65.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_studio_awards tab66 = new Tbl_studio_awards();
+            tab66.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_special_awards tab67 = new Tbl_special_awards();
+            tab67.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_date_special_awards tab68 = new Tbl_date_special_awards();
+            tab68.Remigration(DanceteaManager, Pgdbbreakthefloor);
             */
-            // LATER...
-            //   Tbl_faculty_playlists tab61 = new Tbl_faculty_playlists();
-            //   tab61.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            Tbl_date_studio_awards tab69 = new Tbl_date_studio_awards();
+            tab69.Remigration(DanceteaManager, Pgdbbreakthefloor);
         }
         private void DeleteTable(string pTableName)
         {
