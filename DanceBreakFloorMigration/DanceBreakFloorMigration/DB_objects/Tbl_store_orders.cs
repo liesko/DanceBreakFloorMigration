@@ -63,9 +63,11 @@ namespace DanceBreakFloorMigration.DB_objects
                 pPostgres.Insert("insert into tbl_person(address_id, gender_id, fname, lname, birthdate, person_types_id) " +
                                  "values(null,null,'"+pname+"','"+lname+"',null, '"+ personType + "') ");
                 string Max_person_id = GetId("select max(id) from tbl_person", pPostgres);
+
                 int Max_user_id = Convert.ToInt32(GetId("select max(id) from tbl_user", pPostgres));
                 pPostgres.Insert("insert into tbl_user(id, email, password, active, person_id, unregistered) " +
                                  "values('"+ ++Max_user_id + "','"+pemail+"',null,null,'"+Max_person_id+"','1')");
+
                 buyerId = Max_user_id.ToString();
             }
             return buyerId;

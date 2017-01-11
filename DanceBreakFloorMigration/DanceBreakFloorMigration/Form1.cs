@@ -20,8 +20,8 @@ namespace DanceBreakFloorMigration
         public Form1()
         {
             MyEvent += MyEventWork;
-            ControlletInstance = new Controller(this);
             InitializeComponent();
+            ControlletInstance = new Controller(this);
 
             _backgroundWorker.DoWork += _backgroundWorker_DoWork;
             _backgroundWorker.RunWorkerCompleted += _backgroundWorker_RunWorkerCompleted;
@@ -59,6 +59,11 @@ namespace DanceBreakFloorMigration
                 progressBar.Enabled = true;
                 _backgroundWorker.RunWorkerAsync();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

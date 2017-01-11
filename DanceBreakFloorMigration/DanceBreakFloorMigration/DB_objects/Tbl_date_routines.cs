@@ -1,4 +1,5 @@
-﻿using DanceBreakFloorMigration.Classes;
+﻿using System;
+using DanceBreakFloorMigration.Classes;
 using DanceBreakFloorMigration.Interfaces;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json.Linq;
@@ -41,65 +42,111 @@ namespace DanceBreakFloorMigration.DB_objects
 
         private string Get_json_final(string pfinals, string pfinals_score1, string pfinals_score2, string pfinals_score3, string pfinals_score4, string pfinals_score5, string pfinals_score6, string pfinals_awardid, string pfinals_total_score, string pfinals_dropped_score, string pfinals_time, string pnumber_finals, string pfinals_dropped_score2, string pfinals_has_a, string proom_finals)
         {
-            dynamic finals = new JObject();
-            finals.finals = pfinals;
-            finals.finals_score1 = pfinals_score1;
-            finals.finals_score2 = pfinals_score2;
-            finals.finals_score3 = pfinals_score3;
-            finals.finals_score4 = pfinals_score4;
-            finals.finals_score5 = pfinals_score5;
-            finals.finals_score6 = pfinals_score6;
-            finals.finals_awardid = pfinals_awardid;
-            finals.finals_total_score = pfinals_total_score;
-            finals.finals_dropped_score = pfinals_dropped_score;
-            finals.finals_time = pfinals_time;
-            finals.number_finals = pnumber_finals;
-            finals.finals_dropped_score2 = pfinals_dropped_score2;
-            finals.finals_has_a = pfinals_has_a;
-            finals.room_finals = proom_finals;
-            return finals.ToString();
+            if (pfinals=="True")
+            {
+                dynamic finals = new JObject();
+                //finals.finals = pfinals;
+                finals.score=new JArray();
+                finals.dropped_score = new JArray();
+                JArray x = new JArray();
+                JArray y = new JArray();
+
+                x.Add(Convert.ToInt32(pfinals_score1));
+                x.Add(Convert.ToInt32(pfinals_score2));
+                x.Add(Convert.ToInt32(pfinals_score3));
+                x.Add(Convert.ToInt32(pfinals_score4));
+                x.Add(Convert.ToInt32(pfinals_score5));
+                x.Add(Convert.ToInt32(pfinals_score6));
+                finals.score = x;
+
+                y.Add(Convert.ToInt32(pfinals_dropped_score));
+                y.Add(Convert.ToInt32(pfinals_dropped_score2));
+                finals.dropped_score = y;
+
+                finals.awardid = Convert.ToInt32(pfinals_awardid);
+                finals.total_score = Convert.ToInt32(pfinals_total_score);
+                finals.time = Convert.ToInt32(pfinals_time);
+                finals.number = Convert.ToInt32(pnumber_finals);
+                finals.has_a = Convert.ToInt32(pfinals_has_a);
+                finals.room = Convert.ToInt32(proom_finals);
+                return finals.ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private string Get_json_VIP(string pvips, string pvips_score1, string pvips_score2, string pvips_score3, string pvips_score4, string pvips_score5, string pvips_score6, string pvips_awardid, string pvips_dropped_score, string pvips_total_score, string pvips_time, string pvips_dropped_score2, string pnumber_vips, string pvips_has_a, string proom_vips)
         {
-            dynamic vip = new JObject();
-            vip.vips = pvips;
-            vip.vips_score1 = pvips_score1;
-            vip.vips_score2= pvips_score2;
-            vip.vips_score3= pvips_score3;
-            vip.vips_score4= pvips_score4;
-            vip.vips_score5= pvips_score5;
-            vip.vips_score6= pvips_score6;
-            vip.vips_awardid = pvips_awardid;
-            vip.vips_dropped_score = pvips_dropped_score;
-            vip.vips_total_score = pvips_total_score;
-            vip.vips_time = pvips_time;
-            vip.vips_dropped_score2 = pvips_dropped_score2;
-            vip.number_vips = pnumber_vips;
-            vip.vips_has_a = pvips_has_a;
-            vip.room_vips = proom_vips;
-            return vip.ToString();
+            if (pvips=="True")
+            {
+                dynamic vip = new JObject();
+                //vip.vips = pvips;
+                vip.score = new JArray();
+                vip.dropped_score = new JArray();
+                JArray x = new JArray();
+                x.Add(Convert.ToInt32(pvips_score1));
+                x.Add(Convert.ToInt32(pvips_score2));
+                x.Add(Convert.ToInt32(pvips_score3));
+                x.Add(Convert.ToInt32(pvips_score4));
+                x.Add(Convert.ToInt32(pvips_score5));
+                x.Add(Convert.ToInt32(pvips_score6));
+
+                JArray y = new JArray();
+                y.Add(Convert.ToInt32(pvips_dropped_score));
+                y.Add(Convert.ToInt32(pvips_dropped_score2));
+                vip.dropped_score = y;
+
+                vip.total_score = Convert.ToInt32(pvips_total_score);
+                vip.time = Convert.ToInt32(pvips_time);
+                vip.number_vips = Convert.ToInt32(pnumber_vips);
+                vip.has_a = Convert.ToInt32(pvips_has_a);
+                vip.room = Convert.ToInt32(proom_vips);
+                return vip.ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private string Get_json_Prelims(string pprelims, string pprelims_score1, string pprelims_score2, string pprelims_score3, string pprelims_score4, string pprelims_score5, string pprelims_score6, string pprelims_awardid, string pprelims_total_score, string pprelims_dropped_score, string pprelims_time, string pnumber_prelims, string pprelims_has_a, string pprelims_dropped_score2, string proom_prelims)
         {
-            dynamic prelims = new JObject();
-            prelims.prelims = pprelims;
-            prelims.prelims_score1 = pprelims_score1;
-            prelims.prelims_score2= pprelims_score2;
-            prelims.prelims_score3= pprelims_score3;
-            prelims.prelims_score4= pprelims_score4;
-            prelims.prelims_score5= pprelims_score5;
-            prelims.prelims_score6= pprelims_score6;
-            prelims.prelims_awardid = pprelims_awardid;
-            prelims.prelims_total_score = pprelims_total_score;
-            prelims.prelims_dropped_score = pprelims_dropped_score;
-            prelims.prelims_time = pprelims_time;
-            prelims.number_prelims = pnumber_prelims;
-            prelims.prelims_has_a = pprelims_has_a;
-            prelims.prelims_dropped_score2 = pprelims_dropped_score2;
-            prelims.room_prelims = proom_prelims;
-            return prelims.ToString();
+            if (pprelims=="True")
+            {
+                dynamic prelims = new JObject();
+                //prelims.prelims = pprelims;
+                prelims.score = new JArray();
+                prelims.dropped_score = new JArray();
+                JArray x = new JArray();
+                JArray y = new JArray();
+
+                x.Add(Convert.ToInt32(pprelims_score1));
+                x.Add(Convert.ToInt32(pprelims_score2));
+                x.Add(Convert.ToInt32(pprelims_score3));
+                x.Add(Convert.ToInt32(pprelims_score4));
+                x.Add(Convert.ToInt32(pprelims_score5));
+                x.Add(Convert.ToInt32(pprelims_score6));
+                prelims.score = x;
+
+                y.Add(Convert.ToInt32(pprelims_dropped_score));
+                y.Add(Convert.ToInt32(pprelims_dropped_score2));
+                prelims.dropped_score = y;
+
+                prelims.awardid = Convert.ToInt32(pprelims_awardid);
+                prelims.total_score = Convert.ToInt32(pprelims_total_score);
+                prelims.time = Convert.ToInt32(pprelims_time);
+                prelims.number = Convert.ToInt32(pnumber_prelims);
+                prelims.has_a = Convert.ToInt32(pprelims_has_a);
+                prelims.room = Convert.ToInt32(proom_prelims);
+
+                return prelims.ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }

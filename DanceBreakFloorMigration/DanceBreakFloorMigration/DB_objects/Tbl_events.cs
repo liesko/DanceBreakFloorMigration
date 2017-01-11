@@ -24,6 +24,8 @@ namespace DanceBreakFloorMigration.Classes
 
                 //pPostgres.Insert("insert into tbl_current_season(season_id, events_id, is_current_season) values('"+ dataReader[5] + "','"+ dataReader[0] + "',True);");
             }
+            // this is DUMMY evenet with ID 6 - this event was missing in original DB
+            pPostgres.Insert("insert into tbl_events(id, event_types_id, name) values(6,2, 'DUMMY EVENT');");
             pPostgres.Message = "tbl_events - extraction - FINISH";
         }
     }

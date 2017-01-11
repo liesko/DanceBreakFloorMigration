@@ -28,19 +28,22 @@ namespace DanceBreakFloorMigration.Classes
         public string database { get; private set; }
         private string uid;
         private string password;
-        public MySQL_DB(String pDBName, Form1 form)
+        public MySQL_DB(String pDBName, string pServer, string pUid, string pPassword, Form1 form)
         {
-            Initialize(pDBName);
+            Initialize(pDBName, pServer, pUid, pPassword);
             _form = form;
         }
 
-        private void Initialize(String pDBName)
+        private void Initialize(String pDBName, string pServer, string pUid, string pPassword)
         {
 
-            server = "localhost";
+           // server = "localhost";
+            server = pServer;
             database = pDBName;
-            uid = "root";
-            password = "ahojahoj";
+            //uid = "root";
+            uid = pUid;
+            //password = "ahojahoj";
+            password = pPassword;
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

@@ -29,20 +29,24 @@ namespace DanceBreakFloorMigration.Classes
         private string port;
         private string password;
         private Form1 _form;
-        public PostgreSQL_DB(string pDBName, Form1 form)
+        public PostgreSQL_DB(string pDBName, string pServer, string pUid, string pPort, string pPassword, Form1 form)
         {
-            Initialize(pDBName);
+            Initialize(pDBName, pServer,pUid,pPort,pPassword);
             _form = form;
         }
-        private void Initialize(string pDBName)
+        private void Initialize(string pDBName, string pServer, string pUid, string pPort, string pPassword)
         {
 
-            server = "localhost";
+            //server = "localhost";
+            server = pServer;
             database = pDBName;
             // uid = "postgres";
-            uid = "peterkim";
-            port = "5432";
-            password = "peterkim";
+            //uid = "peterkim";
+            uid = pUid;
+            //port = "5432";
+            port = pPort;
+            //password = "peterkim";
+            password = pPassword;
             // password = "ahojahoj";
             string connectionString;
             connectionString = "Server=" + server + ";"
