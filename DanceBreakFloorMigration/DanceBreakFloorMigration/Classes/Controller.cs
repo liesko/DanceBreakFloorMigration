@@ -33,6 +33,8 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Remigration()
         {
+            
+            DeleteTable("Tbl_dts_reg_types");            
             DeleteTable("Tbl_registration");
             /*
             DeleteTable("Tbl_admin");
@@ -352,6 +354,10 @@ namespace DanceBreakFloorMigration.Classes
             */
             Tbl_registration tab74 = new Tbl_registration();
             tab74.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+            Tbl_dts_reg_types tab7 = new Tbl_dts_reg_types();
+            tab7.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
         }
         private void DeleteTable(string pTableName)
         {
@@ -359,3 +365,4 @@ namespace DanceBreakFloorMigration.Classes
         }
     }
 }
+ 

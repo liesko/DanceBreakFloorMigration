@@ -75,12 +75,14 @@
     <Compile Include="DB_objects\Tbl_date_special_awards.cs" />
     <Compile Include="DB_objects\Tbl_date_studios.cs" />
     <Compile Include="DB_objects\Tbl_date_studio_awards.cs" />
+    <Compile Include="DB_objects\Tbl_dts_reg_types.cs" />
     <Compile Include="DB_objects\Tbl_events.cs" />
     <Compile Include="DB_objects\Tbl_age_division.cs" />
     <Compile Include="DB_objects\Tbl_category.cs" />
     <Compile Include="DB_objects\Tbl_contact_type.cs" />
     <Compile Include="DB_objects\Tbl_countries.cs" />
     <Compile Include="DB_objects\Tbl_events_has_promo_code.cs" />
+    <Compile Include="DB_objects\Tbl_event_attendees.cs" />
     <Compile Include="DB_objects\Tbl_event_reg_types.cs" />
     <Compile Include="DB_objects\Tbl_event_types.cs" />
     <Compile Include="DB_objects\Tbl_faculty.cs" />
