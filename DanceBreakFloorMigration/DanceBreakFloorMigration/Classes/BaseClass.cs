@@ -49,5 +49,12 @@ namespace DanceBreakFloorMigration.Classes
             }
             return "'" + pParam + "'";
         }
+
+        public string AddNewStudio(string pStudioName, PostgreSQL_DB pPostgres)
+        {
+            int MaxStudioId = Convert.ToInt32(GetId("select max(id) from tbl_studios;", pPostgres));
+            pPostgres.Insert("insert into tbl_studios(id, name) values('" + ++MaxStudioId + "','"+pStudioName+"')");
+            return MaxStudioId.ToString();
+        }
     }
 }

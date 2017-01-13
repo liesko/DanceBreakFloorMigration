@@ -31,7 +31,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 {
                     pPostgres.Insert("insert into tbl_store_orders(id, user_id, order_hash, submitted, shipped, statsuser, " +
                                      "digitalonly, fees_paid, tracking, transactionid, label) " +
-                                     "values('" + dataReader["id"] + "','" + dataReader["userid"] + ",'" + dataReader["order_hash"] + "','" + FromUnixTime(Convert.ToInt64(dataReader["submitted"])).ToString().Replace(". ", ".") + "'" +
+                                     "values('" + dataReader["id"] + "','" + dataReader["userid"] + "','" + dataReader["order_hash"] + "','" + FromUnixTime(Convert.ToInt64(dataReader["submitted"])).ToString().Replace(". ", ".") + "'" +
                                      ",'" + CheckBool(dataReader["shipped"].ToString()) + "','" + dataReader["statsuser"] + "','" + CheckBool(dataReader["digitalonly"].ToString()) + "'," +
                                      "'" + dataReader["fees_paid"] + "','" + dataReader["tracking"] + "','" + dataReader["transactionid"] + "','" +
                                      "" + Get_json_label(CheckBool(dataReader["label_made"].ToString()).ToString(), dataReader["label_cost"].ToString(), dataReader["label_carrier"].ToString()) + "')");

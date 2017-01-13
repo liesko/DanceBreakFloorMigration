@@ -61,6 +61,7 @@
     <Compile Include="Classes\HandlerArgs.cs" />
     <Compile Include="Classes\MySQL_DB.cs" />
     <Compile Include="Classes\PostgreSQL_DB.cs" />
+    <Compile Include="DB_objects\Tbl_admin.cs" />
     <Compile Include="DB_objects\Tbl_awards_type.cs" />
     <Compile Include="DB_objects\Tbl_city.cs" />
     <Compile Include="DB_objects\Tbl_competition_cash_awards.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="DB_objects\Tbl_online_critiques_access.cs" />
     <Compile Include="DB_objects\Tbl_online_critiques_judges.cs" />
     <Compile Include="DB_objects\Tbl_online_scoring.cs" />
+    <Compile Include="DB_objects\tbl_online_scoring_has_faculty.cs" />
     <Compile Include="DB_objects\Tbl_payment_method.cs" />
     <Compile Include="DB_objects\Tbl_performance_divisions.cs" />
     <Compile Include="DB_objects\Tbl_perf_div_type.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="DB_objects\Tbl_playlist_workshop_levels.cs" />
     <Compile Include="DB_objects\Tbl_promo_codes.cs" />
     <Compile Include="DB_objects\Tbl_promo_codes_type.cs" />
+    <Compile Include="DB_objects\Tbl_registration.cs" />
     <Compile Include="DB_objects\Tbl_routines.cs" />
     <Compile Include="DB_objects\Tbl_routine_categories.cs" />
     <Compile Include="DB_objects\Tbl_routine_types.cs" />

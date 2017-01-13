@@ -20,6 +20,7 @@ namespace DanceBreakFloorMigration.DB_objects
             {
                 pPostgres.Insert("insert into tbl_category(id, name) values(" + ++counter + ",'" + dataReader[0] + "')");
             }
+            pPostgres.Insert("insert into tbl_category(id, name) values(9,'Nothing');");
             pPostgres.Message = "tbl_category - extraction - FINISH";
         }
     }

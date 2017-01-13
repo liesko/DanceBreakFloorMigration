@@ -32,6 +32,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pPostgres.Update("update tbl_age_divisions set range='2' where id = '10';");
             pPostgres.Update("update tbl_age_divisions set range='2' where id = '11';");
             pPostgres.Update("update tbl_age_divisions set range='5' where id = '12';");
+            pPostgres.Insert("insert into tbl_age_divisions(id, playlist_workshop_levels_id) values(0,1)");
         }
 
         private string GetId(string pParam, PostgreSQL_DB pPostgres)

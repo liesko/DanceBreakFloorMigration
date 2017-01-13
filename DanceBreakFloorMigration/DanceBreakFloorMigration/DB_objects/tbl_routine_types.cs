@@ -15,6 +15,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 pPostgres.Insert("insert into tbl_routine_types(id, name) " +
                                  "values(" + dataReader[0] + ",'" + dataReader[1] + "')");
             }
+            pPostgres.Insert("insert into tbl_routine_types(id, name) values(0,'Nothing');");
             pPostgres.Message = "tbl_routine_types - extraction - FINISH";
         }
     }

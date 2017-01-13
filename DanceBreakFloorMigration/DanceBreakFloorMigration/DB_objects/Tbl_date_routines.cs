@@ -24,18 +24,18 @@ namespace DanceBreakFloorMigration.DB_objects
                                  "" + dataReader["routinecategoryid"] + ","+ dataReader["perfcategoryid"] + " , "+ CheckBool(dataReader["perfdivtype"].ToString()) + "," + dataReader["routinetypeid"] + "," + fee + "," +CheckBool(dataReader["canceled"].ToString()) + "," +
                                  "" + dataReader["custom_dancer_count"] + "," + dataReader["duration"] + "," +CheckBool(dataReader["custom_fee"].ToString()) + "," + dataReader["place_hsa"] + "," + dataReader["place_hsp"] + "," +
                                  "" + award_typename + ",'" + dataReader["uploaded_duration"] + "'," + dataReader["extra_time"] + "," +CheckBool(dataReader["uploaded"].ToString()) + "" +
-                                 ",'"+Get_json_Prelims(dataReader["prelims"].ToString(), dataReader["prelims_score1"].ToString(), dataReader["prelims_score2"].ToString(), dataReader["prelims_score3"].ToString(), dataReader["prelims_score4"].ToString(), 
+                                 ","+Get_json_Prelims(dataReader["prelims"].ToString(), dataReader["prelims_score1"].ToString(), dataReader["prelims_score2"].ToString(), dataReader["prelims_score3"].ToString(), dataReader["prelims_score4"].ToString(), 
                                  dataReader["prelims_score5"].ToString(), dataReader["prelims_score6"].ToString(), dataReader["prelims_awardid"].ToString(), dataReader["prelims_total_score"].ToString(), dataReader["prelims_dropped_score"].ToString(), 
                                  dataReader["prelims_time"].ToString(), dataReader["number_prelims"].ToString(), dataReader["prelims_has_a"].ToString(), dataReader["prelims_dropped_score2"].ToString(), 
-                                 dataReader["room_prelims"].ToString())+ "'" +
-                                  ",'"+Get_json_VIP(dataReader["vips"].ToString(), dataReader["vips_score1"].ToString(), dataReader["vips_score2"].ToString(), dataReader["vips_score3"].ToString(), 
+                                 dataReader["room_prelims"].ToString())+ "" +
+                                  ","+Get_json_VIP(dataReader["vips"].ToString(), dataReader["vips_score1"].ToString(), dataReader["vips_score2"].ToString(), dataReader["vips_score3"].ToString(), 
                                   dataReader["vips_score4"].ToString(), dataReader["vips_score5"].ToString(), dataReader["vips_score6"].ToString(), dataReader["vips_awardid"].ToString(), 
                                   dataReader["vips_dropped_score"].ToString(), dataReader["vips_total_score"].ToString(), dataReader["vips_time"].ToString(), dataReader["vips_dropped_score2"].ToString(), 
-                                  dataReader["number_vips"].ToString(), dataReader["vips_has_a"].ToString(), dataReader["room_vips"].ToString()) +"'" +
-                                 ",'"+Get_json_final(dataReader["finals"].ToString(), dataReader["finals_score1"].ToString(), dataReader["finals_score2"].ToString(), dataReader["finals_score3"].ToString(), 
+                                  dataReader["number_vips"].ToString(), dataReader["vips_has_a"].ToString(), dataReader["room_vips"].ToString()) +"" +
+                                 ","+Get_json_final(dataReader["finals"].ToString(), dataReader["finals_score1"].ToString(), dataReader["finals_score2"].ToString(), dataReader["finals_score3"].ToString(), 
                                  dataReader["finals_score4"].ToString(), dataReader["finals_score5"].ToString(), dataReader["finals_score6"].ToString(), dataReader["finals_awardid"].ToString(), 
                                  dataReader["finals_total_score"].ToString(), dataReader["finals_dropped_score"].ToString(), dataReader["finals_time"].ToString(), dataReader["number_finals"].ToString(), 
-                                 dataReader["finals_dropped_score2"].ToString(), dataReader["finals_has_a"].ToString(), dataReader["room_finals"].ToString()) +"')");
+                                 dataReader["finals_dropped_score2"].ToString(), dataReader["finals_has_a"].ToString(), dataReader["room_finals"].ToString()) +")");
             }
             pPostgres.Message = "tbl_date_routines - extraction - FINISH";
         }
@@ -51,29 +51,29 @@ namespace DanceBreakFloorMigration.DB_objects
                 JArray x = new JArray();
                 JArray y = new JArray();
 
-                x.Add(Convert.ToInt32(pfinals_score1));
-                x.Add(Convert.ToInt32(pfinals_score2));
-                x.Add(Convert.ToInt32(pfinals_score3));
-                x.Add(Convert.ToInt32(pfinals_score4));
-                x.Add(Convert.ToInt32(pfinals_score5));
-                x.Add(Convert.ToInt32(pfinals_score6));
+                x.Add(pfinals_score1);
+                x.Add(pfinals_score2);
+                x.Add(pfinals_score3);
+                x.Add(pfinals_score4);
+                x.Add(pfinals_score5);
+                x.Add(pfinals_score6);
                 finals.score = x;
 
-                y.Add(Convert.ToInt32(pfinals_dropped_score));
-                y.Add(Convert.ToInt32(pfinals_dropped_score2));
+                y.Add(pfinals_dropped_score);
+                y.Add(pfinals_dropped_score2);
                 finals.dropped_score = y;
 
-                finals.awardid = Convert.ToInt32(pfinals_awardid);
-                finals.total_score = Convert.ToInt32(pfinals_total_score);
-                finals.time = Convert.ToInt32(pfinals_time);
-                finals.number = Convert.ToInt32(pnumber_finals);
-                finals.has_a = Convert.ToInt32(pfinals_has_a);
-                finals.room = Convert.ToInt32(proom_finals);
-                return finals.ToString();
+                finals.awardid = pfinals_awardid;
+                finals.total_score = pfinals_total_score;
+                finals.time = pfinals_time;
+                finals.number = pnumber_finals;
+                finals.has_a = pfinals_has_a;
+                finals.room = proom_finals;
+                return "'"+finals.ToString()+"'";
             }
             else
             {
-                return null;
+                return "null";
             }
         }
 
@@ -86,28 +86,28 @@ namespace DanceBreakFloorMigration.DB_objects
                 vip.score = new JArray();
                 vip.dropped_score = new JArray();
                 JArray x = new JArray();
-                x.Add(Convert.ToInt32(pvips_score1));
-                x.Add(Convert.ToInt32(pvips_score2));
-                x.Add(Convert.ToInt32(pvips_score3));
-                x.Add(Convert.ToInt32(pvips_score4));
-                x.Add(Convert.ToInt32(pvips_score5));
-                x.Add(Convert.ToInt32(pvips_score6));
+                x.Add(pvips_score1);
+                x.Add(pvips_score2);
+                x.Add(pvips_score3);
+                x.Add(pvips_score4);
+                x.Add(pvips_score5);
+                x.Add(pvips_score6);
 
                 JArray y = new JArray();
-                y.Add(Convert.ToInt32(pvips_dropped_score));
-                y.Add(Convert.ToInt32(pvips_dropped_score2));
+                y.Add(pvips_dropped_score);
+                y.Add(pvips_dropped_score2);
                 vip.dropped_score = y;
 
-                vip.total_score = Convert.ToInt32(pvips_total_score);
-                vip.time = Convert.ToInt32(pvips_time);
-                vip.number_vips = Convert.ToInt32(pnumber_vips);
-                vip.has_a = Convert.ToInt32(pvips_has_a);
-                vip.room = Convert.ToInt32(proom_vips);
-                return vip.ToString();
+                vip.total_score = pvips_total_score;
+                vip.time = pvips_time;
+                vip.number_vips = pnumber_vips;
+                vip.has_a = pvips_has_a;
+                vip.room = proom_vips;
+                return "'" + vip.ToString()+"'";
             }
             else
             {
-                return null;
+                return "null";
             }
         }
 
@@ -122,30 +122,30 @@ namespace DanceBreakFloorMigration.DB_objects
                 JArray x = new JArray();
                 JArray y = new JArray();
 
-                x.Add(Convert.ToInt32(pprelims_score1));
-                x.Add(Convert.ToInt32(pprelims_score2));
-                x.Add(Convert.ToInt32(pprelims_score3));
-                x.Add(Convert.ToInt32(pprelims_score4));
-                x.Add(Convert.ToInt32(pprelims_score5));
-                x.Add(Convert.ToInt32(pprelims_score6));
+                x.Add(pprelims_score1);
+                x.Add(pprelims_score2);
+                x.Add(pprelims_score3);
+                x.Add(pprelims_score4);
+                x.Add(pprelims_score5);
+                x.Add(pprelims_score6);
                 prelims.score = x;
 
-                y.Add(Convert.ToInt32(pprelims_dropped_score));
-                y.Add(Convert.ToInt32(pprelims_dropped_score2));
+                y.Add(pprelims_dropped_score);
+                y.Add(pprelims_dropped_score2);
                 prelims.dropped_score = y;
 
-                prelims.awardid = Convert.ToInt32(pprelims_awardid);
-                prelims.total_score = Convert.ToInt32(pprelims_total_score);
-                prelims.time = Convert.ToInt32(pprelims_time);
-                prelims.number = Convert.ToInt32(pnumber_prelims);
-                prelims.has_a = Convert.ToInt32(pprelims_has_a);
-                prelims.room = Convert.ToInt32(proom_prelims);
+                prelims.awardid = pprelims_awardid;
+                prelims.total_score = pprelims_total_score;
+                prelims.time = pprelims_time;
+                prelims.number = pnumber_prelims;
+                prelims.has_a = pprelims_has_a;
+                prelims.room = proom_prelims;
 
-                return prelims.ToString();
+                return "'" + prelims.ToString()+"'";
             }
             else
             {
-                return null;
+                return "null";
             }
         }
 

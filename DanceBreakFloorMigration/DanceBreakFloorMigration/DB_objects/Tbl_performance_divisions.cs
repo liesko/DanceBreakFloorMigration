@@ -14,6 +14,7 @@ namespace DanceBreakFloorMigration.DB_objects
             {
                 pPostgres.Insert("insert into tbl_performance_divisions(id, name) values(" + dataReader[0] + ",'" + dataReader[1] + "')");
             }
+            pPostgres.Insert("insert into tbl_performance_divisions(id, name) values(0,'Nothing');");
             pPostgres.Message = "tbl_performance_divisions - extraction - FINISH";
         }
     }
