@@ -2,6 +2,7 @@
 using DanceBreakFloorMigration.Classes;
 using DanceBreakFloorMigration.Interfaces;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json.Linq;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
@@ -9,62 +10,27 @@ namespace DanceBreakFloorMigration.DB_objects
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
-            // tbl_dts_registrations PART - FINISHER REG
+            // tbl_registration from dancetea.registration
             // ----------------------------------------------------------
-            MySqlDataReader dataReader = pMysql.Select("select s.id, s.fname, s.lname, s.email, s.studio, s.phone, s.address, s.city, s.state, s.zip, s.country, " +
-                                                       "s.date, s.fee, s.payment_method, s.title, s.organization, s.fax, s.cell, s.heard, s.details, s.tourdateid, " +
-                                                       "s.confirmed, s.newdtsregid, s.deleted, s.neweventregid, s.viewed, s.independent, s.mybtfregid, s.enteredby, " +
-                                                       "s.confirmdate, x.heard, x.notes, x.totalfees, x.feespaid, x.balancedue " +
-                                                       "from registrations s left join tbl_dts_registrations x on (s.newdtsregid=x.id) where s.newdtsregid is not null and s.newdtsregid!=0;");
-            pMysql.Message = "Tbl_registration - extraction - START ";
+            MySqlDataReader dataReader = pMysql.Select("select * from registrations;");
+            pMysql.Message = "Tbl_registration (dancetea.registration) - extraction - START ";
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_registration(id, tour_dates_id, studios_id) " +
-                                 "values('"+dataReader["id"]+"','"+dataReader["tourdateid"] +"',"+ GetStudioId(dataReader["studio"].ToString(),pPostgres) +");");
+                pPostgres.Insert("insert into tbl_registration(id, tour_dates_id, studios_id, user_id, date, completed, confirmed, heard, details, enteredby_id, viewed, deleted, payment_method) " +
+                                 "values('"+dataReader["id"]+"','"+dataReader["tourdateid"] +"',"+ GetStudioId(dataReader["studio"].ToString(),pPostgres) +"," +
+                                 ""+UserIdManage(dataReader["fname"].ToString().Replace("'","''"), dataReader["lname"].ToString().Replace("'", "''"), dataReader["email"].ToString(),dataReader["title"].ToString() ,pPostgres) +"," +
+                                 "'"+Get_json_date(dataReader["date"].ToString(), dataReader["confirmdate"].ToString()) +"','1',"+CheckBool(dataReader["confirmed"].ToString()) + "," +
+                                 "'"+dataReader["heard"].ToString().Replace("'","''") +"'," +
+                                 "'"+dataReader["details"].ToString().Replace("'", "''") + "',"+NVL(dataReader["enteredby"].ToString()) + ", "+CheckBool(dataReader["viewed"].ToString()) + ", " +
+                                 ""+CheckBool(dataReader["deleted"].ToString()) + ",'"+dataReader["payment_method"] +"');");
             }
-            // tbl_event_registrations PART- FINISHER REG
-            // ----------------------------------------------------------
-            MySqlDataReader dataReader2 = pMysql.Select("select s.id, s.fname, s.lname, s.email, s.studio, s.phone, s.address, s.city, s.state, s.zip, s.country, s.date, " +
-                                                        "s.fee, s.payment_method, s.title, s.organization, s.fax, s.cell, s.heard, s.details, s.tourdateid, s.confirmed, " +
-                                                        "s.newdtsregid, s.deleted, s.neweventregid, s.viewed, s.independent, s.mybtfregid, s.enteredby, s.confirmdate,x.profileid, " +
-                                                        "x.notes, x.totalfees, x.feespaid, x.balancedue, x.studioid, x.id as oldid_event  " +
-                                                        "from registrations s left join tbl_event_registrations x on(s.neweventregid=x.id) " +
-                                                        "where s.neweventregid is not null and s.neweventregid !=0;");
-            while (dataReader2.Read())
-            {
-                pPostgres.Insert("insert into tbl_registration(id, tour_dates_id, studios_id, oldid_event_reg) " +
-                                 "values('" + dataReader2["id"] + "','" + dataReader2["tourdateid"] + "'," + NVL(dataReader2["studioid"].ToString()) + ", "+NVL(dataReader2["oldid_event"].ToString()) + ");");
-            }
+            pPostgres.Insert("insert into tbl_registration(id) values(22996);");
+            pPostgres.Insert("insert into tbl_registration(id) values(23035);");
+            pPostgres.Insert("insert into tbl_registration(id) values(23127);");
+            pPostgres.Insert("insert into tbl_registration(id) values(24225);");
+            pPostgres.Insert("insert into tbl_registration(id) values(31298);");
 
-
-            // others PARTS from registration - FINISHER REG
-            // ----------------------------------------------------------
-            MySqlDataReader dataReader3 = pMysql.Select("select * from registrations s where (s.neweventregid is null or s.neweventregid=0) and (s.newdtsregid is null or s.newdtsregid=0);");
-            while (dataReader3.Read())
-            {
-                pPostgres.Insert("insert into tbl_registration(id, tour_dates_id, studios_id) " +
-                                 "values('" + dataReader3["id"] + "','" + dataReader3["tourdateid"] + "'," + GetStudioId(dataReader3["studio"].ToString(), pPostgres) + ");");
-            }
-
-            // UNFINISHED REG FROM tbl_event_registrations
-            // ----------------------------------------------------------
-
-            // UNFINISHED REG FROM tbl_dts_registrations
-            // ----------------------------------------------------------
-            MySqlDataReader dataReader5 = pMysql.Select("select * from tbl_dts_registrations");
-            int MaxRegId = Convert.ToInt32(GetId("select max(id) from tbl_registration;", pPostgres));
-            while (dataReader5.Read())
-            {
-                string pom= GetId("select id from tbl_registration where... ...")
-                if ()
-                {
-                    pPostgres.Insert("insert into tbl_registration(id, tour_dates_id) " +
-                                    "values('" + ++MaxRegId + "','" + dataReader5["tourdateid"] + "');");
-                }
-            }
-
-            // END
-            pPostgres.Message = "Tbl_registration - extraction - FINISH";
+            pPostgres.Message = "Tbl_registration (dancetea.registration) - extraction - FINISH";
         }
 
         public string GetStudioId(string pStudio_name, PostgreSQL_DB pPostgres)
@@ -86,5 +52,31 @@ namespace DanceBreakFloorMigration.DB_objects
                 }
             }
         }
+        private string UserIdManage(string pname, string lname, string pemail, string pTitle, PostgreSQL_DB pPostgres)
+        {
+            string UserId = GetId("select id from tbl_user where email like '" + pemail + "' limit 1;", pPostgres);
+            string personType = GetId("select id from tbl_person_types where name like '"+pTitle+"' limit 1;", pPostgres);
+            if (UserId == "null")
+            {
+                pPostgres.Insert("insert into tbl_person(address_id, gender_id, fname, lname, birthdate, person_types_id) " +
+                                 "values(null,null,'" + pname + "','" + lname + "',null, " + personType + ") ");
+                string Max_person_id = GetId("select max(id) from tbl_person", pPostgres);
+
+                int Max_user_id = Convert.ToInt32(GetId("select max(id) from tbl_user", pPostgres));
+                pPostgres.Insert("insert into tbl_user(id, email, password, active, person_id, unregistered) " +
+                                 "values('" + ++Max_user_id + "','" + pemail + "',null,null,'" + Max_person_id + "','1')");
+
+                UserId = Max_user_id.ToString();
+            }
+            return UserId;
+        }
+        private string Get_json_date(string pFirst_date, string pSecond_date)
+        {
+            dynamic date = new JObject();
+            date.completed = pFirst_date;
+            date.confirmed = pSecond_date;
+            return date.ToString();
+        }
+
     }
 }

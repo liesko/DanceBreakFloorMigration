@@ -16,6 +16,12 @@ namespace DanceBreakFloorMigration.DB_objects
                                  "values('"+dataReader["id"]+"','"+dataReader["password"]+"','"+dataReader["last_login"]+"','"+dataReader["ip"]+"'," +
                                  "'"+dataReader["name"]+"','"+dataReader["theme"]+ "','" + CheckBool(dataReader["financials"].ToString()) + "','" +CheckBool(dataReader["accesslevel"].ToString()) + "');");
             }
+            pPostgres.Insert("insert into tbl_admin(id, name) values(21, 'DUMMY')");
+            pPostgres.Insert("insert into tbl_admin(id, name) values(0, 'DUMMY')");
+            pPostgres.Insert("insert into tbl_admin(id, name) values(34, 'DUMMY')");
+
+            pPostgres.Insert("insert into tbl_admin(id, name) values(12, 'DUMMY')");
+            pPostgres.Insert("insert into tbl_admin(id, name) values(23, 'DUMMY')");            
             pPostgres.Message = "Tbl_admin - extraction - FINISH";
         }
     }

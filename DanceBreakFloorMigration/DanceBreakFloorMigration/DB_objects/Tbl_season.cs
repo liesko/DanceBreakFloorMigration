@@ -9,14 +9,15 @@ namespace DanceBreakFloorMigration.DB_objects
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
             MySqlDataReader dataReader = pMysql.Select("select id, year1, year2 from tbl_seasons;");
-            pMysql.Message = "tbl_season - extraction - START";
+            pMysql.Message = "tbl_seasons - extraction - START";
             string pom = "null";
             while (dataReader.Read())
             {
                 pom = (dataReader[2].ToString()=="")?"null": dataReader[2].ToString();
-                pPostgres.Insert("insert into tbl_season(id, start_year,end_year) values('" + dataReader[0] + "',"+ dataReader[1] + ","+ pom + ")");
+                pPostgres.Insert("insert into tbl_seasons(id, start_year,end_year) values('" + dataReader[0] + "',"+ dataReader[1] + ","+ pom + ")");
             }
-            pPostgres.Message = "tbl_season - extraction - FINISH";
+            pPostgres.Insert("insert into tbl_seasons(id, start_year, end_year) values(0, 9999,9999)");
+            pPostgres.Message = "tbl_seasons - extraction - FINISH";
         }
     }
 }

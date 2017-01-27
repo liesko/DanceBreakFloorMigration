@@ -17,7 +17,7 @@ namespace DanceBreakFloorMigration.DB_objects
             while (dataReader.Read())
             {
                 pPostgres.Insert("insert into tbl_online_scoring_has_faculty(online_scoring_id, faculty_id, data) " +
-                                 "values('"+dataReader["id"]+"','"+dataReader["faculty"]+"','"+dataReader["data"].ToString().Replace("'","''") +"')");
+                                 "values('"+dataReader["id"]+"','"+dataReader["faculty"]+"',"+NVL(dataReader["data"].ToString().Replace("'","''")) + ")");
             }
             pPostgres.Message = "tbl_online_scoring_has_faculty - extraction - FINISH";
         }

@@ -46,7 +46,7 @@ namespace DanceBreakFloorMigration
 
         private void BtnDBConnect_Click(object sender, EventArgs e)
         {
-            BtnDBConnect.Enabled = false;
+            //BtnDBConnect.Enabled = false;
             ControlletInstance.Connect();
         }
 
@@ -54,6 +54,7 @@ namespace DanceBreakFloorMigration
         {
             if (!_backgroundWorker.IsBusy)
             {
+                BtnDBConnect.Enabled = false;
                 BtnMigrationDB.Enabled = false;
                 progressBar.Visible = true;
                 progressBar.Enabled = true;

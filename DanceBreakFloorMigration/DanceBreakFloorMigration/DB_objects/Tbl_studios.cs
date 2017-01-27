@@ -15,8 +15,8 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_studios - extraction - START";
             while (dataReader.Read())
             {
-                string notes = (dataReader["notes"].ToString() == "") ? "null" : "'" + dataReader["notes"] + "'";
-                string contacts = (dataReader["contacts"].ToString() == "") ? "null" : "'" + dataReader["contacts"].ToString().Replace("'", "''") + "'";
+                string notes = (dataReader["notes"].ToString() == "") ? "null" : "'" + dataReader["notes"].ToString().Replace(Environment.NewLine, "").Replace("\r\n", "").Replace("\r", "").Replace("\n", "") + "'";
+                string contacts = (dataReader["contacts"].ToString() == "") ? "null" : "'" + dataReader["contacts"].ToString().Replace("'", "''").Replace(Environment.NewLine, "").Replace("\r\n", "").Replace("\r", "").Replace("\n", "") + "'";
                 pPostgres.Insert("insert into tbl_studios(id, name, notes, contacts, address_id) " +
                                 "values('" + dataReader["id"] + "','" + dataReader["name"].ToString().Replace("'", "''") + "',"+notes+ ","+ contacts + "" +
                                  ","+GetAddressId(dataReader["address"].ToString(), dataReader["city"].ToString(), dataReader["state"].ToString(), 
@@ -33,9 +33,9 @@ namespace DanceBreakFloorMigration.DB_objects
         private string GetAddressId(string pAddress, string pCity, string pState, string pZip, string pCountryId, PostgreSQL_DB pPostgres)
         {
             NpgsqlDataReader query;
-            string p_city_id = GetId("select id from tbl_city where name like '"+ pCity.Replace("'", "''") + "'", pPostgres);
+            string p_city_id = GetId("select id from tbl_cities where name like '" + pCity.Replace("'", "''") + "'", pPostgres);
             query = pPostgres.Select("select distinct id " +
-                                   "from tbl_address where address like '" + pAddress.Replace("'", "''") + "' and city_id = " + p_city_id + " and zip like '"+pZip+"' and country_id='"+pCountryId+"';");
+                                   "from tbl_addresses where address like '" + pAddress.Replace("'", "''") + "' and city_id = " + p_city_id + " and zip like '"+pZip+"' and country_id='"+pCountryId+"';");
             string pom;
             while (query.Read())
             {
@@ -46,10 +46,10 @@ namespace DanceBreakFloorMigration.DB_objects
             query.Dispose();
             if (pAddress != "")
             {
-                string city_id = GetId("select id from tbl_city where name like '" + pCity.Replace("'", "''") + "'", pPostgres);
+                string city_id = GetId("select id from tbl_cities where name like '" + pCity.Replace("'", "''") + "'", pPostgres);
                 string pomStateId = GetId("select id from tbl_states where name like '" + pState + "'", pPostgres);
-                pPostgres.Insert("insert into tbl_address(state_id, address, city_id, zip) values(" + pomStateId + ",'" + pAddress.Replace("'", "''") + "'," + city_id + ",'" + pZip + "');");
-                string p_address_id = GetId("select max(id) from tbl_address", pPostgres);
+                pPostgres.Insert("insert into tbl_addresses(state_id, address, city_id, zip) values(" + pomStateId + ",'" + pAddress.Replace("'", "''") + "'," + city_id + ",'" + pZip + "');");
+                string p_address_id = GetId("select max(id) from tbl_addresses", pPostgres);
                 return p_address_id;
             }
             else

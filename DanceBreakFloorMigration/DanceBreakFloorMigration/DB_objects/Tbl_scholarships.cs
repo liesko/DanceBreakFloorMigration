@@ -18,6 +18,7 @@ namespace DanceBreakFloorMigration.DB_objects
                     "values('" + dataReader["id"] + "','" + CheckBool(dataReader["active"].ToString()) + "','" + dataReader["report_order"] + "'," +
                     "'" + CheckBool(dataReader["isclass"].ToString()) + "','" + dataReader["name"] + "','" + dataReader["eventid"] + "');");
             }
+            pPostgres.Insert("insert into tbl_scholarships(id, events_id) values(14,6);");
             pPostgres.Message = "tbl_scholarships - extraction - FINISH";
         }
     }

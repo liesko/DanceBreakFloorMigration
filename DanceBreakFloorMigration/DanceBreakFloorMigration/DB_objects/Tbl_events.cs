@@ -26,6 +26,7 @@ namespace DanceBreakFloorMigration.Classes
             }
             // this is DUMMY evenet with ID 6 - this event was missing in original DB
             pPostgres.Insert("insert into tbl_events(id, event_types_id, name) values(6,2, 'DUMMY EVENT');");
+            pPostgres.Insert("insert into tbl_events(id, event_types_id, name) values(0,2,'DUMMY EVENT');");
             pPostgres.Message = "tbl_events - extraction - FINISH";
         }
     }

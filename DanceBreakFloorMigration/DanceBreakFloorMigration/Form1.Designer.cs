@@ -113,7 +113,7 @@
             this.textPostgreDbName.Name = "textPostgreDbName";
             this.textPostgreDbName.Size = new System.Drawing.Size(100, 20);
             this.textPostgreDbName.TabIndex = 6;
-            this.textPostgreDbName.Text = "test";
+            this.textPostgreDbName.Text = "test4";
             // 
             // label1
             // 

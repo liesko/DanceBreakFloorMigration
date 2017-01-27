@@ -15,12 +15,12 @@ namespace DanceBreakFloorMigration.DB_objects
                                                        "select city from tbl_tour_dates where city not like '' " +
                                                        "union " +
                                                        "select city from tbl_profiles where city not like ''");
-            pMysql.Message = "tbl_city - extraction - START";
+            pMysql.Message = "tbl_cities - extraction - START";
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_city(name) values('"+dataReader[0].ToString().Replace("'","''") + "');");
+                pPostgres.Insert("insert into tbl_cities(name) values('" + dataReader[0].ToString().Replace("'","''") + "');");
             }
-            pPostgres.Message = "tbl_city - extraction - FINISH";
+            pPostgres.Message = "tbl_cities - extraction - FINISH";
         }
     }
 }

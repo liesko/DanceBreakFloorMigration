@@ -13,15 +13,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "tbl_user_has_dancer - extraction - START";
             while (dataReader.Read())
             {
-                try
-                {
-                    pPostgres.Insert("insert into tbl_user_has_dancer(dancer_id, user_id) values('" + dataReader["profileid"] + "','" + dataReader["userid"] + "')");
-                }
-                catch (Exception)
-                {
-
-                    pPostgres.Message = "INVALIT COMBINATION: insert into tbl_user_has_dancer(dancer_id, user_id) values('" + dataReader["profileid"] + "','" + dataReader["userid"] + "')";
-                }
+                 pPostgres.Insert("insert into tbl_user_has_dancer(dancer_id, user_id) values('" + dataReader["profileid"] + "','" + dataReader["userid"] + "')");
             }
             pPostgres.Message = "tbl_user_has_dancer - extraction - FINISH";
         }

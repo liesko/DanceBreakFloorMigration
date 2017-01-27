@@ -56,5 +56,61 @@ namespace DanceBreakFloorMigration.Classes
             pPostgres.Insert("insert into tbl_studios(id, name) values('" + ++MaxStudioId + "','"+pStudioName+"')");
             return MaxStudioId.ToString();
         }
+        public void CreateDummyWaiver(string pWaiverId, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_waivers where id = " + pWaiverId + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_waivers(id, dancer_id) values(" + pWaiverId + ", 20797);");
+            }
+        }
+        public void CreateDummyStudio(string pStudio, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_studios where id = " + pStudio + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_studios(id, name) values(" + pStudio + ",'DUMMY DANCE STUDIO');");
+            }
+        }
+        public void CreateDummyRegistration(string pRegistration, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_registration where id = " + pRegistration + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_registration(id) values(" + pRegistration + ");");
+            }
+        }
+        public void CreateDummyWorkshopLevel(string pWorkshopLevel, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_workshop_levels where id = " + pWorkshopLevel + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_workshop_levels(id, playlist_workshop_levels_id, season_id) values(" + pWorkshopLevel + ",0,0);");
+            }
+        }
+        public void CreateDummyDancer(string pDancerId, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_dancer where id = " + pDancerId + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_dancer(id, person_id) values(" + pDancerId + ",0);");
+            }
+        }
+        public void CreateDummyPromoCode(string pPromoCode, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_promo_codes where id = " + pPromoCode + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_promo_codes(id, promo_codes_type_id, name,uses) values(" + pPromoCode + ",1, 'DUMMY',1);");
+            }
+        }
+        public void CreateDummyRoutines(string pRoutineId, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_routines where id = " + pRoutineId + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_routines(id, studios_id, name) values("+ pRoutineId + ", 0, 'DUMMY');");
+            }
+        }
     }
 }

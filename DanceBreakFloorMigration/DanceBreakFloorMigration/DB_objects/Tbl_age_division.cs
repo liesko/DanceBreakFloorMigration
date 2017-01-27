@@ -18,7 +18,7 @@ namespace DanceBreakFloorMigration.DB_objects
                 pom = GetId(dataReader[3].ToString(), pPostgres);
                
                  pPostgres.Insert("insert into tbl_age_divisions(id, range, minimum_age,playlist_workshop_levels_id) " +
-                                 "values('" + dataReader[0] + "','" + dataReader[1] + "','"+ dataReader[2] + "','"+ pom + "');");
+                                 "values('" + dataReader[0] + "',null,'"+ dataReader[2] + "','"+ pom + "');");
             }
             pPostgres.Message = "tbl_age_divisions - extraction - FINISH";
             pPostgres.Update("update tbl_age_divisions set range='2' where id = '1';");

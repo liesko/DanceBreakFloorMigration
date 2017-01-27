@@ -66,14 +66,17 @@ namespace DanceBreakFloorMigration.Classes
                 //The two most common error numbers when connecting are as follows:
                 //0: Cannot connect to server.
                 //1045: Invalid user name and/or password.
+                Message = "MySQL DB: " + database + " - CONNECT FAILE.";
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        Message = "MySQL DB: " + database + " - CONNECT FAILE. Cannot connect to server.";
+                        //MessageBox.Show("Cannot connect to server.  Contact administrator");
                         break;
 
                     case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
+                        Message = "MySQL DB: " + database + " - CONNECT FAILE. Invalid username/password, please try again";
+                        // MessageBox.Show("Invalid username/password, please try again");
                         break;
                 }
                 return false;
