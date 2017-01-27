@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Classes\BaseClass.cs" />
     <Compile Include="Classes\Controller.cs" />
+    <Compile Include="DB_objects\Tbl_event_reg_type_names.cs" />
     <Compile Include="DB_objects\Tbl_store_promocodes.cs" />
     <Compile Include="DB_objects\DummyData1.cs" />
     <Compile Include="Classes\HandlerArgs.cs" />

@@ -32,7 +32,7 @@ namespace DanceBreakFloorMigration.Classes
         }
 
         public void Remigration()
-        {            
+        {         
             DeleteTable("tbl_award_nominations_has_teacher");   // M:N          
             DeleteTable("tbl_tda_bestdancer_data");
             DeleteTable("tbl_tda_peopleschoice_votes");
@@ -54,8 +54,9 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_registrations_attendees_dts");
             DeleteTable("tbl_event_attendees"); 
             DeleteTable("tbl_registration");                                             
-            DeleteTable("tbl_waivers");
-            DeleteTable("tbl_date_scholarships");            
+            DeleteTable("tbl_waivers");            
+            DeleteTable("tbl_date_scholarships"); 
+            /*                       
             DeleteTable("tbl_schedule_workshops_rooms");                        
             DeleteTable("tbl_date_schedule_workshops");            
             DeleteTable("tbl_dts_reg_types");                        
@@ -83,8 +84,11 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_date_routines");                        
             DeleteTable("tbl_perf_div_types");
             // table has been removed from model
-            // DeleteTable("tbl_events_has_promo_code");                                
+            // DeleteTable("tbl_events_has_promo_code");  
+                                     
             DeleteTable("tbl_event_reg_types");                        
+            DeleteTable("tbl_event_reg_type_names");
+            
             DeleteTable("tbl_promo_codes");
             DeleteTable("tbl_routine_categories");            
             DeleteTable("tbl_store_orders");
@@ -149,8 +153,8 @@ namespace DanceBreakFloorMigration.Classes
               DeleteTable("tbl_store_product_types");
               DeleteTable("tbl_countries");
               DeleteTable("tbl_cities");
-            
-            
+              */
+              /*
             Tbl_city tab0 = new Tbl_city();
             tab0.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
@@ -308,8 +312,14 @@ namespace DanceBreakFloorMigration.Classes
             Tbl_promo_codes tab48 = new Tbl_promo_codes();
             tab48.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
+
+            Tbl_event_reg_type_names tab49x = new Tbl_event_reg_type_names();
+            tab49x.Remigration(DanceteaManager, Pgdbbreakthefloor);
+
             Tbl_event_reg_types tab49 = new Tbl_event_reg_types();
             tab49.Remigration(DanceteaManager, Pgdbbreakthefloor);
+            
+
             
                     // table has been removed from model !!!!!!!!!
                     //Tbl_events_has_promo_code tab50 = new Tbl_events_has_promo_code();
@@ -392,15 +402,15 @@ namespace DanceBreakFloorMigration.Classes
             
             tbl_schedule_workshops_room tab78 = new tbl_schedule_workshops_room();
             tab78.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            
+            */
             Tbl_date_scholarships tab79 = new Tbl_date_scholarships();
             tab79.Remigration(DanceteaManager, Pgdbbreakthefloor);            
-
+            
             Tbl_waivers tab81 = new Tbl_waivers();
             tab81.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
 
-            /*  START TBL_REGISTRATION ----------------------------------*/
+            //  START TBL_REGISTRATION ----------------------------------
             
             Tbl_registration tab74 = new Tbl_registration();
             tab74.Remigration(DanceteaManager, Pgdbbreakthefloor);
@@ -409,8 +419,7 @@ namespace DanceBreakFloorMigration.Classes
             Tbl_registration2 tab82 = new Tbl_registration2();
             tab82.Remigration(Mybreak_db, Pgdbbreakthefloor);
             
-            /*END TBL_REGISTRATION --------------------------------------*/
-
+            // END TBL_REGISTRATION --------------------------------------
             
             Tbl_event_attendees tab76 = new Tbl_event_attendees();
             tab76.Remigration(DanceteaManager, Pgdbbreakthefloor);            
@@ -467,7 +476,8 @@ namespace DanceBreakFloorMigration.Classes
             tab95.Remigration(DanceteaManager, Pgdbbreakthefloor);
 
             Tbl_tda_bestdancer_data tab100 = new Tbl_tda_bestdancer_data();
-            tab100.Remigration(DanceteaManager, Pgdbbreakthefloor);            
+            tab100.Remigration(DanceteaManager, Pgdbbreakthefloor);     
+            
         }
         private void DeleteTable(string pTableName)
         {

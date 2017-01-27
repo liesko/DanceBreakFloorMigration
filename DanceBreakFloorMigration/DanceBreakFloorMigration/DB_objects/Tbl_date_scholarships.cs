@@ -13,9 +13,22 @@ namespace DanceBreakFloorMigration.DB_objects
             pMysql.Message = "Tbl_date_scholarships - extraction - START ";
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_date_scholarships(id, tour_dates_id, scholarships_id, winner, code) " +
+                // -------------------
+                if (!String.IsNullOrEmpty(dataReader["facultyid"].ToString()))
+                {
+                    CreateDummyFaculty(NVL(dataReader["facultyid"].ToString()), pPostgres);
+                }
+
+                // -------------------
+                if (!String.IsNullOrEmpty(dataReader["datedancerid"].ToString()))
+                {
+                    CreateDummyTblDateDancers(NVL(dataReader["datedancerid"].ToString()), pPostgres);
+                }
+
+                pPostgres.Insert("insert into tbl_date_scholarships(id, tour_dates_id, scholarships_id, winner, code, faculty_id, dancer_id, date_dancer_id) " +
                                  "values("+dataReader["id"]+","+dataReader["tourdateid"] +","+dataReader["scholarshipid"] +"," +
-                                 ""+CheckBool(dataReader["winner"].ToString()) + ","+NVL(dataReader["code"].ToString()) + ")");
+                                 ""+CheckBool(dataReader["winner"].ToString()) + ","+NVL(dataReader["code"].ToString()) + ","+NVL(dataReader["facultyid"].ToString()) + "," +
+                                 ""+NVL(dataReader["profileid"].ToString()) + ","+NVL(dataReader["datedancerid"].ToString()) + ")");
             }
             pPostgres.Message = "Tbl_date_scholarships - extraction - FINISH";
         }

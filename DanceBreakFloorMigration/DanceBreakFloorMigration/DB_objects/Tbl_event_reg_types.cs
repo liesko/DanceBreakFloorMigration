@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 
 namespace DanceBreakFloorMigration.DB_objects
 {
-    public class Tbl_event_reg_types:IMigration
+    public class Tbl_event_reg_types:  BaseClass, IMigration
     {
         public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
         {
@@ -22,8 +22,11 @@ namespace DanceBreakFloorMigration.DB_objects
             int counter = 0;
             while (dataReader.Read())
             {
-                pPostgres.Insert("insert into tbl_event_reg_types(id, name, old_id, seasons_id, fee, discountfee, events_id) " +
-                                 "values("+ ++counter+",'"+dataReader["name"]+"',"+dataReader["id"]+ "," + dataReader["season"] + "," + dataReader["fee"] + "," + dataReader["discountfee"] + "," + dataReader["eventid"] + ");");
+                string pEventNameId = GetId("select id from tbl_event_reg_type_names where name like '"+dataReader["name"]+"' limit 1;", pPostgres);
+
+                pPostgres.Insert("insert into tbl_event_reg_types(id, old_id, seasons_id, fee, discountfee, events_id, event_reg_type_names_id) " +
+                                 "values("+ ++counter+","+dataReader["id"]+ "," + dataReader["season"] + "," + dataReader["fee"] + "," + dataReader["discountfee"] + "," +
+                                 "" + dataReader["eventid"] + ","+ pEventNameId + ");");
             }
             pPostgres.Message = "tbl_event_reg_types - extraction - FINISH";
         }

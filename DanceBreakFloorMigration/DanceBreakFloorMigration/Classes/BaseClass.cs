@@ -112,5 +112,21 @@ namespace DanceBreakFloorMigration.Classes
                 pPostgres.Insert("insert into tbl_routines(id, studios_id, name) values("+ pRoutineId + ", 0, 'DUMMY');");
             }
         }
+        public void CreateDummyFaculty(string pFacultyId, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_faculty where id = " + pFacultyId + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_faculty(id, events_id, dancer_id, bio, website) values("+ pFacultyId + ",6,20797, 'DUMMY', 'DUMMY');");
+            }
+        }
+        public void CreateDummyTblDateDancers(string pTblDateDancersId, PostgreSQL_DB pPostgres)
+        {
+            string check = GetId("select id from tbl_date_dancers where id = " + pTblDateDancersId + ";", pPostgres);
+            if (check == "null")
+            {
+                pPostgres.Insert("insert into tbl_date_dancers(id) values("+ pTblDateDancersId + ");");
+            }
+        }
     }
 }

@@ -131,6 +131,7 @@ namespace DanceBreakFloorMigration.DB_objects
             pPostgres.Insert("insert into tbl_faculty(id, events_id, dancer_id, bio, website) values(127,6,20797, 'DUMMY', 'DUMMY');");
             pPostgres.Insert("insert into tbl_faculty(id, events_id, dancer_id, bio, website) values(128,6,20797, 'DUMMY', 'DUMMY');");
             pPostgres.Insert("insert into tbl_faculty(id, events_id, dancer_id, bio, website) values(129,6,20797, 'DUMMY', 'DUMMY');");
+            pPostgres.Insert("insert into tbl_faculty(id, events_id, dancer_id, bio, website) values(0,6,20797, 'DUMMY', 'DUMMY');");
 
         }
     }
