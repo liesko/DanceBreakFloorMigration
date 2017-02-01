@@ -6,7 +6,7 @@ namespace DanceBreakFloorMigration.Classes
 {
     public class Tbl_store_promocodes : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select * from store_promocodes;");
             pMysql.Message = "tbl_store_promocodes - extraction - START ";

@@ -58,6 +58,8 @@
             this.textMyBreakServerName = new System.Windows.Forms.TextBox();
             this.textMyBreakUID = new System.Windows.Forms.TextBox();
             this.textMyBreakPassword = new System.Windows.Forms.TextBox();
+            this.SuplementCalendar = new System.Windows.Forms.MonthCalendar();
+            this.btnSuplement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnDBConnect
@@ -82,7 +84,7 @@
             // 
             // TextBoxMigration
             // 
-            this.TextBoxMigration.Location = new System.Drawing.Point(117, 12);
+            this.TextBoxMigration.Location = new System.Drawing.Point(116, 12);
             this.TextBoxMigration.Name = "TextBoxMigration";
             this.TextBoxMigration.Size = new System.Drawing.Size(384, 372);
             this.TextBoxMigration.TabIndex = 3;
@@ -177,11 +179,13 @@
             // 
             // textBoxPostgresPassword
             // 
+            this.textBoxPostgresPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBoxPostgresPassword.Location = new System.Drawing.Point(371, 432);
             this.textBoxPostgresPassword.Name = "textBoxPostgresPassword";
             this.textBoxPostgresPassword.Size = new System.Drawing.Size(100, 20);
             this.textBoxPostgresPassword.TabIndex = 14;
             this.textBoxPostgresPassword.Text = "peterkim";
+            this.textBoxPostgresPassword.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -250,6 +254,7 @@
             this.textTeaPassword.Size = new System.Drawing.Size(100, 20);
             this.textTeaPassword.TabIndex = 22;
             this.textTeaPassword.Text = "ahojahoj";
+            this.textTeaPassword.UseSystemPasswordChar = true;
             // 
             // label9
             // 
@@ -318,12 +323,31 @@
             this.textMyBreakPassword.Size = new System.Drawing.Size(100, 20);
             this.textMyBreakPassword.TabIndex = 22;
             this.textMyBreakPassword.Text = "ahojahoj";
+            this.textMyBreakPassword.UseSystemPasswordChar = true;
+            // 
+            // SuplementCalendar
+            // 
+            this.SuplementCalendar.Location = new System.Drawing.Point(507, 12);
+            this.SuplementCalendar.Name = "SuplementCalendar";
+            this.SuplementCalendar.TabIndex = 23;
+            // 
+            // btnSuplement
+            // 
+            this.btnSuplement.Location = new System.Drawing.Point(507, 187);
+            this.btnSuplement.Name = "btnSuplement";
+            this.btnSuplement.Size = new System.Drawing.Size(150, 48);
+            this.btnSuplement.TabIndex = 24;
+            this.btnSuplement.Text = "Start Suplement Migration";
+            this.btnSuplement.UseVisualStyleBackColor = true;
+            this.btnSuplement.Click += new System.EventHandler(this.btnSuplement_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 598);
+            this.ClientSize = new System.Drawing.Size(675, 598);
+            this.Controls.Add(this.btnSuplement);
+            this.Controls.Add(this.SuplementCalendar);
             this.Controls.Add(this.textMyBreakPassword);
             this.Controls.Add(this.textTeaPassword);
             this.Controls.Add(this.textMyBreakUID);
@@ -393,6 +417,8 @@
         public System.Windows.Forms.TextBox textMyBreakPassword;
         public System.Windows.Forms.TextBox textTeaDbName;
         public System.Windows.Forms.TextBox textMyBreakDbName;
+        private System.Windows.Forms.MonthCalendar SuplementCalendar;
+        private System.Windows.Forms.Button btnSuplement;
     }
 }
 

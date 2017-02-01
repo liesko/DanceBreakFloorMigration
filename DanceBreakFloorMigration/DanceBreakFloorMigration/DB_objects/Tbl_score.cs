@@ -6,7 +6,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_score:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             pPostgres.Message = "tbl_score - extraction - FINISH";
             pPostgres.Insert("insert into tbl_score(id, name) values('1','finals')");

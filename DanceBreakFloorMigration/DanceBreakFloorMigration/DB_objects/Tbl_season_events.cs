@@ -7,7 +7,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_season_events:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select id, seasonid, eventid from tbl_season_events;");
             pMysql.Message = "tbl_season_events - extraction - START";

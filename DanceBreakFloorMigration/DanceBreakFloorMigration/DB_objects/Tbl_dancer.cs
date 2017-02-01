@@ -9,7 +9,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_dancer : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             pPostgres.Insert("insert into tbl_person(id, fname, lname) values(0, 'DUMMY', 'DUMMY');");
             pPostgres.Insert("insert into tbl_dancer(id, person_id) values(20797,0);");

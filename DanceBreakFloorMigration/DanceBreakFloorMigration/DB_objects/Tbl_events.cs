@@ -5,7 +5,7 @@ namespace DanceBreakFloorMigration.Classes
 {
     public class Tbl_events : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select 	id, name, link, type, web_home_webcast_banner, currentseason, facebook_link, ageasofyear, " +
                                                        "intopmenu, workshoponly from events; ");

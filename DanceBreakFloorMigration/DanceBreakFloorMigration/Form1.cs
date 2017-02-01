@@ -66,5 +66,11 @@ namespace DanceBreakFloorMigration
         {
 
         }
+
+        private void btnSuplement_Click(object sender, EventArgs e)
+        {
+            ControlletInstance.Connect();
+            ControlletInstance.SuplementRemigration(SuplementCalendar.SelectionRange.Start.ToString());
+        }
     }
 }

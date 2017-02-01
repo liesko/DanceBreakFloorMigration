@@ -8,7 +8,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_events_has_promo_code : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select a.id codeid, b.name name, b.discount_fee discount_fee, b.fee fee, b.eventid eventid " +
                                                        "from tbl_event_reg_types_18 b join promo_codes a using(eventid) " +

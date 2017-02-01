@@ -7,7 +7,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_user_has_dancer:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select distinct userid, profileid from tbl_saved_dancers;");
             pMysql.Message = "tbl_user_has_dancer - extraction - START";

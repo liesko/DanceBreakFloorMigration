@@ -6,7 +6,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_states: IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select id, name, abbreviation, countryid from tbl_states;");
             pMysql.Message = "tbl_states (from tbl_states)- extraction - START";

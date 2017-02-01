@@ -7,7 +7,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_studio_has_person:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             pMysql.Message = "studios_has_person - extraction - START";
                 pPostgres.Insert("insert into studios_has_person(studios_id, person_id) select c.studios_id, a.id from tbl_person a join tbl_user b on (a.id=b.person_id) " +

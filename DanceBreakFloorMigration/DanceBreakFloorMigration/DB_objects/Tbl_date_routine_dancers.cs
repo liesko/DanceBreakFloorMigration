@@ -7,7 +7,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_date_routine_dancers:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select routineid, profileid, tourdateid from tbl_date_routine_dancers group by routineid, profileid, tourdateid;");
             pMysql.Message = "tbl_date_routine_dancers - extraction - START";

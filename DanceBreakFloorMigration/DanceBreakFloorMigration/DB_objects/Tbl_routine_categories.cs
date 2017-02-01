@@ -7,7 +7,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_routine_categories : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select cast(name as char) name, min_dancers, full_fee_per_dancer, duration, cast(abbreviation as char) abbreviation, discount_fee_per_dancer, " +
                                                        "finale_fee_per_dancer, finale_prelim_fee_per_dancer from tbl_routine_categories_11;");

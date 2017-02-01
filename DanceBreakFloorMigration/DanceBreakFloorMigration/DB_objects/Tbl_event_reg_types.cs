@@ -6,7 +6,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_event_reg_types:  BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("SELECT id, name, fee, eventid, discountfee, 12 AS season FROM tbl_event_reg_types_12 " +
                                                        "union " +

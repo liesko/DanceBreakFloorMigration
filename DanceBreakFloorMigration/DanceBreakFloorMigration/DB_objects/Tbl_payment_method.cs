@@ -6,7 +6,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_payment_method:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select distinct payment_method from registrations where payment_method!='';");
             pMysql.Message = "payment_method (from registration)- extraction - START";

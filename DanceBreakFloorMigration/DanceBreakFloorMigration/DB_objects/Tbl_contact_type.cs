@@ -5,7 +5,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_contact_type:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             pPostgres.Message = "tbl_contact_type - extraction - START";
             pPostgres.Insert("insert into tbl_contact_type(id, name) values('1','email')");

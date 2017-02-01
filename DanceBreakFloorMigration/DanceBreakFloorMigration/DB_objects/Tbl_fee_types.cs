@@ -5,7 +5,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_fee_types:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             pPostgres.Message = "tbl_fee_types - extraction - START";
             pPostgres.Insert("insert into tbl_fee_types(id, name) values('1','workshop')");

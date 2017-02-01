@@ -8,7 +8,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class tbl_schedule_workshops_room : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select * from tbl_date_schedule_workshops");
             pMysql.Message = "tbl_schedule_workshops_rooms - extraction - START ";

@@ -4,7 +4,7 @@ namespace DanceBreakFloorMigration.Classes
 {
     public class DummyData1 : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             pMysql.Message = "DUMMY data1 GENERATE - START";
             pPostgres.Insert("insert into tbl_tour_dates(id, season_id, event_id) values(36, 1,6);");

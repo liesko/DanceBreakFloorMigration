@@ -6,7 +6,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_online_scoring_has_faculty : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             MySqlDataReader dataReader = pMysql.Select("select id, facultyid1 as faculty, data1 as data from tbl_online_scoring where facultyid1!=0 " +
                                                        "union select id, facultyid2 as faculty, data2 as data from tbl_online_scoring where facultyid2!=0 " +

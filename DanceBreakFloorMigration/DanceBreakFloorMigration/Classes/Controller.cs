@@ -32,7 +32,8 @@ namespace DanceBreakFloorMigration.Classes
         }
 
         public void Remigration()
-        {         
+        {
+            /*
             DeleteTable("tbl_award_nominations_has_teacher");   // M:N          
             DeleteTable("tbl_tda_bestdancer_data");
             DeleteTable("tbl_tda_peopleschoice_votes");
@@ -42,7 +43,7 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_store_promocodes");                                             
             DeleteTable("tbl_tda_award_types");            
             DeleteTable("tbl_dts_fees");            
-            DeleteTable("tbl_date_dancers");            
+            DeleteTable("tbl_date_dancers");                        
             DeleteTable("tbl_dts_registrations");            
             DeleteTable("tbl_event_registrations");                       
             DeleteTable("tbl_user_registrations_soty");                        
@@ -56,7 +57,7 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_registration");                                             
             DeleteTable("tbl_waivers");            
             DeleteTable("tbl_date_scholarships"); 
-            /*                       
+                                  
             DeleteTable("tbl_schedule_workshops_rooms");                        
             DeleteTable("tbl_date_schedule_workshops");            
             DeleteTable("tbl_dts_reg_types");                        
@@ -75,8 +76,8 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_date_mybtf_exceptions");
             DeleteTable("tbl_competition_cash_awards");            
             DeleteTable("tbl_staff");
-            DeleteTable("tbl_staff_types");            
-            DeleteTable("tbl_jobs");
+            DeleteTable("tbl_staff_types");                        
+            DeleteTable("tbl_jobs");            
             DeleteTable("tbl_store_products_inventory");
             DeleteTable("tbl_store_giftcards");            
             DeleteTable("tbl_user_hearts");            
@@ -154,7 +155,7 @@ namespace DanceBreakFloorMigration.Classes
               DeleteTable("tbl_countries");
               DeleteTable("tbl_cities");
               */
-              /*
+            /*
             Tbl_city tab0 = new Tbl_city();
             tab0.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
@@ -402,7 +403,7 @@ namespace DanceBreakFloorMigration.Classes
             
             tbl_schedule_workshops_room tab78 = new tbl_schedule_workshops_room();
             tab78.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            */
+            
             Tbl_date_scholarships tab79 = new Tbl_date_scholarships();
             tab79.Remigration(DanceteaManager, Pgdbbreakthefloor);            
             
@@ -451,6 +452,7 @@ namespace DanceBreakFloorMigration.Classes
             Tbl_dts_registrations tab91 = new Tbl_dts_registrations();
             tab91.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
+            
             Tbl_date_dancers tab92 = new Tbl_date_dancers();
             tab92.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
@@ -477,8 +479,17 @@ namespace DanceBreakFloorMigration.Classes
 
             Tbl_tda_bestdancer_data tab100 = new Tbl_tda_bestdancer_data();
             tab100.Remigration(DanceteaManager, Pgdbbreakthefloor);     
+            */
             
         }
+
+        public void SuplementRemigration(string pSuplementDateFrom)
+        {
+            Mybreak_db.Message = pSuplementDateFrom;
+            Tbl_jobs tab57supl = new Tbl_jobs();
+            tab57supl.Remigration(DanceteaManager, Pgdbbreakthefloor, pSuplementDateFrom);
+        }
+
         private void DeleteTable(string pTableName)
         {
             Pgdbbreakthefloor.Delete(pTableName);

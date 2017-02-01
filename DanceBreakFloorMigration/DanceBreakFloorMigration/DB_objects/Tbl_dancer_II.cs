@@ -8,7 +8,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_dancer_II : BaseClass, IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             // all dancers related to the any studio...
             MySqlDataReader dataReader = pMysql.Select("select * from tbl_profiles where studioid is null;");

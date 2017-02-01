@@ -5,7 +5,7 @@ namespace DanceBreakFloorMigration.DB_objects
 {
     public class Tbl_perf_div_type:IMigration
     {
-        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres)
+        public void Remigration(MySQL_DB pMysql, PostgreSQL_DB pPostgres, string pDate = "1.1.2500")
         {
             pPostgres.Message = "tbl_perf_div_types - creation - START";
             pPostgres.Insert("insert into tbl_perf_div_types(id, name) values('1','Combined Top 3');");
