@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F38E818-0D42-4E43-B726-A4502F0AF093}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DanceBreakFloorMigration</RootNamespace>
+    <AssemblyName>DanceBreakFloorMigration</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.1.8.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.1.8\lib\net451\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\BaseClass.cs" />
+    <Compile Include="Classes\Controller.cs" />
+    <Compile Include="DB_objects\Tbl_event_reg_type_names.cs" />
+    <Compile Include="DB_objects\Tbl_store_promocodes.cs" />
+    <Compile Include="DB_objects\DummyData1.cs" />
+    <Compile Include="Classes\HandlerArgs.cs" />
+    <Compile Include="Classes\MySQL_DB.cs" />
+    <Compile Include="Classes\PostgreSQL_DB.cs" />
+    <Compile Include="DB_objects\DummyData2.cs" />
+    <Compile Include="DB_objects\Registrations_routines_dancers.cs" />
+    <Compile Include="DB_objects\Tbl_admin.cs" />
+    <Compile Include="DB_objects\Tbl_awards_type.cs" />
+    <Compile Include="DB_objects\Tbl_city.cs" />
+    <Compile Include="DB_objects\Tbl_competition_awards.cs" />
+    <Compile Include="DB_objects\Tbl_competition_cash_awards.cs" />
+    <Compile Include="DB_objects\Tbl_dancer.cs" />
+    <Compile Include="DB_objects\Tbl_dancer_II.cs" />
+    <Compile Include="DB_objects\Tbl_date_dancers.cs" />
+    <Compile Include="DB_objects\Tbl_date_mybtf_exceptions.cs" />
+    <Compile Include="DB_objects\Tbl_date_playlists.cs" />
+    <Compile Include="DB_objects\Tbl_date_routines.cs" />
+    <Compile Include="DB_objects\Tbl_date_routine_dancers.cs" />
+    <Compile Include="DB_objects\Tbl_date_schedule_competition.cs" />
+    <Compile Include="DB_objects\Tbl_date_schedule_workshops.cs" />
+    <Compile Include="DB_objects\Tbl_date_scholarships.cs" />
+    <Compile Include="DB_objects\Tbl_date_special_awards.cs" />
+    <Compile Include="DB_objects\Tbl_date_studios.cs" />
+    <Compile Include="DB_objects\Tbl_date_studio_awards.cs" />
+    <Compile Include="DB_objects\Tbl_dts_attendees.cs" />
+    <Compile Include="DB_objects\Tbl_dts_fees.cs" />
+    <Compile Include="DB_objects\Tbl_dts_registrations.cs" />
+    <Compile Include="DB_objects\Tbl_dts_reg_types.cs" />
+    <Compile Include="DB_objects\Tbl_events.cs" />
+    <Compile Include="DB_objects\Tbl_age_division.cs" />
+    <Compile Include="DB_objects\Tbl_category.cs" />
+    <Compile Include="DB_objects\Tbl_contact_type.cs" />
+    <Compile Include="DB_objects\Tbl_countries.cs" />
+    <Compile Include="DB_objects\Tbl_events_has_promo_code.cs" />
+    <Compile Include="DB_objects\Tbl_event_attendees.cs" />
+    <Compile Include="DB_objects\Tbl_event_registrations.cs" />
+    <Compile Include="DB_objects\Tbl_event_reg_types.cs" />
+    <Compile Include="DB_objects\Tbl_event_types.cs" />
+    <Compile Include="DB_objects\Tbl_faculty.cs" />
+    <Compile Include="DB_objects\Tbl_faculty_playlists.cs" />
+    <Compile Include="DB_objects\Tbl_fee_types.cs" />
+    <Compile Include="DB_objects\Tbl_gender.cs" />
+    <Compile Include="DB_objects\Tbl_jobs.cs" />
+    <Compile Include="DB_objects\Tbl_level.cs" />
+    <Compile Include="DB_objects\Tbl_online_critiques_access.cs" />
+    <Compile Include="DB_objects\Tbl_online_critiques_judges.cs" />
+    <Compile Include="DB_objects\Tbl_online_scoring.cs" />
+    <Compile Include="DB_objects\tbl_online_scoring_has_faculty.cs" />
+    <Compile Include="DB_objects\Tbl_payment_method.cs" />
+    <Compile Include="DB_objects\Tbl_performance_divisions.cs" />
+    <Compile Include="DB_objects\Tbl_perf_div_type.cs" />
+    <Compile Include="DB_objects\Tbl_person_types.cs" />
+    <Compile Include="DB_objects\Tbl_playlist_workshop_levels.cs" />
+    <Compile Include="DB_objects\Tbl_promo_codes.cs" />
+    <Compile Include="DB_objects\Tbl_promo_codes_type.cs" />
+    <Compile Include="DB_objects\Tbl_registration.cs" />
+    <Compile Include="DB_objects\Tbl_registration2.cs" />
+    <Compile Include="DB_objects\Tbl_registrations_attendees_dts.cs" />
+    <Compile Include="DB_objects\Tbl_registrations_best_dancers.cs" />
+    <Compile Include="DB_objects\Tbl_registrations_dancers.cs" />
+    <Compile Include="DB_objects\Tbl_registrations_routines.cs" />
+    <Compile Include="DB_objects\Tbl_routines.cs" />
+    <Compile Include="DB_objects\Tbl_routine_categories.cs" />
+    <Compile Include="DB_objects\Tbl_routine_types.cs" />
+    <Compile Include="DB_objects\tbl_schedule_workshops_room.cs" />
+    <Compile Include="DB_objects\Tbl_scholarships.cs" />
+    <Compile Include="DB_objects\Tbl_score.cs" />
+    <Compile Include="DB_objects\Tbl_score_colors.cs" />
+    <Compile Include="DB_objects\Tbl_season.cs" />
+    <Compile Include="DB_objects\Tbl_season_events.cs" />
+    <Compile Include="DB_objects\Tbl_songs.cs" />
+    <Compile Include="DB_objects\Tbl_soty_type.cs" />
+    <Compile Include="DB_objects\Tbl_special_awards.cs" />
+    <Compile Include="DB_objects\Tbl_staff.cs" />
+    <Compile Include="DB_objects\Tbl_staff_types.cs" />
+    <Compile Include="DB_objects\Tbl_states.cs" />
+    <Compile Include="DB_objects\Tbl_store_giftcards.cs" />
+    <Compile Include="DB_objects\Tbl_store_hearts.cs" />
+    <Compile Include="DB_objects\Tbl_store_orders.cs" />
+    <Compile Include="DB_objects\Tbl_store_products.cs" />
+    <Compile Include="DB_objects\Tbl_store_products_has_size.cs" />
+    <Compile Include="DB_objects\Tbl_store_products_inventory.cs" />
+    <Compile Include="DB_objects\tbl_store_product_colors.cs" />
+    <Compile Include="DB_objects\Tbl_store_product_subtypes.cs" />
+    <Compile Include="DB_objects\Tbl_store_product_type.cs" />
+    <Compile Include="DB_objects\Tbl_store_size.cs" />
+    <Compile Include="DB_objects\Tbl_studios.cs" />
+    <Compile Include="DB_objects\Tbl_studio_awards.cs" />
+    <Compile Include="DB_objects\Tbl_studio_has_person.cs" />
+    <Compile Include="DB_objects\Tbl_tda_award_nominations.cs" />
+    <Compile Include="DB_objects\Tbl_tda_award_types.cs" />
+    <Compile Include="DB_objects\Tbl_tda_bestdancer_data.cs" />
+    <Compile Include="DB_objects\Tbl_tda_peopleschoice_votes.cs" />
+    <Compile Include="DB_objects\Tbl_time_type.cs" />
+    <Compile Include="DB_objects\Tbl_tour_dates.cs" />
+    <Compile Include="DB_objects\Tbl_users.cs" />
+    <Compile Include="DB_objects\Tbl_user_has_dancer.cs" />
+    <Compile Include="DB_objects\Tbl_user_hearts.cs" />
+    <Compile Include="DB_objects\Tbl_user_registrations_soty.cs" />
+    <Compile Include="DB_objects\Tbl_user_registrations_specialty.cs" />
+    <Compile Include="DB_objects\Tbl_user_stats.cs" />
+    <Compile Include="DB_objects\Tbl_waivers.cs" />
+    <Compile Include="DB_objects\Tbl_workshop_levels.cs" />
+    <Compile Include="DB_objects\Tbl_workshop_room.cs" />
+    <Compile Include="DB_objects\Tour_dates_workshop_room.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IDB.cs" />
+    <Compile Include="Interfaces\IMigration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include=".gitignore" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
