@@ -76,8 +76,10 @@ namespace DanceBreakFloorMigration.Classes
             DeleteTable("tbl_date_mybtf_exceptions");
             DeleteTable("tbl_competition_cash_awards");            
             DeleteTable("tbl_staff");
-            DeleteTable("tbl_staff_types");                        
-            DeleteTable("tbl_jobs");            
+            DeleteTable("tbl_staff_types");
+            */
+            DeleteTable("tbl_jobs");
+            /*
             DeleteTable("tbl_store_products_inventory");
             DeleteTable("tbl_store_giftcards");            
             DeleteTable("tbl_user_hearts");            
@@ -343,10 +345,10 @@ namespace DanceBreakFloorMigration.Classes
             
             Tbl_store_products_inventory tab56 = new Tbl_store_products_inventory();
             tab56.Remigration(Mybreak_db, Pgdbbreakthefloor);
-            
+            */
             Tbl_jobs tab57 = new Tbl_jobs();
             tab57.Remigration(DanceteaManager, Pgdbbreakthefloor);
-            
+            /*
             Tbl_staff_types tab58 = new Tbl_staff_types();
             tab58.Remigration(DanceteaManager, Pgdbbreakthefloor);
             
