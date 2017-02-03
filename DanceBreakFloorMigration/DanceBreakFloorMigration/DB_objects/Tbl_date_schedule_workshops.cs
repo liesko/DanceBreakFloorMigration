@@ -14,8 +14,8 @@ namespace DanceBreakFloorMigration.DB_objects
             while (dataReader.Read())
             {
                 pPostgres.Insert("insert into tbl_date_schedule_workshops(id, tour_dates_id, date, start_time, duration, span) " +
-                                 "values("+dataReader["id"]+", "+NVL(dataReader["tourdateid"].ToString()) + ",'"+FromUnixTime(Convert.ToInt64(dataReader["date"])) + "'," +
-                                 "'"+FromUnixTime(Convert.ToInt64(dataReader["start_time"])) + "','"+dataReader["duration"]+"',"+dataReader["span"]+")");
+                                 "values("+dataReader["id"]+", "+NVL(dataReader["tourdateid"].ToString()) + ",'"+ RemoveFirstTwoOccurence(" ", FromUnixTime(Convert.ToInt64(dataReader["date"]))) + "'," +
+                                 "'"+RemoveFirstTwoOccurence(" ", FromUnixTime(Convert.ToInt64(dataReader["start_time"]))) + "','"+RetSeconds(dataReader["duration"].ToString()) + "',"+dataReader["span"]+")");
             }
             pPostgres.Message = "tbl_date_schedule_workshops - extraction - FINISH";
         }

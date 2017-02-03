@@ -122,9 +122,24 @@ namespace DanceBreakFloorMigration.Classes
 
         public void Update(string pUpdate)
         {
+            /*
             cmd.CommandText = pUpdate;
             cmd.Connection = connection;
             cmd.ExecuteNonQuery();
+            */            
+            try
+            {
+                _tran = connection.BeginTransaction();
+                cmd.CommandText = pUpdate;
+                cmd.Connection = connection;
+                cmd.ExecuteNonQuery();
+                _tran.Commit();
+            }
+            catch (Exception)
+            {
+                Message = "Invalid UPDATE: " + pUpdate;
+               // _tran.Dispose();
+            }
         }
 
         public NpgsqlDataReader Select(string pQuery)

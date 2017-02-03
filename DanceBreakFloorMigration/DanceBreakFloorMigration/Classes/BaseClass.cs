@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using MySql.Data.MySqlClient;
 using Npgsql;
 
 namespace DanceBreakFloorMigration.Classes
@@ -35,10 +37,11 @@ namespace DanceBreakFloorMigration.Classes
             return String.Join("", source.ToCharArray().Where(a => !oldChar.Contains(a)).ToArray());
         }
 
-        public DateTime FromUnixTime(long unixTime)
+        //public DateTime FromUnixTime(long unixTime)
+        public static string FromUnixTime(long unixTime)
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            return epoch.AddSeconds(unixTime);
+            return epoch.AddSeconds(unixTime).ToString();
         }
 
         public string NVL(string pParam)
@@ -127,6 +130,71 @@ namespace DanceBreakFloorMigration.Classes
             {
                 pPostgres.Insert("insert into tbl_date_dancers(id) values("+ pTblDateDancersId + ");");
             }
+        }
+
+        /* 
+         * pId - ID in MySQL table
+         * pMysqlList - first is Table_name otbers are rows         
+         * pPosgresList - first is Table_name otbers are rows
+         * condition: count and order of the rows must be the same
+         */
+
+        public void UpdatePostgreRow(String pId, List<String> pMysqlList, List<String> pPosgresList, PostgreSQL_DB pPostgres)
+        {                        
+                string core_update_string = null;
+                for (int i = 1; i < pMysqlList.Count; i++)
+                {
+                    core_update_string += pPosgresList[i];
+                    core_update_string += "=";
+                    String pMysqlValue = null;
+                    if (pMysqlList[i]=="False" || pMysqlList[i] == "True")
+                    {
+                        pMysqlValue = pMysqlList[i].Replace("False","0").Replace("True","1");
+                    }
+                    else
+                    {
+                        pMysqlValue = pMysqlList[i];
+                    }
+
+                    core_update_string += "'"+ pMysqlValue.Replace("'","''") + "'";
+                    if (i< pMysqlList.Count-1)
+                    {
+                        core_update_string += ", ";
+                    }                    
+                }
+                pPostgres.Update("update "+pPosgresList[0]+ " set "+ core_update_string + " where id="+pId+";");
+        }
+        /*
+         * Method - return number of second from string
+         * example: RetSeconds("0:30")
+         */
+        public string RetSeconds(string ptime)
+        {
+            String time = ptime;
+            time = "0:" + time;
+            TimeSpan ts = TimeSpan.Parse(time);
+            double totalSeconds = ts.TotalSeconds;
+            return totalSeconds.ToString();
+        }
+        /*
+         * Method will remove firs two occurence of selected char
+         * example: RemoveFirstTwoOccurence(" ","10. 10. 2010 30:30:30") --->10.10.2010 30:30:30
+         */
+        public static string RemoveFirstTwoOccurence(string pRemove, string pString)
+        {
+            string newtring = pString;
+            int index = newtring.IndexOf(pRemove);
+            string cleanPath = (index < 0)
+                ? newtring
+                : newtring.Remove(index, pRemove.Length);
+
+            newtring = cleanPath;
+            index = newtring.IndexOf(pRemove);
+            cleanPath = (index < 0)
+                ? newtring
+                : newtring.Remove(index, pRemove.Length);
+
+            return cleanPath;
         }
     }
 }
