@@ -134,8 +134,8 @@ namespace DanceBreakFloorMigration.Classes
 
         /* 
          * pId - ID in MySQL table
-         * pMysqlList - first is Table_name otbers are rows         
-         * pPosgresList - first is Table_name otbers are rows
+         * pMysqlList - first is Table_name or "null", others are ROWS
+         * pPosgresList - first is Table_name others are rows
          * condition: count and order of the rows must be the same
          */
 
@@ -195,6 +195,15 @@ namespace DanceBreakFloorMigration.Classes
                 : newtring.Remove(index, pRemove.Length);
 
             return cleanPath;
+        }
+        /*
+         * will return time from datetime
+         * example: ReturnTimeFromDateTime("25. 9. 2010 8:00:01")   ----> 8:00:01
+         */
+        public static string ReturnTimeFromDateTime(string pDateTime)
+        {
+            DateTime pom_date = Convert.ToDateTime(pDateTime);
+            return pom_date.TimeOfDay.ToString();
         }
     }
 }
